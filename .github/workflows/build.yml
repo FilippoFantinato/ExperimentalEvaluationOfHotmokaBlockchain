@@ -33,5 +33,5 @@ jobs:
         
       - uses: actions/upload-artifact@v2
         with:
-          name: ${{ steps.thesis_name.outputs.NAME }}
+          name: Thesis
           path: ${{ steps.thesis_name.outputs.NAME }}
