@@ -1,4 +1,4 @@
-name: CI
+name: Build thesis
 on:
   push:
     branches: [ main ]
@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Compile tex files into pdf
+      - name: Compile tex file into pdf
         uses: xu-cheng/latex-action@v2
         with:
           root_file: tesi.tex
@@ -33,4 +33,5 @@ jobs:
         
       - uses: actions/upload-artifact@v2
         with:
+          name: ${{ steps.thesis_name.outputs.NAME }}
           path: ${{ steps.thesis_name.outputs.NAME }}
