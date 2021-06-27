@@ -1,0 +1,37 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Compile tex files into pdf
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: tesi.tex
+          latexmk_shell_escape: true
+          
+      - name: Get output name
+        id: thesis_name
+        run: |
+          name=$(`cat informations.json` | jq '.name' -r)
+          version=$(`cat informations.json` | jq '.version' -r)
+          echo "##[set-output name=NAME;]$name_$version.pdf"
+          
+      - name: Rename pdf
+        run: |
+          mv tesi.pdf ${{ steps.thesis_name.outputs.NAME }}
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Thesis
+          path: ${{ steps.output_name.outputs.NAME }}
