@@ -25,6 +25,8 @@ jobs:
         run: |
           name=$(echo `cat informations.json` | jq '.name' -r)
           version=$(echo `cat informations.json` | jq '.version' -r)
+          
+          echo "##[set-output name=VERSION;]$version"
           echo "##[set-output name=NAME;]${name}_$version.pdf"
           
       - name: Rename pdf
@@ -33,5 +35,5 @@ jobs:
         
       - uses: actions/upload-artifact@v2
         with:
-          name: Thesis
+          name: Thesis ${{ steps.thesis_name.outputs.VERSION }}
           path: ${{ steps.thesis_name.outputs.NAME }}
