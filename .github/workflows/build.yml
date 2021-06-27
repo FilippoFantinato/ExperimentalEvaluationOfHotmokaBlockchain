@@ -23,8 +23,8 @@ jobs:
       - name: Get output name
         id: thesis_name
         run: |
-          name=$(`cat informations.json` | jq '.name' -r)
-          version=$(`cat informations.json` | jq '.version' -r)
+          name=$(echo `cat informations.json` | jq '.name' -r)
+          version=$(echo `cat informations.json` | jq '.version' -r)
           echo "##[set-output name=NAME;]$name_$version.pdf"
           
       - name: Rename pdf
