@@ -4,6 +4,9 @@
 %**************************************************************
 \renewcommand{\acronymname}{Acronimi e abbreviazioni}
 
+\newacronym[description={\glslink{ICT}{Information and Communications Technology}}]
+{ict}{ICT}{Information and Communications Technology}
+
 \newacronym[description={\glslink{apig}{Application Program Interface}}]
     {api}{API}{Application Program Interface}
 
@@ -13,20 +16,34 @@
 %**************************************************************
 % Glossario
 %**************************************************************
-%\renewcommand{\glossaryname}{Glossario}
+\renewcommand{\glossaryname}{Glossario}
 
-\newglossaryentry{apig}
-{
-    name=\glslink{api}{API},
-    text=Application Program Interface,
-    sort=api,
-    description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
+\newglossaryentry{ICT}{
+    name=ICT,
+    text=Information and Communications Technology,
+    description={Con il termine \emph{Information and Communications Technology}, si intende l'uso della tecnologia nella gestione e nel trattamento delle informazioni. Include tutti gli ambiti professionali che riguardano la progettazione e lo sviluppo tecnico della comunicazione digitale}
 }
 
-\newglossaryentry{umlg}
+\newglossaryentry{System Integrator}
 {
-    name=\glslink{uml}{UML},
-    text=UML,
-    sort=uml,
-    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
+    name=System Integrator,
+    description={Con il termine inglese \emph{System Integrator} viene indicata un'azienda che si occupa dell'integrazione di sistemi. Il suo compito è quello di far dialogare impianti diversi tra di loro, allo scopo di creare una nuova struttura funzionale che possa utilizzare sinergicamente le potenzialità degli impianti d'origine e creando quindi funzionalità originariamente non presenti}
+}
+
+\newglossaryentry{on premises}{
+    name={On premises},
+    text={on premises},
+    description={In informatica con il termine \emph{on premises} si indica l'installazione del \emph{software} direttamente sulla macchina locale}
+}
+
+\newglossaryentry{Single Page Application}{
+    name=Single Page Application,
+    text=Single Page Application,
+    description={Per \emph{Single Page Application} si intende qualsiasi applicazione web che interagisce con l'utente aggiornando le parti della pagina con dati prelevati direttamente dal server}
+}
+
+\newglossaryentry{Single File Components}{
+    name=Single File Components,
+    text=Single File Components,
+    description={È la principale caratteristica del \emph{framework} Vue.js e permette di definire il codice di \emph{markup}, la logica e lo stile direttamente all'interno dello stesso file}
 }
