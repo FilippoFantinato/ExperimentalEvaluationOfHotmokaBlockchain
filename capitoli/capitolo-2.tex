@@ -198,12 +198,12 @@ Per quanto riguarda la ripartizione oraria delle principali attività, qui si pu
 
 % TODO: Sistemare stile o sostituire con longtable
 
-\begin{tabularx}{\columnwidth}{|c|X|}
+\begin{longtabu}{|c|X|}
 	\hline
-	\textbf{Durata in ore} & \textbf{Descrizione dell'attività} \\\hline
 
+  \textbf{Durata in ore} & \textbf{Descrizione dell'attività} \\ \hline
+  
 	\textbf{160} & \textbf{Studio delle tecnologie} \\
-  \multirow{4}{0cm}\\ 
   \textit{40} &
   Studio dei concetti generali riguardanti la \emph{blockchain} \\
   \textit{40} & 
@@ -212,31 +212,29 @@ Per quanto riguarda la ripartizione oraria delle principali attività, qui si pu
   Studio del linguaggio Solidity per la definizione di \emph{smart contract} \\
   \textit{40} & 
   Studio della \emph{blockchain} Hotmoka \\
+  
   \hline
 
   \textbf{80} & \textbf{Implementazione degli \emph{smart contract} per la gestione di NFT} \\ 
-  \multirow{3}{0cm} \\ 
   \textit{40} & 
-  Studio e implementazione degli \emph{smart contract} per la gestione di NFT seguendo gli standard
-  ERC su \emph{blockchain} Ethereum \\
+  Studio e implementazione degli \emph{smart contract} per la gestione di NFT seguendo gli standard ERC su \emph{blockchain} Ethereum \\
   \textit{40} & 
-  Studio e implementazione degli \emph{smart contract} per la gestione di NFT seguendo gli standard
-  Hotmoka \\
+  Studio e implementazione degli \emph{smart contract} per la gestione di NFT seguendo gli standard Hotmoka \\
+  
   \hline
   
   \textbf{24} & \textbf{Integrazione tra il backend e una delle due implementazioni sviluppate} \\
   \hline
 
-  \textbf{40} & \textbf{Stesura documentazione}  \\ 
-  \multirow{4}{0cm}\\ 
+  \textbf{40} & \textbf{Stesura documentazione} \\ 
   \textit{16} & 
   Stesura della documentazione relativa al periodo di codifica \\
   \textit{24} & 
   Stesura della documentazione finale \\
+
   \hline
 
   \textbf{16} & \textbf{Collaudo Finale}  \\ 
-  \multirow{4}{0cm}\\ 
   \textit{13} & 
   Collaudo \\
   \textit{1} &
@@ -245,10 +243,10 @@ Per quanto riguarda la ripartizione oraria delle principali attività, qui si pu
   Live demo del lavoro di stage \\
   \hline
 
-  \textbf{Totale ore} & \multicolumn{1}{|c|}{\textbf{320}} \\\hline
+  \textbf{Totale ore} & \multicolumn{1}{c}{\textbf{320}} \\ \hline
 
-\end{tabularx}
-\captionof{table}{Tabella riassuntiva ore per attività} 
+  \caption{Tabella riassuntiva delle ore per attività}
+\end{longtabu}
 
 \subsection{Vincoli organizzativi}
 A causa della situazione pandemica ancora persistente, anche se in via di miglioramento, l'attività di stage è stata svolta in modalità mista. Sin dall'inizio dello stage è stato concordato con il mio \emph{tutor} aziendale, Fabio Pallaro, di fissare il lunedì come giorno obbligatorio di presenza in ufficio, in modo tale da poter eseguire lo \emph{sprint review}. 
@@ -283,7 +281,7 @@ I \textbf{canali di comunicazione} utilizzati sono quelli che sono stati riporta
   
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{capitolo2/trello-board.png}
+    \includegraphics[width=0.8\textwidth]{capitolo2/trello-board.png}
     \caption{Gestione degli \emph{sprint} settimanali su Trello}
   \end{figure}
 
