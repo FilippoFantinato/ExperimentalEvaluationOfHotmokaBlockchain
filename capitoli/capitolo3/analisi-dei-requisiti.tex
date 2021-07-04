@@ -59,13 +59,7 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
   \begin{itemize}
     \item L'applicativo Java vuole creare un NFT a partire da un opera, dalla quale non è stato creato alcun NFT;
     \item L'opera viene caricata sulla rete IPFS tramite il servizio Pinata;
-    \item Viene contattato lo \textit{smart contract} e creato il NFT, il quale avrà le seguenti informazioni:
-    \begin{itemize}
-      \item il hash che identifica il NFT;
-      \item il \textit{wallet} dell'artista che sta caricando l'opera;
-      \item l'id dell'artista;
-      \item l'orario in cui è avvenuto il caricamento.
-    \end{itemize}
+    \item Viene invocato lo \textit{smart contract} e creato il NFT.
   \end{itemize}
   \item \UCExt
   \begin{enumerate}[label=\lett]
@@ -83,7 +77,7 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
 
     \item L'applicativo Java vuole caricare un'opera dalla quale è già stato estratto il NFT:
     \begin{itemize}
-      \item (UC\ref{UC:extension.opera-exists-yet}) - Visualizzazione messaggio di NFT già esistente;
+      \item (UC\ref{UC:extension.nft-exists-yet}) - Visualizzazione messaggio di NFT già esistente;
       \item Viene impedita la creazione del NFT.
     \end{itemize}
   \end{enumerate}
@@ -128,8 +122,138 @@ L'applicativo Java può trasferire la proprietà di un NFT dal proprietario ad u
   \end{enumerate}
 \end{itemize}
 
-\UC{Ottenimento di un opera a partire dal suo id}
+\UC{Ottenimento di un NFT a partire dal suo id}
 L'applicativo Java può ottenere le informazioni di un NFT a partire dal id con il quale è memorizzato.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{l'applicativo Java utilizza un id associato ad un NFT};
+  \item \UCPost{l'applicativo Java ottiene le informazioni del NFT};
+  \item \UCMain
+  \begin{itemize}
+    \item l'applicativo Java invoca lo \textit{smart contract} utilizzando un id associato ad un NFT;
+    \item riceve le informazioni inserite durante la creazione.
+  \end{itemize}
+
+  \item \UCExt
+  \begin{enumerate}[label=\lett]
+    \item L'applicativo Java invia un id che non è associato ad alcun NFT:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.nft-not-exists}) - Visualizzazione messaggio di NFT non esistente;
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\UC{Ottenimento di un opera a partire dal suo hash}
+L'applicativo Java può ottenere le informazioni di un NFT a partire dal hash associato al NFT.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{l'applicativo Java utilizza un hash associato ad un NFT};
+  \item \UCPost{l'applicativo Java ottiene le informazioni del NFT};
+  
+  \item \UCMain
+  \begin{itemize}
+    \item l'applicativo Java invoca lo \textit{smart contract} utilizzando il hash associato al NFT;
+    \item riceve le informazioni inserite durante la creazione. 
+  \end{itemize}
+  
+  \item \UCExt
+  \begin{enumerate}[label=\lett]
+    \item l'applicativo Java invia un hash che non è associato ad alcun NFT:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.nft-not-exists}) - Visualizzazione messaggio di NFT non esistente.
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\UC{Ottenimento della storia delle transazioni di un NFT}
+L'applicativo Java può ottenere la storia delle transazioni di un NFT a partire dal id con il quale è memorizzato.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{l'applicativo Java utilizza un id associato ad un NFT};
+  \item \UCPost{L'applicativo Java ottiene la storia delle transazioni di un NFT};
+
+  \item \UCMain
+  \begin{itemize}
+    \item l'applicativo Java invoca lo \textit{smart contract} utilizzando un id associato ad un NFT;
+    \item riceve la storia delle transazioni.
+  \end{itemize}
+  
+  \item \UCExt
+  \begin{enumerate}[label=\lett]
+    \item L'applicativo Java invia un id che non è associato ad alcun NFT:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.nft-not-exists}) - Visualizzazione messaggio di NFT non esistente;
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\UC{Visualizzazione messaggio di wallet non nel formato corretto}
+\label{UC:extension.wallet-not-correct}
+
+Nel caso in cui il \textit{wallet} inviato allo \textit{smart contract} non sia nel formato corretto, verrà visualizzato un messaggio di errore che lo segnala.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{il formato del \textit{wallet} non è nel formato corretto};
+  \item \UCPost{viene visualizzato il messaggio che segnala l'errore};
+  
+  \item \UCMain
+  \begin{itemize}
+    \item l'applicativo Java invia un \textit{wallet} che non è nel formato corretto;
+    \item viene visualizzato il messaggio che segnala l'errore.
+  \end{itemize}
+\end{itemize}
+
+\UC{Visualizzazione messaggio di operazione non consentita}
+\label{UC:extension.operation-not-allowed}
+
+Nel caso in cui lo \textit{smart contract} non venga invocato dal suo proprietario, verrà visualizzato il messaggio di operazione non consentita.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{lo \textit{smart contract} non viene invocato dal suo proprietario};
+  \item \UCPost{viene visualizzato il messaggio di operazione non consentita};
+  
+  \item \UCMain
+  \begin{itemize}
+    \item l'applicativo Java non viene invocato dal suo proprietario;
+    \item viene visualizzato il messaggio di operazione non consentita. 
+  \end{itemize}
+\end{itemize}
+
+\UC{Visualizzazione messaggio di NFT già esistente}
+\label{UC:extension.nft-exists-yet}
+
+Nel caso in cui si cerchi di caricare un NFT già esistente, verrà visualizzato il messaggio che lo segnalerà.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{l'applicativo Java carica };
+  \item \UCPost{};
+  
+  \item \UCMain
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
+
+
+\UC{Visualizzazione messaggio di NFT non esistente}
+\label{UC:extension.nft-not-exists}
 
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
@@ -137,108 +261,12 @@ L'applicativo Java può ottenere le informazioni di un NFT a partire dal id con 
   \item \UCPre{}
   \item \UCPost{}
   
-  \item \UCMain{}
+  \item \UCMain
   \begin{itemize}
     \item 
   \end{itemize}
   
-  \item \UCExt{}
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
-\end{itemize}
-
-\UC{Ottenimento di un opera a partire dal suo hash}
-\begin{itemize}
-  \item \UCPrimaryActors{}
-  \item \UCSecondaryActors{}
-  \item \UCPre{}
-  \item \UCPost{}
-  
-  \item \UCMain{}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  
-  \item \UCExt{}
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
-\end{itemize}
-
-\UC{Ottenimento della storia delle transazioni di un opera}
-\begin{itemize}
-  \item \UCPrimaryActors{}
-  \item \UCSecondaryActors{}
-  \item \UCPre{}
-  \item \UCPost{}
-  
-  \item \UCMain{}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  
-  \item \UCExt{}
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
-\end{itemize}
-
-\UC{Visualizzazione messaggio di wallet non nel formato corretto}
-\label{UC:extension.wallet-not-correct}
-
-\begin{itemize}
-  \item \UCPrimaryActors{}
-  \item \UCSecondaryActors{}
-  \item \UCPre{}
-  \item \UCPost{}
-  
-  \item \UCMain{}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  
-  \item \UCExt{}
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
-\end{itemize}
-
-\UC{Visualizzazione messaggio di operazione non consentita}
-\label{UC:extension.operation-not-allowed}
-
-\begin{itemize}
-  \item \UCPrimaryActors{}
-  \item \UCSecondaryActors{}
-  \item \UCPre{}
-  \item \UCPost{}
-  
-  \item \UCMain{}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  
-  \item \UCExt{}
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
-\end{itemize}
-
-\UC{Visualizzazione messaggio di NFT già esistente}
-\label{UC:extension.opera-exists-yet}
-
-\begin{itemize}
-  \item \UCPrimaryActors{}
-  \item \UCSecondaryActors{}
-  \item \UCPre{}
-  \item \UCPost{}
-  
-  \item \UCMain{}
-  \begin{itemize}
-    \item 
-  \end{itemize}
-  
-  \item \UCExt{}
+  \item \UCExt
   \begin{enumerate}[label=\lett]
     \item 
   \end{enumerate}
