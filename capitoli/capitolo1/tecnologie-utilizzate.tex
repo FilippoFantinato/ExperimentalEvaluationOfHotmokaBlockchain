@@ -1,0 +1,60 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../../tesi.tex
+
+\section{Tecnologie utilizzate}
+Da quel che ho potuto constatare durante l'attività di stage, per la realizzazione dei prodotti sopra elencati Sync Lab sfrutta un'ampia gamma di tecnologie per fornire prodotti stabili e sicuri. Le tecnologie utilizzate sono molte e variano in base alla necessità del prodotto, ma quelle più utilizzate possono essere raggruppate in due grandi categorie: \textit{front-end} e \textit{back-end}. \\
+
+Per quanto riguarda le tecnologie di supporto, c'è stato un aumento di utilizzo dei sistemi di comunicazione digitali a causa della pandemia, anche se venivano già utilizzati precedentemente per comunicare con le diverse sedi. La pandemia ha spinto Sync Lab ad un utilizzo sempre maggiore di Discord, Google Meet, Trello e Notion.
+
+\begin{itemize}
+  \item \textbf{Google Meet}: \textit{software} utilizzato per le videoconferenze che permette di comunicare con più colleghi e organizzare riunioni virtuali con un grande numero di partecipanti;
+  \item \textbf{Discord}: piattaforma di comunicazione digitale gratuita, la quale permette di fruire di chat in tempo reale, gestendo più canali vocali e testuali divisi per argomento. Tra le varie funzioni disponibili, permette di dividere i membri in gruppi in base al progetto che devono portare a termine. È presente anche una sezione per le videoconferenze, ma è meno avanzata rispetto a Google Meet e per questo non lo si preferisce;
+  \item \textbf{Trello}: piattaforma per la gestione di progetti seguendo la metodologia Scrum. Trello mette a disposizione una \textit{Scrum Board} dove è possibile dividere le attività in base al loro stato di avanzamento. Le colonne sono modificabili, come qualsiasi componente in Trello, ma quelle predefinite sono le seguenti:
+  \begin{itemize}
+    \item \textbf{\textit{Backlog}}: contiene il \textit{product backlog};
+    \item \textbf{Da fare}: definisce le attività da svolgere durante lo \textit{sprint};
+    \item \textbf{In corso}: presenta tutte le attività in esecuzione;
+    \item \textbf{In verifica}: consiste in tutte le attività in attesa di verifica;
+    \item \textbf{Terminati}: include le attività legate ad uno \textit{sprint} che sono state verificate. 
+  \end{itemize}
+  \item \textbf{Notion}: piattaforma utilizzata per la prenotazione del posto in sede, così da facilitare la gestione ed il controllo delle persone, in modo tale da rispettare il numero massimo consentito dalla legge.
+\end{itemize}
+
+\subsection{Front-end}
+Le tecnologie per lo sviluppo di interfacce grafiche utilizzate da Sync Lab sono le seguenti:
+
+\paragraph{Linguaggi di programmazione} 
+I linguaggi di programmazione più utilizzati sono:
+\begin{itemize}
+  \item \textbf{HTML5}: anche se non è prettamente un linguaggio di programmazione, ma bensì un linguaggio di \textit{markup}, viene utilizzato dall'azienda Sync Lab per la strutturazione delle sue pagine web. Ha lo scopo di definire la struttura grafica, ovvero il \textit{layout}, tramite l'utilizzo di \textit{tag} diversi;
+  
+  \item \textbf{CSS3}: è un linguaggio che viene utilizzato per definire la formattazione di documenti HTML. Sync Lab lo ha adottato per mantenere separati i contenuti della pagina, dalla loro presentazione;
+
+  \item \textbf{Javascript}: impiegato nella realizzazione di applicativi web interattivi, è diventato in questi ultimi anni il linguaggio di programmazione più utilizzato al mondo. Questo è stato causato dalla grande diffusione che ha avuto il web, dalla sua semplicità d'uso e, in particolare, dalla non presenza di concorrenti in questo settore. Javascript si basa sui paradigmi di programmazione ad oggetti e a eventi, ma ha il grande difetto di non avere la tipizzazione statica delle variabili, ovvero non viene specificato il tipo delle variabili durante la scrittura del codice. A causa di questa mancanza molto grave che provoca svariati problemi quando in seguito il codice verrà eseguito, molti sviluppatori si stanno spostando verso \textbf{Typescript}, ovvero un \textit{superset} di Javascript, il quale aggiunge la tipizzazione statica del codice, una sintassi più aggiornata per la scrittura delle classi e delle interfacce e molti altri costrutti che facilitano la scrittura del codice. Per \textit{superset} si intende che il codice scritto in Typescript viene tradotto in codice Javascript attraverso un processo di transpilazione. Questo permette a codice Typescript di essere eseguito su qualsiasi browser, o generalizzando, qualsiasi macchina virtuale che esegue codice Javascript;
+  
+  \item \textbf{Kotlin}: un linguaggio multi-paradigma che è sempre più diffuso per lo sviluppo di applicazioni android, il quale sta andando a sostituire Java. Kotlin è molto più semplice e veloce rispetto a Java, infatti qualsiasi pezzo di codice scritto in Kotlin è notevolmente più corto. Questo permette, auspicabilmente, di introdurre meno \textit{bug} nel codice. Inoltre, Kotlin risolve il problema del \textit{NullPointerException} che in Java crea numerosi inconvenienti. Per fare ciò, in Kotlin sono stati introdotti due tipi di variabili: i \textit{nullable types} e i \textit{non-nullable types}. In poche parole, tutte le variabili quando vengono dichiarate sono di tipo \textit{non-nullable} e non possono avere valore \textit{null}. Per far si che possa assumere valore \textit{null} bisogna dichiarare la variabile con una sintassi apposita. Per questi motivi e molti altri, Kotlin è stato adottato dall'azienda per lo sviluppo di applicazioni Android.
+\end{itemize}
+
+\paragraph{Framework} L'ambito web è quello dove avviene un impiego maggiore di \textit{framework}. I più utilizzati attualmente sono:
+\begin{itemize}
+  \item \textbf{Angular}: è uno dei \textit{framework} open-source più popolari e utilizzati al mondo per lo sviluppo di \gls{Single Page Application}. Permette di creare applicazioni web di livello \textit{enterprise} grazie alla sua architettura \textit{MVC} (\textit{Model View Controller}) utilizzando come linguaggio principale Typescript. Angular è stato il primo \textit{framework} a rendere disponibile anche per lo sviluppo web, vari \textit{design pattern}, tra i quali il più importante è il \textit{dependency injection}. In Angular tutto viene trattato come un componente e questo permette la riduzione della duplicazione del codice e aumenta di molto la riusabilità;
+  
+  \item \textbf{React.js}: si distingue da Angular per la maggiore facilità di apprendimento e velocità a livello di \textit{performance}, la quale lo rende perfetto per la realizzazione di siti semplici. Anche React si basa sul concetto di componente, ma non utilizza alcuna architettura MVC. Infatti React utilizza l'architettura \textit{Flux/Redux}, creata appositamente per quest'ultimo. La velocità di React è data dall'utilizzo di un \textit{Virtual DOM}, un \textit{DOM} locale al sito al cui vengono applicate le modifiche che bisogna compiere alla vista, per identificare le modifiche finali ed applicarle al \textit{DOM} reale, così da evitare tutti i cambiamenti intermedi;
+  
+  \item \textbf{Vue.js}: molto simile a React.js, Vue.js introduce il concetto di \gls{Single File Components}, semplificando maggiormente la scrittura di applicazioni web. Sempre basato sul concetto di componenti e riusabilità, è utilizzabile anche con il linguaggio Typescript e si basa sul \textit{Virtual DOM} come React.js. Vue.js è un \textit{framework} che sta sempre di più prendendo piede all'interno dell'azienda, anche se di fatto non è ancora stato adottato ufficialmente.
+\end{itemize}
+
+\subsection{Back-end}
+Per quanto riguarda le tecnologie per lo sviluppo lato \textit{back-end}, si possono identificare le seguenti:
+
+\paragraph{Linguaggi di programmazione}
+I linguaggi più utilizzati per lo sviluppo lato \textit{back-end} sono entrambi basati sulla \textit{Java Virtual Machine}:
+\begin{itemize}
+  \item \textbf{Java}: essendo il linguaggio per lo sviluppo di \textit{back-end} più utilizzato al mondo, ha il vantaggio di avere a disposizione una \textit{community} molto vasta e un elevato numero di \textit{framework} stabili ed impiegati per moltissimi applicativi. Oltre ad essere un linguaggio di programmazione multi-paradigma orientato agli oggetti e avere la tipizzazione statica, ha il vantaggio di essere stato progettato con l'obiettivo di essere il più possibile indipendente dalla piattaforma \textit{hardware} di esecuzione. Infatti il codice Java non viene tradotto in codice macchina da un compilatore, ma verrà compilato in \textit{bytecode} per essere eseguito dalla macchina virtuale \textit{Java Virtual Machine}. Viene impiegato principalmente per la scrittura di servizi con architettura \textit{REST}, ovvero con una struttura ben definita dove ogni servizio non ha sessioni, ha degli \textit{URL} a cui fanno riferimento delle \textit{API} e si utilizzano dei metodi specifici per il recupero di informazioni, per la modifica e altri scopi;
+  
+  \item \textbf{Scala}: è un linguaggio che si basa sui paradigmi di programmazione ad oggetti e funzionale, con la caratteristica di avere una tipizzazione forte. Viene impiegato dall'azienda per lo sviluppo di applicazioni concorrenti, distribuite, resilienti e guidate dai messaggi, oppure per la scrittura di librerie che in seguito verranno integrate con Java.
+\end{itemize}
+
+\paragraph{Framework} Il \textit{framework} più utilizzato per lo sviluppo in questo ambito è sicuramente \textbf{Spring}. Quest'ultimo permette di realizzare applicativi lato \textit{server} utilizzando il linguaggio Java e sfruttando vari \textit{design pattern}. A Spring vengono associati altri progetti tali Spring Boot, Spring Data, Spring Batch, Spring MVC. La scelta dell'architettura è totalmente libera e Spring si presta perfettamente a qualunque tipologia si voglia scegliere. 
+Sync Lab lo impiega per lo sviluppo di architetture a micro-servizi, con l'utilizzo del \textit{MVC pattern}.

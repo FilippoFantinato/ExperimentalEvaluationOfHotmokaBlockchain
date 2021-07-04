@@ -19,7 +19,7 @@
                openright,               % inizio capitoli a destra
                english,                 
                italian,                 
-               ]{book}    
+               ]{book}
 
 %**************************************************************
 % Importazione package
@@ -136,6 +136,7 @@
 % Materiale finale
 %**************************************************************
 \backmatter
-\printglossaries
+\printglossary[title={Glossario}]
+\printglossary[type=\acronymtype, title={Acronimi}]
 \input{inizio-fine/bibliografia}
 \end{document}

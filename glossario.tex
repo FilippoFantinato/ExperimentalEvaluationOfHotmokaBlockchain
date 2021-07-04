@@ -2,24 +2,67 @@
 %**************************************************************
 % Acronimi
 %**************************************************************
-\renewcommand{\acronymname}{Acronimi e abbreviazioni}
+\renewcommand{\acronymname}{Acronimi e Abbreviazioni}
 
 \newacronym[description={\glslink{DApp}{Decentralized application}}]
     {dApp}{DApp}{Decentralized application}
+    
+\newacronym[description={\glslink{ICT}{Information and Communications Technology}}]
+    {ict}{ICT}{Information and Communications Technology}
+
+\newacronym[description={\glslink{apig}{Application Program Interface}}]
+    {api}{API}{Application Program Interface}
+
+\newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
+    {uml}{UML}{Unified Modeling Language}
 
 %**************************************************************
 % Glossario
 %**************************************************************
-%\renewcommand{\glossaryname}{Glossario}
+\renewcommand{\glossaryname}{Glossario}
+% \renewcommand{\glossar}{Glossario}
 
-\newglossaryentry{criptovalute}{
+\newglossaryentry{criptovalute}
+{
     name={Criptovalute},
     text={criptovalute},
     sort={criptovalute},
     description={Per criptovaluta si intende una valuta virtuale che costituisce una rappresentazione digitale di valore ed e' utilizzata come mezzo di scambio o detenuta a scopo di investimento. Le criptovalute possono essere trasferite, conservate o negoziate elettronicamente}
 }
 
-\newglossaryentry{DApp}{
+\newglossaryentry{DApp}
+{
     name={\glslink{dApp}{DApp}},
     description={Per DApp si intende un'applicazione che lavora in un ambiente distribuito. Le DApp a cui si fa riferimento in questo testo sono quelle basate sulla \textit{blockchain}, programmabili attraverso \textit{smart contract}. Un qualsiasi software, per poter essere definito DApp, deve soddisfare i seguenti criteri: deve essere un'applicazione completamente \textit{open-source}, i vari dati delle operazioni devono essere storicizzati su una \textit{blockchain} pubblica e deve utilizzare un token crittografico generato da lei stessa}
+}
+
+\newglossaryentry{ICT}
+{
+    name=\glslink{ict}{ICT},
+    text=Information and Communications Technology,
+    description={Con il termine \textit{Information and Communications Technology}, si intende l'uso della tecnologia nella gestione e nel trattamento delle informazioni. Include tutti gli ambiti professionali che riguardano la progettazione e lo sviluppo tecnico della comunicazione digitale}
+}
+
+\newglossaryentry{System Integrator}
+{
+    name=System Integrator,
+    description={Con il termine inglese \textit{System Integrator} viene indicata un'azienda che si occupa dell'integrazione di sistemi. Il suo compito è quello di far dialogare impianti diversi tra di loro, allo scopo di creare una nuova struttura funzionale che possa utilizzare sinergicamente le potenzialità degli impianti d'origine e creando quindi funzionalità originariamente non presenti}
+}
+
+\newglossaryentry{on premises}{
+    name={On premises},
+    text={on premises},
+    description={In informatica con il termine \textit{on premises} si indica l'installazione del \textit{software} direttamente sulla macchina locale}
+}
+
+\newglossaryentry{Single Page Application}{
+    name=Single Page Application,
+    text=Single Page Application,
+    description={Per \textit{Single Page Application} si intende qualsiasi applicazione web che interagisce con l'utente aggiornando le parti della pagina con dati prelevati direttamente dal server}
+}
+
+\newglossaryentry{Single File Components}{
+    name=Single File Components,
+    text=Single File Components,
+    description={È la principale caratteristica del \textit{framework} Vue.js e permette di definire il codice di \textit{markup}, la logica e lo stile direttamente all'interno dello stesso file}
 }
