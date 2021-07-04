@@ -61,13 +61,33 @@ Anche se esistono da tanti anni, si sono diffusi solo verso la fine del 2020 e i
 
 NFTLab è nato proprio da questo contesto. Oltre alle funzionalità di accesso e registrazione, permetterà agli utenti autenticati di caricare le proprie opere, che potranno essere qualsiasi tipo di file, aggiungendo un nome, una descrizione, le categorie facente parte, il prezzo e gli verrà anche assegnato un tipo in base al file. In seguito al caricamento verrà estratto il NFT e memorizzato in \emph{Blockchain}. 
 Ogni utente potrà visualizzare le seguenti opere caricate da ogni utente, cercarle in base alle categorie di cui fanno parte, il loro tipo ed il nome, e comprarle, se autenticato. Quando visualizzerà i dettagli di un opera, in base al tipo del file, verrà mostrata un'anteprima di quest'ultima.
-I dati di ogni opera possono essere cambiati dal proprietario, tranne l'opera in sè ed il tipo legato ad essa.
+I dati di ogni opera possono essere cambiati dal proprietario, tranne l'opera in sè visto che il NFT è intrinsecamente legato ad essa.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.3\textwidth]{capitolo2/nftlab-logo.png}
   \caption{Logo di NFTLab}
 \end{figure}
+
+Il progetto è stato sviluppato con altre quattro persone che stavano facendo il percorso di stage dell'Università di Padova. Due di queste persone avevano il compito di sviluppare il \textit{front-end} utilizzando, ognuna, un \textit{framework} tra Angular e Vue.js. La terza persona, invece, aveva il compito di sviluppare il \textit{back-end} attraverso il \textit{framework} Sprint. La parte di creazione e gestione degli NFT dovevo farla io.
+
+\noindent Al termine del percorso di stage, sono state implementate le seguenti funzionalità:
+\begin{itemize}
+  \item Registrazione e autenticazione di un utente;
+  \item Caricamento di un opera e inserimento delle relative informazioni;
+  \item Modifica di un'opera precedentemente caricata;
+  \item Visualizzazione della pagina personale di un utente;
+  \item Visualizzazione di tutte le opere caricate da altri utenti;
+  \item Visualizzazione dei dettagli di un opera.
+\end{itemize}
+
+\noindent In seguito all'arrivo di altri tirocinanti, verranno ultimate le seguenti funzionalità:
+\begin{itemize}
+  \item Vendita di un opera precedentemente caricata;
+  \item Ricerca di un opera precedentemente caricata.
+\end{itemize}
+
+Per quanto riguarda la parte di \textit{blockchain}, è stato pensato di sviluppare interamente una \gls{DApp}, rimuovendo il \textit{back-end} e affidando quel ruolo ad un singolo \textit{smart contract}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -278,20 +298,20 @@ I \textbf{canali di comunicazione} utilizzati sono quelli che sono stati riporta
   \item \textbf{Google Meet}: utilizzato per partecipare alle varie riunioni o incontri urgenti svolti con gli \emph{stakeholders};
   \item \textbf{Trello}: \emph{scrum board} utilizzata per l'organizzazione degli \emph{sprint} settimanali;
   
-  \clearpage
+  % \clearpage
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{capitolo2/trello-board.png}
+    \includegraphics[width=0.5\textwidth]{capitolo2/trello-board.png}
     \caption{Gestione degli \emph{sprint} settimanali su Trello}
   \end{figure}
 
   \item \textbf{Notion}: impiegato, come già detto in precedenza, per la prenotazione della presenza in sede.
 \end{itemize}
 
-Per quanto riguarda la \textbf{gestione del codice}, non ci è stato imposto alcun vincolo da parte dell'azienda. Per questo motivo, è stata creata un'organizzazione sulla piattaforma \textbf{GitHub} dove sono raggruppate tutte le \emph{repository} e tutti gli artefatti prodotti. Il progetto è stato sviluppato con altre 4 persone che stavano facendo il percorso di stage dell'Università di Padova.
+Per quanto riguarda la \textbf{gestione del codice}, non ci è stato imposto alcun vincolo da parte dell'azienda. Per questo motivo, è stata creata un'organizzazione sulla piattaforma \textbf{GitHub} dove sono raggruppate tutte le \emph{repository} e tutti gli artefatti prodotti.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.8\textwidth]{capitolo2/github-organization.png}
+  \includegraphics[width=0.5\textwidth]{capitolo2/github-organization.png}
   \caption{Organizzazione NFTLab su GitHub}
 \end{figure}
