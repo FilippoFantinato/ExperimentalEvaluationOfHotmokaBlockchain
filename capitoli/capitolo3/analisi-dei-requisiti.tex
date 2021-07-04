@@ -52,18 +52,30 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
 
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
-  \item \UCSecondaryActors{smart contract, Pinata};
+  \item \UCSecondaryActors{\textit{smart contract}, Pinata};
   \item \UCPre{l'applicativo Java vuole creare un NFT da un opera non ancora esistente};
   \item \UCPost{il NFT è stato creato e l'opera è stata caricata nella rete IPFS};
-  \item \UCMain{}
+  \item \UCMain
   \begin{itemize}
     \item L'applicativo Java vuole creare un NFT a partire da un opera, dalla quale non è stato creato alcun NFT;
     \item L'opera viene caricata sulla rete IPFS tramite il servizio Pinata;
-    \item Viene contattato lo \textit{smart contract} e creato il NFT.
+    \item Viene contattato lo \textit{smart contract} e creato il NFT, il quale avrà le seguenti informazioni:
+    \begin{itemize}
+      \item il hash che identifica il NFT;
+      \item il \textit{wallet} dell'artista che sta caricando l'opera;
+      \item l'id dell'artista;
+      \item l'orario in cui è avvenuto il caricamento.
+    \end{itemize}
   \end{itemize}
-  \item \UCExt{}
+  \item \UCExt
   \begin{enumerate}[label=\lett]
-    \item L'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario dello \textit{smart contract}:
+    \item L'applicativo Java vuole assegnare il NFT ad un \textit{wallet} che non è nel formato corretto:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.wallet-not-correct}) - Visualizzazione messaggio di \textit{wallet} non nel formato corretto;
+      \item Viene impedita la creazione del NFT.
+    \end{itemize}
+
+    \item L'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario di quest'ultimo:
     \begin{itemize}
       \item (UC\ref{UC:extension.operation-not-allowed}) - Visualizzazione messaggio di operazione non consentita;
       \item Viene impedita la creazione del NFT.
@@ -71,40 +83,166 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
 
     \item L'applicativo Java vuole caricare un'opera dalla quale è già stato estratto il NFT:
     \begin{itemize}
-      \item (UC\ref{UC:extension.opera-exists-yet}) - Visualizzazione messaggio di opera già esistente;
+      \item (UC\ref{UC:extension.opera-exists-yet}) - Visualizzazione messaggio di NFT già esistente;
       \item Viene impedita la creazione del NFT.
     \end{itemize}
   \end{enumerate}
 \end{itemize}
 
 
-\UC{Vendita di un opera}
-L'applicativo Java può trasferire la proprietà di un'opera dal proprietario all'acquirente.
+\UC{Trasferimento della proprietà di un NFT}
+L'applicativo Java può trasferire la proprietà di un NFT dal proprietario ad un acquirente.
 
 \begin{itemize}
-  \item 
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{esiste il NFT che si vuole trasferire e l'acquirente è diverso dal proprietario};
+  \item \UCPost{il NFT viene trasferito dal proprietario all'acquirente};
+  
+  \item \UCMain
+  \begin{itemize}
+    \item L'applicativo Java, attraverso il \textit{wallet} del proprietario dello \textit{smart contract}, comunica con lo \textit{smart contract} caricato nella \textit{blockchain};
+    \item Gli invia i dati del proprietario e dell'acquirente;
+    \item Viene eseguito il trasferimento.
+  \end{itemize}
+
+  \item \UCExt
+  \begin{enumerate}[label=\lett]
+    \item L'applicativo Java vuole vuole trasferire il NFT dal proprietario all'acquirente, riferendosi ad uno di questi due attraverso un \textit{wallet} che non è nel formato corretto:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.wallet-not-correct}) - Visualizzazione messaggio di \textit{wallet} non nel formato corretto;
+      \item Viene impedito il trasferimento del NFT.
+    \end{itemize}
+
+    \item L'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario di quest'ultimo:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.operation-not-allowed}) - Visualizzazione messaggio di operazione non consentita;
+      \item Viene impedito il trasferimento del NFT.
+    \end{itemize}
+
+    \item L'acquirente corrisponde al proprietario del NFT:
+    \begin{itemize}
+      \item Visualizzazione messaggio di operazione non andata a buon fine, dato che l'acquirente non può anche essere il proprietario del NFT;
+      \item Viene impedito il trasferimento del NFT.
+    \end{itemize}
+  \end{enumerate}
 \end{itemize}
 
 \UC{Ottenimento di un opera a partire dal suo id}
+L'applicativo Java può ottenere le informazioni di un NFT a partire dal id con il quale è memorizzato.
+
+\begin{itemize}
+  \item \UCPrimaryActors{applicativo Java};
+  \item \UCSecondaryActors{\textit{smart contract}};
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
 
 \UC{Ottenimento di un opera a partire dal suo hash}
+\begin{itemize}
+  \item \UCPrimaryActors{}
+  \item \UCSecondaryActors{}
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
 
 \UC{Ottenimento della storia delle transazioni di un opera}
+\begin{itemize}
+  \item \UCPrimaryActors{}
+  \item \UCSecondaryActors{}
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
 
-\UC{Visualizzazione messaggio di operazione con consentita}
+\UC{Visualizzazione messaggio di wallet non nel formato corretto}
+\label{UC:extension.wallet-not-correct}
+
+\begin{itemize}
+  \item \UCPrimaryActors{}
+  \item \UCSecondaryActors{}
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
+
+\UC{Visualizzazione messaggio di operazione non consentita}
 \label{UC:extension.operation-not-allowed}
 
-\UC{Visualizzazione messaggio di opera già esistente}
+\begin{itemize}
+  \item \UCPrimaryActors{}
+  \item \UCSecondaryActors{}
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
+
+\UC{Visualizzazione messaggio di NFT già esistente}
 \label{UC:extension.opera-exists-yet}
 
-
-% \paragraph{UC1 - Caricamento di un opera in blockchain}
-
-% \paragraph{UC2 - Vendita di un opera}
-
-% \paragraph{UC3 - Ottenimento di un opera a partire dal suo id}
-
-% \paragraph{UC4 - Ottenimento di un opera a partire dal suo hash}
+\begin{itemize}
+  \item \UCPrimaryActors{}
+  \item \UCSecondaryActors{}
+  \item \UCPre{}
+  \item \UCPost{}
+  
+  \item \UCMain{}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+  
+  \item \UCExt{}
+  \begin{enumerate}[label=\lett]
+    \item 
+  \end{enumerate}
+\end{itemize}
 
 \subsection{Requisiti funzionali}
 Tabella dei requisiti funzionali, con relativa spiegazione e fonte.
