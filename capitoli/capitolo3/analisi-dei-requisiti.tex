@@ -63,18 +63,27 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
   \end{itemize}
   \item \UCExt{}
   \begin{enumerate}[label=\lett]
+    \item L'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario dello \textit{smart contract}:
+    \begin{itemize}
+      \item (UC\ref{UC:extension.operation-not-allowed}) - Visualizzazione messaggio di operazione non consentita;
+      \item Viene impedita la creazione del NFT.
+    \end{itemize}
+
     \item L'applicativo Java vuole caricare un'opera dalla quale è già stato estratto il NFT:
     \begin{itemize}
       \item (UC\ref{UC:extension.opera-exists-yet}) - Visualizzazione messaggio di opera già esistente;
       \item Viene impedita la creazione del NFT.
     \end{itemize}
-    
-    \item 
   \end{enumerate}
 \end{itemize}
 
 
 \UC{Vendita di un opera}
+L'applicativo Java può trasferire la proprietà di un'opera dal proprietario all'acquirente.
+
+\begin{itemize}
+  \item 
+\end{itemize}
 
 \UC{Ottenimento di un opera a partire dal suo id}
 
