@@ -47,8 +47,10 @@ Un attore secondario è un'entità estranea al sistema che supporta gli attori p
   \item \textbf{Pinata}: rappresenta il servizio che permette di interagire con la rete IPFS.
 \end{itemize}
 
-\UC{Caricamento di un opera in blockchain}
-Qualsiasi applicativo Java può caricare un opera in blockchain.
+\UC{Caricamento di un NFT in blockchain}
+\label{UC:upload-new-nft}
+
+Qualsiasi applicativo Java può caricare un nuovo NFT in blockchain.
 
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
@@ -85,6 +87,8 @@ Qualsiasi applicativo Java può caricare un opera in blockchain.
 
 
 \UC{Trasferimento della proprietà di un NFT}
+\label{UC:transfer-nft}
+
 L'applicativo Java può trasferire la proprietà di un NFT dal proprietario ad un acquirente.
 
 \begin{itemize}
@@ -123,6 +127,8 @@ L'applicativo Java può trasferire la proprietà di un NFT dal proprietario ad u
 \end{itemize}
 
 \UC{Ottenimento di un NFT a partire dal suo id}
+\label{UC:get-nft-by-id}
+
 L'applicativo Java può ottenere le informazioni di un NFT a partire dal id con il quale è memorizzato.
 
 \begin{itemize}
@@ -146,6 +152,8 @@ L'applicativo Java può ottenere le informazioni di un NFT a partire dal id con 
 \end{itemize}
 
 \UC{Ottenimento di un opera a partire dal suo hash}
+\label{UC:get-nft-by-hash}
+
 L'applicativo Java può ottenere le informazioni di un NFT a partire dal hash associato al NFT.
 
 \begin{itemize}
@@ -170,6 +178,8 @@ L'applicativo Java può ottenere le informazioni di un NFT a partire dal hash as
 \end{itemize}
 
 \UC{Ottenimento della storia delle transazioni di un NFT}
+\label{UC:get-transaction-history}
+
 L'applicativo Java può ottenere la storia delle transazioni di un NFT a partire dal id con il quale è memorizzato.
 
 \begin{itemize}
@@ -232,51 +242,96 @@ Nel caso in cui lo \textit{smart contract} non venga invocato dal suo proprietar
 \UC{Visualizzazione messaggio di NFT già esistente}
 \label{UC:extension.nft-exists-yet}
 
-Nel caso in cui si cerchi di caricare un NFT già esistente, verrà visualizzato il messaggio che lo segnalerà.
+Nel caso in cui si cerchi di caricare un NFT già esistente, verrà visualizzato un messaggio opportuno che lo segnalerà.
 
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
   \item \UCSecondaryActors{\textit{smart contract}};
-  \item \UCPre{l'applicativo Java carica };
-  \item \UCPost{};
+  \item \UCPre{l'applicativo Java carica un NFT già esistente};
+  \item \UCPost{viene visualizzato un messaggio di errore che lo segnala};
   
   \item \UCMain
   \begin{itemize}
-    \item 
+    \item l'applicativo Java carica un NFT già esistente;
+    \item viene visualizzato il messaggio di NFT già esistente.
   \end{itemize}
-  
-  \item \UCExt
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
 \end{itemize}
-
 
 \UC{Visualizzazione messaggio di NFT non esistente}
 \label{UC:extension.nft-not-exists}
 
+Nel caso in cui il NFT di cui si ha bisogno non esista, verrà visualizzato un messaggio opportuno che lo segnalerà.
+
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
   \item \UCSecondaryActors{\textit{smart contract}};
-  \item \UCPre{}
-  \item \UCPost{}
+  \item \UCPre{il NFT che si sta cercando non esiste};
+  \item \UCPost{viene visualizzato un messaggio di errore che segnala la non esistenza del NFT};
   
   \item \UCMain
   \begin{itemize}
-    \item 
+    \item l'applicativo Java ha bisogno di un NFT non esistente;
+    \item viene visualizzato il messaggio di NFT non esistente.
   \end{itemize}
-  
-  \item \UCExt
-  \begin{enumerate}[label=\lett]
-    \item 
-  \end{enumerate}
 \end{itemize}
 
 \subsection{Requisiti funzionali}
 Tabella dei requisiti funzionali, con relativa spiegazione e fonte.
+\begin{longtabu}{|c|X|c|}
+
+  \hline 
+
+  \textbf{Codice requisito} & \textbf{Descrizione} & \textbf{Fonte} \\ 
+
+  \hline
+
+  \rfun{O}{} & L'applicativo Java può caricare un nuovo NFT. & UC\ref{UC:upload-new-nft} \\
+  
+  \hline
+
+  \rfun{O}{} & L'applicativo Java può trasferire la proprietà di un NFT dal proprietario all'acquirente. & UC\ref{UC:transfer-nft} \\ 
+  
+  \hline
+
+  \rfun{O}{} & L'applicativo Java può ottenere le informazioni di un NFT a partire dall'id con il quale è memorizzato. & UC\ref{UC:get-nft-by-id} \\ 
+  
+  \hline
+
+  \rfun{O}{} & L'applicativo Java può ottenere le informazioni di un NFT a partire dal hash al quale è associato. & UC\ref{UC:get-nft-by-hash} \\ 
+  
+  \hline
+
+  \rfun{O}{} & L'applicativo Java può ottenere la storia delle transazioni di un NFT. & UC\ref{UC:get-transaction-history} \\ 
+  
+  \hline
+
+  \caption{Requisiti funzionali}
+\end{longtabu}
 
 \subsection{Requisiti di qualità}
 Tabella dei requisiti di qualità, con relativa spiegazione e fonte.
 
+\begin{longtabu}{|c|l|c|}
+
+  \hline 
+
+  Codice requisito & Descrizione & Fonte \\ 
+  
+  \hline
+
+  \caption{Requisiti di qualità}
+\end{longtabu}
+
 \subsection{Requisiti di vincolo}
 Tabella dei requisiti di vincolo, con relativa spiegazione e fonte.
+
+\begin{longtabu}{|c|l|c|}
+
+  \hline 
+
+  Codice requisito & Descrizione & Fonte \\ 
+  
+  \hline
+
+  \caption{Requisiti di vincolo}
+\end{longtabu}
