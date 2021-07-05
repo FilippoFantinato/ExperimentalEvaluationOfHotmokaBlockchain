@@ -201,20 +201,20 @@
 
 %%%% Parameters
 % #1: Title
-\newenvironment{risk}[1]{
-    \refstepcounter{riskcounter}        % increment counter
-    \par \noindent                      % start new paragraph
-    \textbf{\arabic{riskcounter}. #1}   % display the title before the 
-                                        % content of the environment is displayed 
-}{
-    \par\medskip
-}
+% \newenvironment{risk}[1]{
+%     \refstepcounter{riskcounter}        % increment counter
+%     \par \noindent                      % start new paragraph
+%     \textbf{\arabic{riskcounter}. #1}   % display the title before the 
+%                                         % content of the environment is displayed 
+% }{
+%     \par\medskip
+% }
 
-\newcommand{\riskname}{Rischio}
+% \newcommand{\riskname}{Rischio}
 
-\newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
+% \newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
 
-\newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
+% \newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
 
 %**************************************************************
 % Environment per ``use case''
@@ -397,4 +397,18 @@
 \newcommand{\tracvin}[1]{
 	\stepcounter{tracvinCounter}
 	\rvincode{#1}{\thetracvinCounter}
+}
+
+% Risk
+\newcounter{riskCounter}
+
+\setcounter{riskCounter}{0}
+
+\newcommand{\risk}[1]{
+	\refstepcounter{riskCounter}
+	\riskcode{#1}{\theriskCounter}
+}
+
+\newcommand{\riskcode}[2]{
+	\textbf{R#1#2}
 }
