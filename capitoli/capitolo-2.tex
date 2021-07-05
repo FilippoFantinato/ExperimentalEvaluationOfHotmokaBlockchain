@@ -19,16 +19,16 @@ Il progetto di stage, chiamato \textbf{NFTLab} e proposto dall'azienda Sync Lab,
 Nati nel 2017 in seguito alla richiesta di standardizzazione su blockchain Ethereum \textit{ERC721}, NFT è l'acronimo di \textit{Non Fungible Token} e per comprendere cosa sono e le loro possibili applicazioni, dobbiamo prima di tutto analizzare l'etimologia della parola.
 Un \textit{token} lessicale è un'insieme di caratteri che rappresentano qualsiasi cosa e il fatto che sia non fungibile implica che rappresenta un qualcosa di unico.
 In contrapposizione ai \textit{token} fungibili, come le monete fisiche o le \gls{criptovalute}, i \textit{token} non fungibili non possono essere scambiati reciprocamente in quanto ognuno ha un valore che non è legato al \textit{token} in sè, ma a quello che rappresenta.
-Vengono salvati nella tecnologia \textit{blockchain} per semplificare la gestione dell'accesso e della proprietà, per assicurare l'unicità e l'impossibilità di contraffazione. \\
+Vengono salvati nella tecnologia \textit{blockchain} per semplificare la gestione dell'accesso e della proprietà e per assicurare l'unicità e l'impossibilità di contraffazione. \\
 
 \noindent Gli NFT possono essere distinti dai token fungibili per le seguenti tre caratteristiche:
 \begin{itemize}
   \item \textbf{Unico}: qualsiasi NFT viene definito da un codice univoco che lo rappresenta;
   \item \textbf{Raro}: questo è ciò che gli attribuisce il valore, in quanto se ce ne fossero di più varrebbero di meno;
-  \item \textbf{Indivisibile}: gli NFT non possono essere suddivisi in parti, in quanto perderebbero il proprio valore. Possono essere detenuti, acquistati e venduti solo come entità intere.
+  \item \textbf{Indivisibile}: gli NFT non possono essere suddivisi in parti, in quanto perderebbero il proprio valore. Devono essere detenuti, acquistati e venduti solo come entità intere.
 \end{itemize}
 
-\noindent Le applicazioni che possono avere sono di vario tipo, ma in generale ovunque ci sia bisogno di questi benefici:
+\noindent Le applicazioni che possono avere sono di vario tipo, ma in generale possono essere utilizzati ovunque ci sia bisogno di questi tre benefici:
 \begin{itemize}
   \item \textbf{Fornire la proprietà}: ovvero consolidare il diritto di proprietà, visto che ogni NFT deve essere associato ad una persona;
   \item \textbf{Trasferibilità}: i diritti di proprietà di un NFT possono essere negoziati su vari mercati e scambiati facilmente;
@@ -36,7 +36,7 @@ Vengono salvati nella tecnologia \textit{blockchain} per semplificare la gestion
 \end{itemize}
 
 L'ambito nel quale sono stati utilizzati sin da subito è l'arte digitale, dove c'è bisogno di dimostrare l'autenticità e la proprietà di una determinata opera per evitare contraffazioni.
-Anche se esistono da tanti anni, si sono diffusi solo verso la fine del 2020 e inizio 2021 grazie a siti che permettono il caricamento e la vendita di opere digitali sotto forma di NFT. Il sito più famoso ed utilizzato in questo ambito si chiama \textit{CryptoKitties}. Tutte le opere che si possono acquistare e vendere su \textit{CryptoKitties} riguardano dei gatti, a cui ogni autore può applicare delle particolarità che rendono la sua opera unica.
+Anche se esistono da tanti anni, si sono diffusi solo verso la fine del 2020 e inizio 2021 grazie a siti che permettono il caricamento e la vendita di opere digitali sotto forma di NFT. Il sito più famoso ed utilizzato in questo ambito si chiama \textit{CryptoKitties}, dove tutte le opere che si possono acquistare e vendere riguardano dei gatti, a cui ogni autore può applicare delle particolarità che rendono la sua opera unica.
 
 \begin{figure}[!tbph]
   \captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=footnotesize, labelsep=space}
@@ -61,7 +61,7 @@ Anche se esistono da tanti anni, si sono diffusi solo verso la fine del 2020 e i
 \end{figure}
 
 NFTLab è nato proprio da questo contesto. Oltre alle funzionalità di accesso e registrazione, permetterà agli utenti autenticati di caricare le proprie opere, che potranno essere qualsiasi tipo di \textit{file}, aggiungendo un nome, una descrizione, le categorie facente parte, il prezzo e gli verrà anche assegnato un tipo in base al \textit{file}. In seguito al caricamento verrà estratto il NFT e memorizzato in \textit{blockchain}. 
-Ogni utente potrà visualizzare le opere caricate da ogni utente, cercarle in base alle categorie di cui fanno parte, il loro tipo ed il nome, e comprarle, se autenticato. Quando visualizzerà i dettagli di un opera, in base al tipo del \textit{file}, verrà mostrata un'anteprima di quest'ultima.
+Ogni utente potrà visualizzare le opere caricate dalle altre persone, cercarle in base alle categorie di cui fanno parte, il loro tipo ed il nome, e comprarle, se autenticato. Quando visualizzerà i dettagli di un opera, in base al tipo del \textit{file}, verrà mostrata l'anteprima di quest'ultima.
 I dati di ogni opera possono essere cambiati dal proprietario, tranne l'opera in sè visto che il NFT è intrinsecamente legato ad essa.
 
 \begin{figure}[!h]
@@ -70,7 +70,7 @@ I dati di ogni opera possono essere cambiati dal proprietario, tranne l'opera in
   \caption{Logo di NFTLab}
 \end{figure}
 
-Il progetto è stato sviluppato con altre quattro persone che stavano svolgendo il percorso di stage dell'Università di Padova. Due di queste persone avevano il compito di sviluppare il \textit{front-end} utilizzando, ognuna, un \textit{framework} tra Angular e Vue.js. La terza persona, invece, aveva il compito di sviluppare il \textit{back-end} attraverso il \textit{framework} Spring. La parte di creazione e gestione degli NFT l'ho fatta io. \\
+Il progetto è stato sviluppato con altre quattro persone che stavano svolgendo il percorso di stage dell'Università degli Studi di Padova. Due di queste persone avevano il compito di sviluppare il \textit{front-end} utilizzando, ognuna, un \textit{framework} tra Angular e Vue.js. La terza persona, invece, aveva il compito di sviluppare il \textit{back-end} attraverso il \textit{framework} Spring. La parte di creazione e gestione degli NFT l'ho fatta io. \\
 
 \noindent In accordo con il proponente, al termine dello stage, sono state implementate le seguenti funzionalità:
 \begin{itemize}
@@ -95,7 +95,7 @@ Per quanto riguarda lo sviluppo della parte di gestione degli NFT, è stato pens
 \section{Scelta dell'azienda}
 La scelta di Sync Lab come azienda dove svolgere lo stage è avvenuta durante l'evento annuale, organizzato dall'Università degli Studi di Padova in associazione con gli imprenditori di AssIndustria VenetoCentro, chiamato \textbf{StageIT}. Questo evento, svoltosi online a causa della pandemia, permette alle aziende di presentare il loro ambito lavorativo e i vari progetti di stage proposti. Durante questo evento ho potuto incontrare varie aziende, analizzando di ognuna le opportunità che offrivano. In seguito ho contattato e sono stato contattato da varie aziende, le quali avevano il mio \textit{curriculum vitae} caricato in precedenza sulla piattaforma SIAGAS offerta dall'Università di Padova. Tra le varie aziende che mi hanno contattato c'è stata anche Sync Lab. \\
 
-Il motivo principale che mi ha spinto a sceglierla come azienda dove svolgere lo stage è \textbf{il progetto}. Infatti, quasi tutti i progetti di stage che mi hanno proposto le altre aziende erano molto pratici, dove bisognava utilizzare un \textit{framework} per sviluppare siti web o applicazioni Android. Il progetto svolto con Sync Lab si discosta molto da quest'ottica, riuscendo ad unire perfettamente innovazione, aspetti teorici e aspetti pratici. Mi ha permesso di approfondire, sotto gli aspetti elencati in precedenza, la tecnologia \textit{blockchain} la quale ho sempre visto con molta curiosità, cercando di capire se è davvero solo una tendenza oppure se consiste in una tecnologia che rivoluzionerà molti ambiti professionali. \\
+Il motivo principale che mi ha spinto a sceglierla come azienda dove svolgere lo stage è \textbf{il progetto}. Infatti, quasi tutti i progetti di stage che mi hanno proposto le altre aziende erano molto pratici, dove bisognava utilizzare un \textit{framework} per sviluppare siti web o applicazioni \textit{mobile}. Il progetto proposto da Sync Lab si discosta molto da quest'ottica, riuscendo ad unire perfettamente innovazione, aspetti teorici e aspetti pratici. Mi ha permesso di approfondire, sotto gli aspetti elencati in precedenza, la tecnologia \textit{blockchain} la quale ho sempre visto con molta curiosità, cercando di capire se è davvero solo una tendenza oppure se consiste in una tecnologia che rivoluzionerà molti ambiti professionali. \\
 
 Un altro motivo per cui ho preferito Sync Lab è stata \textbf{l'azienda in senso stretto}, intesa come ambiente lavorativo, poiché al suo interno è presente un numero elevato di dipendenti ed è particolarmente strutturata. L'ho scelta con la speranza di poter vivere un ambiente lavorativo con grande esperienza dove potermi confrontare con persone molto più esperte di me sotto l'aspetto tecnico e tecnologico.
 
