@@ -5,25 +5,320 @@
 \chapter{Lo stage}
 \label{cap:stage}
 
-\section{Scelta dell'azienda}
-Ragione per la quale ho scelto il seguente stage a discapito di altri, approfondendo la motivazione per la quale l'azienda ha scelto di intraprendere questo percorso.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Il progetto}
-Spiegazione approfondita del progetto di stage, con una breve introduzione al contesto sul quale si basa.
+Il progetto di stage, chiamato \textbf{NFTLab} e proposto dall'azienda Sync Lab, consiste in un \textit{e-commerce} dedicato alla vendita di NFT. Prima di spiegare le varie funzionalità e caratteristiche di NFTLab, è doveroso fare una premessa e spiegare cosa sono gli NFT. \\
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.1\columnwidth]{capitolo2/nft-logo.png}
+  \caption{Simbolo degli NFT}
+\end{figure}
+
+Nati nel 2017 in seguito alla richiesta di standardizzazione su blockchain Ethereum \textit{ERC721}, NFT è l'acronimo di \textit{Non Fungible Token} e per comprendere cosa sono e le loro possibili applicazioni, dobbiamo prima di tutto analizzare l'etimologia della parola.
+Un \textit{token} lessicale è un'insieme di caratteri che rappresentano qualsiasi cosa e il fatto che sia non fungibile implica che rappresenta un qualcosa di unico.
+In contrapposizione ai \textit{token} fungibili, come le monete fisiche o le \gls{criptovalute}, i \textit{token} non fungibili non possono essere scambiati reciprocamente in quanto ognuno ha un valore che non è legato al \textit{token} in sè, ma a quello che rappresenta.
+Vengono salvati nella tecnologia \textit{blockchain} per semplificare la gestione dell'accesso e della proprietà e per assicurare l'unicità e l'impossibilità di contraffazione. \\
+
+\noindent Gli NFT possono essere distinti dai token fungibili per le seguenti tre caratteristiche:
+\begin{itemize}
+  \item \textbf{Unico}: qualsiasi NFT viene definito da un codice univoco che lo rappresenta;
+  \item \textbf{Raro}: questo è ciò che gli attribuisce il valore, in quanto se ce ne fossero di più varrebbero di meno;
+  \item \textbf{Indivisibile}: gli NFT non possono essere suddivisi in parti, in quanto perderebbero il proprio valore. Devono essere detenuti, acquistati e venduti solo come entità intere.
+\end{itemize}
+
+\noindent Le applicazioni che possono avere sono di vario tipo, ma in generale possono essere utilizzati ovunque ci sia bisogno di questi tre benefici:
+\begin{itemize}
+  \item \textbf{Fornire la proprietà}: ovvero consolidare il diritto di proprietà, visto che ogni NFT deve essere associato ad una persona;
+  \item \textbf{Trasferibilità}: i diritti di proprietà di un NFT possono essere negoziati su vari mercati e scambiati facilmente;
+  \item \textbf{Dimostrare l'autenticità}: utilizzando la tecnologia \textit{blockchain} è possibile rassicurare i compratori dimostrando che il loro acquisto è autentico e originale.
+\end{itemize}
+
+L'ambito nel quale sono stati utilizzati sin da subito è l'arte digitale, dove c'è bisogno di dimostrare l'autenticità e la proprietà di una determinata opera per evitare contraffazioni.
+Anche se esistono da tanti anni, si sono diffusi solo verso la fine del 2020 e inizio 2021 grazie a siti che permettono il caricamento e la vendita di opere digitali sotto forma di NFT. Il sito più famoso ed utilizzato in questo ambito si chiama \textit{CryptoKitties}, dove tutte le opere che si possono acquistare e vendere riguardano dei gatti, a cui ogni autore può applicare delle particolarità che rendono la sua opera unica.
+
+\begin{figure}[!tbph]
+  \captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=footnotesize, labelsep=space}
+
+  \centering
+
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{capitolo2/cryptokitties.jpg}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{capitolo2/movimento-capitali-cryptokitties.png}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.5\textwidth}
+    \caption{Esempio di CryptoKitties}
+    \textbf{Fonte}: \href{https://www.cryptokitties.co}{https://www.cryptokitties.co}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\textwidth}
+    \caption{Movimento di capitali sulla piattaforma CryptoKitties, anno 2020/2021}
+    \textbf{Fonte}: \href{https://coinranking.com/dapp/cryptokitties}{https://coinranking.com}
+  \end{minipage}
+\end{figure}
+
+NFTLab è nato proprio da questo contesto. Oltre alle funzionalità di accesso e registrazione, permetterà agli utenti autenticati di caricare le proprie opere, che potranno essere qualsiasi tipo di \textit{file}, aggiungendo un nome, una descrizione, le categorie facente parte, il prezzo e gli verrà anche assegnato un tipo in base al \textit{file}. In seguito al caricamento verrà estratto il NFT e memorizzato in \textit{blockchain}. 
+Ogni utente potrà visualizzare le opere caricate dalle altre persone, cercarle in base alle categorie di cui fanno parte, il loro tipo ed il nome, e comprarle, se autenticato. Quando visualizzerà i dettagli di un opera, in base al tipo del \textit{file}, verrà mostrata l'anteprima di quest'ultima.
+I dati di ogni opera possono essere cambiati dal proprietario, tranne l'opera in sè visto che il NFT è intrinsecamente legato ad essa.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{capitolo2/nftlab-logo.png}
+  \caption{Logo di NFTLab}
+\end{figure}
+
+Il progetto è stato sviluppato con altre quattro persone che stavano svolgendo il percorso di stage dell'Università degli Studi di Padova. Due di queste persone avevano il compito di sviluppare il \textit{front-end} utilizzando, ognuna, un \textit{framework} tra Angular e Vue.js. La terza persona, invece, aveva il compito di sviluppare il \textit{back-end} attraverso il \textit{framework} Spring. La parte di creazione e gestione degli NFT l'ho fatta io. \\
+
+\noindent In accordo con il proponente, al termine dello stage, sono state implementate le seguenti funzionalità:
+\begin{itemize}
+  \item registrazione ed autenticazione di un utente;
+  \item caricamento di un opera ed inserimento delle relative informazioni;
+  \item modifica di un'opera precedentemente caricata;
+  \item visualizzazione della pagina personale di un utente;
+  \item visualizzazione di tutte le opere caricate da altri utenti;
+  \item visualizzazione dei dettagli di un opera.
+\end{itemize}
+
+\noindent Come già previsto dai nostri \textit{tutor} aziendali, tra cui il mio, Fabio Pallaro, in seguito all'arrivo di altri tirocinanti verranno ultimate le seguenti funzionalità:
+\begin{itemize}
+  \item vendita di un opera precedentemente caricata;
+  \item ricerca di un opera precedentemente caricata.
+\end{itemize}
+
+Per quanto riguarda lo sviluppo della parte di gestione degli NFT, è stato pensato di progettare un percorso di stage dove un futuro tirocinante avrà il compito di sviluppare interamente una \gls{DApp}, rimuovendo la componente \textit{back-end} e affidando quel ruolo ad un singolo \textit{smart contract}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Scelta dell'azienda}
+La scelta di Sync Lab come azienda dove svolgere lo stage è avvenuta durante l'evento annuale, organizzato dall'Università degli Studi di Padova in associazione con gli imprenditori di AssIndustria VenetoCentro, chiamato \textbf{StageIT}. Questo evento, svoltosi online a causa della pandemia, permette alle aziende di presentare il loro ambito lavorativo e i vari progetti di stage proposti. Durante questo evento ho potuto incontrare varie aziende, analizzando di ognuna le opportunità che offrivano. In seguito ho contattato e sono stato contattato da varie aziende, le quali avevano il mio \textit{curriculum vitae} caricato in precedenza sulla piattaforma SIAGAS offerta dall'Università di Padova. Tra le varie aziende che mi hanno contattato c'è stata anche Sync Lab. \\
+
+Il motivo principale che mi ha spinto a sceglierla come azienda dove svolgere lo stage è \textbf{il progetto}. Infatti, quasi tutti i progetti di stage che mi hanno proposto le altre aziende erano molto pratici, dove bisognava utilizzare un \textit{framework} per sviluppare siti web o applicazioni \textit{mobile}. Il progetto proposto da Sync Lab si discosta molto da quest'ottica, riuscendo ad unire perfettamente innovazione, aspetti teorici e aspetti pratici. Mi ha permesso di approfondire, sotto gli aspetti elencati in precedenza, la tecnologia \textit{blockchain} la quale ho sempre visto con molta curiosità, cercando di capire se è davvero solo una tendenza oppure se consiste in una tecnologia che rivoluzionerà molti ambiti professionali. \\
+
+Un altro motivo per cui ho preferito Sync Lab è stata \textbf{l'azienda in senso stretto}, intesa come ambiente lavorativo, poiché al suo interno è presente un numero elevato di dipendenti ed è particolarmente strutturata. L'ho scelta con la speranza di poter vivere un ambiente lavorativo con grande esperienza dove potermi confrontare con persone molto più esperte di me sotto l'aspetto tecnico e tecnologico.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Obiettivi dello stage}
-Approfondimento degli obiettivi e prodotti attesi del mio stage.
+Lo scopo del seguente stage è di sviluppare la parte di creazione e gestione degli NFT, utilizzando due \textit{blockchain}: Ethereum e Hotmoka. In seguito ho dovuto scegliere la migliore e integrarla con il \textit{back-end} di NFTLab. L'obiettivo, perciò, consiste nello sviluppo di uno \textit{smart contract} per la gestione della compravendita di NFT e di una libreria Java che permetta a NFTLab di interagire con lo \textit{smart contract} caricato in \textit{blockchain}. \newline
+
+\noindent I prodotti attesi al termine dello stage sono i seguenti:
+\begin{itemize}
+  \item un \textbf{documento tecnico} per l'azienda dove vengono illustrati i seguenti punti:
+  \begin{itemize}
+    \item le differenze nell'implementazione degli \textit{smart contract} per la gestione di NFT seguendo gli \textit{standard} delle due \textit{blockchain} sopra citate;
+    \item motivazioni che hanno spinto verso una soluzione piuttosto che verso l'altra;
+    \item spiegazione dell'architettura e le parti più complesse che sono state sviluppate.
+  \end{itemize}
+  \item le \textbf{implementazioni degli \textit{smart contract}} per le \textit{blockchain} Ethereum e Hotmoka;
+  \item l'\textbf{implementazione della libreria} per l'interazione del \textit{back-end} con entrambe le \textit{blockchain}.
+\end{itemize}
 
 \section{Obiettivi personali}
-Descrizione degli obiettivi definiti nel piano di lavoro.
+In seguito ad una discussione avvenuta precedentemente all'inizio dello stage con il mio \textit{tutor} aziendale, l'ingegnere Fabio Pallaro, sono stati definiti vari obiettivi personali che potessero approfondire ogni aspetto del percorso. \\
+
+\noindent Si farà riferimento agli obiettivi secondo la seguente notazione:
+\begin{itemize}
+  \item \textbf{O}: per gli obiettivi obbligatori, vincolanti in quanto obiettivo primario richiesto dal committente;
+  \item \textbf{D}: per gli obiettivi desiderabili, non vincolanti o strettamente necessari, ma dal riconoscibile valore aggiunto;
+  \item \textbf{F}: per gli obiettivi facoltativi, rappresentanti valore aggiunto non strettamente competitivo.
+\end{itemize}
+
+\noindent La nomenclatura, perciò, sarà formata nel seguente modo:
+\begin{center}
+  (O|D|F)[0-9]+
+\end{center}
+
+\noindent Gli obiettivi personali che ho conseguito sono riassunti di seguito:
+\begin{longtabu}{|c|X|}
+  \hline
+
+  \textbf{Obiettivo} & \textbf{Descrizione} \\ \hline
+
+  \textbf{Obbligatorio} & \\
+
+  % O01       & Studio della tecnologia \textit{blockchain} \\
+  % O02       & Studio della \textit{blockchain} Ethereum \\
+  % O03       & Studio della \textit{blockchain} Hotmoka \\ 
+  % O04       & Studio del linguaggio Solidity \\ 
+  % O05       & Studio degli standard per la gestione degli NFT \\ 
+  O01       & Implementazione del 80\% dei contratti per la gestione di NFT previsti \\
+  O02       & Implementazione della libreria per la comunicazione di NFTLab con i contratti sviluppati \\
+
+  \hline
+
+  \textbf{Desiderabile} &  \\
+  
+  D01       & Implementazione del 100\% dei contratti previsti \\
+
+  \hline
+
+  \textbf{Facoltativo} & \\
+
+  F01       & Implementazione dei \textit{test} relativi alle implementazioni realizzate \\
+
+  \hline
+
+  \caption{Obiettivi dello stage}
+\end{longtabu}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Vincoli dello stage}
+Prima di iniziare con lo stage, è stato redatto, insieme al mio \textit{tutor} aziendale Fabio Pallaro, il piano di lavoro dove sono stati specificati i vincoli temporali e organizzativi. In seguito è stato approvato dal mio relatore, il professore Tullio Vardanega.
 
 \subsection{Pianificazione temporale}
-Presentazione della pianificazione temporale.
+Lo stage si è svolto in una durata pari a 8 settimane, nel periodo che va dal 03-05-2021 al 25-06-2021, per un totale di 320 ore, ovvero 40 ore a settimana. Queste 8 settimane sono state divise in 3 periodi principali: il periodo di formazione, dove ho dovuto studiare i principi alla base delle varie \textit{blockchain} che sono andato ad utilizzare, con i relativi linguaggi di programmazione per la stesura degli \textit{smart contract}; il periodo di sviluppo dove ho dovuto produrre i vari \textit{smart contract} e le relative integrazioni con il \textit{back-end}; il periodo di validazione, collaudo e presentazione del prodotto. \\
+
+\noindent La pianificazione settimanale è la seguente: 
+\begin{itemize}
+  \item \textbf{Prima settimana (40 ore)}:
+  \begin{itemize}
+      \item incontro con persone coinvolte nel progetto per discutere i requisiti e le richieste relative al sistema da sviluppare;
+      \item verifica credenziali e strumenti di lavoro assegnati;
+      \item studio dei concetti generali riguardanti la \textit{blockchain}.
+  \end{itemize}
+  \item \textbf{Seconda settimana (40 ore)}:
+  \begin{itemize}
+      \item studio della \textit{blockchain} Ethereum.
+  \end{itemize}
+  \item \textbf{Terza settimana (40 ore)}:
+  \begin{itemize}
+      \item studio del linguaggio Solidity per la definizione di \textit{smart contract}.
+  \end{itemize}
+  \item \textbf{Quarta settimana (40 ore)}:
+  \begin{itemize}
+      \item studio e implementazione degli \textit{smart contract} per la gestione di NFT seguendo lo standard \textit{ERC721} su \textit{blockchain} Ethereum.
+  \end{itemize}
+  \item \textbf{Quinta settimana (40 ore)}:
+  \begin{itemize}
+      \item studio della \textit{blockchain} Hotmoka.
+  \end{itemize}
+  \item \textbf{Sesta settimana (40 ore)}:
+  \begin{itemize}
+      \item studio e implementazione degli \textit{smart contract} per la gestione di NFT seguendo gli standard Hotmoka.
+  \end{itemize}
+  \item \textbf{Settima settimana (40 ore)}:
+  \begin{itemize}
+      \item conclusione codifica;
+      \item integrazione tra il \textit{back-end} e una delle due implementazioni sviluppate;
+      \item stesura della documentazione relativa al periodo di codifica.
+  \end{itemize}
+  \item \textbf{Ottava settimana (40 ore)}:
+  \begin{itemize}
+      \item collaudo della soluzione e stesura della documentazione finale;
+      \item incontro di presentazione della soluzione con gli \textit{stakeholders};
+      \item \textit{live demo} del lavoro di stage.
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\columnwidth]{capitolo2/gantt.png}
+  \caption{Diagramma di Gantt relativo alla pianificazione dello stage}
+\end{figure}
+
+Per quanto riguarda la ripartizione oraria delle principali attività, qui si può vedere la tabella riassuntiva:
+\begin{longtabu}{|c|X|}
+	\hline
+
+  \textbf{Durata in ore} & \textbf{Descrizione dell'attività} \\ \hline
+  
+	\textbf{160} & \textbf{Studio delle tecnologie} \\
+  \textit{40} &
+  Studio dei concetti generali riguardanti la \textit{blockchain} \\
+  \textit{40} & 
+  Studio della \textit{blockchain} Ethereum \\
+  \textit{40} & 
+  Studio del linguaggio Solidity per la definizione di \textit{smart contract} \\
+  \textit{40} & 
+  Studio della \textit{blockchain} Hotmoka \\
+
+  \hline
+
+  \textbf{80} & \textbf{Implementazione degli \textit{smart contract} per la gestione di NFT} \\ 
+  \textit{40} & 
+  Studio e implementazione degli \textit{smart contract} per la gestione di NFT seguendo lo standard \textit{ERC721} su \textit{blockchain} Ethereum \\
+  \textit{40} & 
+  Studio e implementazione degli \textit{smart contract} per la gestione di NFT seguendo gli standard Hotmoka \\
+  
+  \hline
+  
+  \textbf{24} & \textbf{Integrazione tra il backend e una delle due implementazioni sviluppate} \\
+  \hline
+
+  \textbf{40} & \textbf{Stesura documentazione} \\ 
+  \textit{16} & 
+  Stesura della documentazione relativa al periodo di codifica \\
+  \textit{24} & 
+  Stesura della documentazione finale \\
+
+  \hline
+
+  \textbf{16} & \textbf{Collaudo Finale}  \\ 
+  \textit{13} & 
+  Collaudo \\
+  \textit{1} &
+  Incontro di presentazione della piattaforma con gli \textit{stakeholders} \\
+  \textit{2} & 
+  Live demo del lavoro di stage \\
+  \hline
+
+  \textbf{Totale ore} & \multicolumn{1}{c}{\textbf{320}} \\ \hline
+
+  \caption{Tabella riassuntiva delle ore per attività}
+\end{longtabu}
 
 \subsection{Vincoli organizzativi}
-Spiegazione delle modalità di lavoro intraprese sia con il tutor aziendale, sia con il mio relatore, approfondendo gli strumenti utilizzati.
+A causa della situazione pandemica ancora persistente, anche se in via di miglioramento, l'attività di stage è stata svolta in modalità mista. Sin dall'inizio dello stage è stato concordato con il mio \textit{tutor} aziendale, Fabio Pallaro, di fissare il lunedì come giorno obbligatorio di presenza in ufficio, in modo tale da poter eseguire lo \textit{sprint review}. 
+Tutti gli altri giorni erano liberi e potevo scegliere personalmente se svolgere il lavoro in \textit{smart working}, oppure andare in ufficio. Per andare in ufficio dovevo prenotarmi minimo 2 giorni prima sulla piattaforma \textit{notion} e, nel caso ci fosse stato un numero considerevole di circa 10 persone gia prenotate, dovevo evitare di aggiungermi così da prevenire il superamento delle 15 persone massime permesse dalla legge.
+Personalmente, oltre al lunedì, andavo in ufficio anche il venerdì in modo tale da avere un contatto più diretto ed efficiente con gli altri membri del gruppo che hanno lavorato al progetto NFTLab.\\
 
-\section{Analisi dei rischi}
-Breve analisi dei rischi.
+Per mantenere attiva la comunicazione con il mio \textbf{\textit{tutor} aziendale}, è stato creato un registro delle attività condiviso dove, giornalmente, ho scritto gli avanzamenti svolti nell'arco della giornata lavorativa. In seguito, ogni attività è stata verificata dal mio \textit{tutor} aziendale in modo tale da confermare la correttezza di quanto fatto. Per quanto riguarda il registro delle attività, ogni riga è stata organizzata nel seguente modo:
+\begin{itemize}
+  \item \textbf{Data}: data della giornata lavorativa interessata;
+  \item \textbf{Descrizione}: breve descrizione dei progressi compiuti; 
+  \item \textbf{Nota}: possibile nota del \textit{tutor} aziendale su quanto ho scritto nella descrizione;
+  \item \textbf{\textit{Check} del \textit{tutor} aziendale}: spunta che conferma la correttezza degli avanzamenti realizzati.
+\end{itemize}
+
+\clearpage
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\columnwidth]{capitolo2/registro-attivita.png}
+  \caption{Estratto del registro delle attività}
+\end{figure}
+
+Per quanto riguarda la comunicazione con il mio \textbf{\textit{tutor} interno}, ho provveduto ad informarlo tramite \textit{email} ogni 5 giorni lavorativi, riassumendo gli avanzamenti compiuti durante la settimana e specificando se fossero o meno coerenti con la pianificazione settimanale concordata nel piano di lavoro. Nel caso in cui ci fosse stata l'opportunità di cambiamento della pianificazione settimanale, avrei dovuto sottoporre la modifica alla sua approvazione, specificando le varie motivazioni. \\
+
+Durante il mio stage è stato fatto uso della metodologia \textbf{Scrum} in quanto è il metodo di sviluppo che viene adottato in tutti i progetti aziendali. Gli \textit{sprint} sono stati limitati ad una settimana e, come detto in precedenza, il lunedì era dedicato allo \textit{sprint review}. Questo mi ha permesso di analizzare e provare in prima persona la metodologia Scrum applicata in un ambito lavorativo e aziendale importante come lo è Sync Lab. \\
+
+I \textbf{canali di comunicazione} utilizzati sono quelli che sono stati riportati in \ref{sec:tecnologie-utilizzate}. Più nello specifico è stato utilizzato:
+\begin{itemize}
+  \item \textbf{Discord}: tramite questa piattaforma è stato possibile rimanere in comunicazione con gli altri membri che stavano lavorando sul progetto NFTLab e con il mio \textit{tutor} aziendale, per esporgli qualsiasi mio dubbio e riferirgli i problemi che ho incontrato e non sono riuscito a risolvere anche dopo un periodo considerevole di tempo;
+  \item \textbf{Google Meet}: utilizzato per partecipare alle varie riunioni o incontri urgenti svolte con gli \textit{stakeholders};
+  \item \textbf{Trello}: \textit{scrum board} utilizzata per l'organizzazione degli \textit{sprint} settimanali;
+  
+  % \clearpage
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.64\textwidth]{capitolo2/trello-board.png}
+    \caption{Gestione degli \textit{sprint} settimanali su Trello}
+  \end{figure}
+
+  \item \textbf{Notion}: impiegato, come già detto in precedenza, per la prenotazione della presenza in sede.
+\end{itemize}
+
+Per quanto riguarda la \textbf{gestione del codice}, non ci è stato imposto alcun vincolo da parte dell'azienda. Per questo motivo, in accordo con gli altri componenti del gruppo, è stata creata un'organizzazione sulla piattaforma GitHub dove sono raggruppate tutte le \textit{repository} e tutti gli artefatti prodotti.
+
+% \clearpage
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{capitolo2/github-organization.png}
+  \caption{Organizzazione NFTLab su GitHub}
+  \textbf{Fonte}: \href{https://github.com/NFT-Lab}{https://github.com/NFT-Lab}
+\end{figure}
