@@ -102,11 +102,11 @@ Un altro motivo per cui ho preferito Sync Lab è stata \textbf{l'azienda in sens
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Obiettivi dello stage}
-Lo scopo del seguente stage è di sviluppare la parte di creazione e gestione degli NFT, utilizzando due \textit{blockchain}: Ethereum e Hotmoka. In seguito avrei dovuto scegliere la migliore e integrarla con il \textit{back-end} di NFTLab. L'obiettivo, perciò, consiste nello sviluppo di uno \textit{smart contract} per la gestione della compravendita di NFT e di una libreria Java che permetta a NFTLab di interagire con lo \textit{smart contract} caricato in \textit{blockchain}. \newline
+Lo scopo del seguente stage è di sviluppare la parte di creazione e gestione degli NFT, utilizzando due \textit{blockchain}: Ethereum e Hotmoka. In seguito ho dovuto scegliere la migliore e integrarla con il \textit{back-end} di NFTLab. L'obiettivo, perciò, consiste nello sviluppo di uno \textit{smart contract} per la gestione della compravendita di NFT e di una libreria Java che permetta a NFTLab di interagire con lo \textit{smart contract} caricato in \textit{blockchain}. \newline
 
 \noindent I prodotti attesi al termine dello stage sono i seguenti:
 \begin{itemize}
-  \item una \textbf{relazione} dove verranno illustrati i seguenti punti:
+  \item un \textbf{documento tecnico} per l'azienda dove vengono illustrati i seguenti punti:
   \begin{itemize}
     \item le differenze nell'implementazione degli \textit{smart contract} per la gestione di NFT seguendo gli \textit{standard} delle due \textit{blockchain} sopra citate;
     \item motivazioni che hanno spinto verso una soluzione piuttosto che verso l'altra;
@@ -131,7 +131,7 @@ In seguito ad una discussione avvenuta precedentemente all'inizio dello stage co
   (O|D|F)[0-9]+
 \end{center}
 
-\noindent Gli obiettivi di stage che ho conseguito sono riassunti di seguito:
+\noindent Gli obiettivi personali che ho conseguito sono riassunti di seguito:
 \begin{longtabu}{|c|X|}
   \hline
 
@@ -139,13 +139,14 @@ In seguito ad una discussione avvenuta precedentemente all'inizio dello stage co
 
   \textbf{Obbligatorio} & \\
 
-  O01       & Studio della tecnologia \textit{blockchain} \\
-  O02       & Studio della \textit{blockchain} Ethereum \\
-  O03       & Studio della \textit{blockchain} Hotmoka \\ 
-  O04       & Studio del linguaggio Solidity \\ 
-  O05       & Studio degli standard per la gestione degli NFT \\ 
-  O06       & Implementazione del 80\% dei contratti per la gestione di NFT previsti \\
-  
+  % O01       & Studio della tecnologia \textit{blockchain} \\
+  % O02       & Studio della \textit{blockchain} Ethereum \\
+  % O03       & Studio della \textit{blockchain} Hotmoka \\ 
+  % O04       & Studio del linguaggio Solidity \\ 
+  % O05       & Studio degli standard per la gestione degli NFT \\ 
+  O01       & Implementazione del 80\% dei contratti per la gestione di NFT previsti \\
+  O02       & Implementazione della libreria per la comunicazione di NFTLab con i contratti sviluppati \\
+
   \hline
 
   \textbf{Desiderabile} &  \\
@@ -169,7 +170,7 @@ In seguito ad una discussione avvenuta precedentemente all'inizio dello stage co
 Prima di iniziare con lo stage, è stato redatto, insieme al mio \textit{tutor} aziendale Fabio Pallaro, il piano di lavoro dove sono stati specificati i vincoli temporali e organizzativi. In seguito è stato approvato dal mio relatore, il professore Tullio Vardanega.
 
 \subsection{Pianificazione temporale}
-Lo stage si è svolto in una durata pari a 8 settimane, nel periodo che va dal 03-05-2021 al 25-06-2021, per un totale di 320 ore, ovvero 40 ore a settimana. Queste 8 settimane sono state divise in 3 periodi principali: il periodo di formazione, dove ho dovuto studiare i principi alla base delle varie \textit{blockchain} che sarei andato ad utilizzare, con i relativi linguaggi di programmazione per la stesura degli \textit{smart contract}; il periodo di sviluppo dove ho dovuto produrre i vari \textit{smart contract} e le relative integrazioni con il \textit{back-end}; il periodo di validazione, collaudo e presentazione del prodotto. \\
+Lo stage si è svolto in una durata pari a 8 settimane, nel periodo che va dal 03-05-2021 al 25-06-2021, per un totale di 320 ore, ovvero 40 ore a settimana. Queste 8 settimane sono state divise in 3 periodi principali: il periodo di formazione, dove ho dovuto studiare i principi alla base delle varie \textit{blockchain} che sono andato ad utilizzare, con i relativi linguaggi di programmazione per la stesura degli \textit{smart contract}; il periodo di sviluppo dove ho dovuto produrre i vari \textit{smart contract} e le relative integrazioni con il \textit{back-end}; il periodo di validazione, collaudo e presentazione del prodotto. \\
 
 \noindent La pianificazione settimanale è la seguente: 
 \begin{itemize}
@@ -234,7 +235,7 @@ Per quanto riguarda la ripartizione oraria delle principali attività, qui si pu
   Studio del linguaggio Solidity per la definizione di \textit{smart contract} \\
   \textit{40} & 
   Studio della \textit{blockchain} Hotmoka \\
-  
+
   \hline
 
   \textbf{80} & \textbf{Implementazione degli \textit{smart contract} per la gestione di NFT} \\ 
@@ -275,7 +276,7 @@ A causa della situazione pandemica ancora persistente, anche se in via di miglio
 Tutti gli altri giorni erano liberi e potevo scegliere personalmente se svolgere il lavoro in \textit{smart working}, oppure andare in ufficio. Per andare in ufficio dovevo prenotarmi minimo 2 giorni prima sulla piattaforma \textit{notion} e, nel caso ci fosse stato un numero considerevole di circa 10 persone gia prenotate, dovevo evitare di aggiungermi così da prevenire il superamento delle 15 persone massime permesse dalla legge.
 Personalmente, oltre al lunedì, andavo in ufficio anche il venerdì in modo tale da avere un contatto più diretto ed efficiente con gli altri membri del gruppo che hanno lavorato al progetto NFTLab.\\
 
-Per mantenere attiva la comunicazione con il mio \textbf{\textit{tutor} aziendale}, è stato creato un registro delle attività condiviso dove, giornalmente, ho scritto gli avanzamenti svolti nell'arco della giornata lavorativa. In seguito, ogni attività veniva verificata dal mio \textit{tutor} aziendale in modo tale da confermare la correttezza di quanto fatto. Per quanto riguarda il registro delle attività, ogni riga è stata organizzata nel seguente modo:
+Per mantenere attiva la comunicazione con il mio \textbf{\textit{tutor} aziendale}, è stato creato un registro delle attività condiviso dove, giornalmente, ho scritto gli avanzamenti svolti nell'arco della giornata lavorativa. In seguito, ogni attività è stata verificata dal mio \textit{tutor} aziendale in modo tale da confermare la correttezza di quanto fatto. Per quanto riguarda il registro delle attività, ogni riga è stata organizzata nel seguente modo:
 \begin{itemize}
   \item \textbf{Data}: data della giornata lavorativa interessata;
   \item \textbf{Descrizione}: breve descrizione dei progressi compiuti; 
