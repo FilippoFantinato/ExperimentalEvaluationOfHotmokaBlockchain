@@ -171,6 +171,10 @@
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
 
+%**************************************************************
+% Impostazioni tabu
+%**************************************************************
+\tabulinesep=1.2mm
 
 %**************************************************************
 % Altro
@@ -191,7 +195,7 @@
 
 \newcommand{\glsfirstoccur}{\ap{{[g]}}}
 
-\newcommand{\intro}[1]{\emph{\textsf{#1}}}
+\newcommand{\intro}[1]{\textit{\textsf{#1}}}
 
 %**************************************************************
 % Environment per ``rischi''
@@ -215,6 +219,8 @@
 % \newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
 
 % \newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
+
+\renewcommand{\arraystretch}{1.2}
 
 %**************************************************************
 % Environment per ``use case''
