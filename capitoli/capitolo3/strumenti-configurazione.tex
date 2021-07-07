@@ -3,31 +3,123 @@
 % !TEX root = ../../tesi.tex
 
 \section{Strumenti e configurazione}
-Inizialmente, prima di Iniziare la fase di sviluppo, ho svolto un processo di organizzazione e configurazione degli strumenti per procede al meglio con la fase successiva. 
+Inizialmente, prima di iniziare la fase di sviluppo, ho svolto un processo di organizzazione e configurazione degli strumenti per procede al meglio con la fase successiva. 
 
 \subsection{Strumenti di gestione del progetto}
-Descrizione degli strumenti utilizzati per la gestione del progetto.
+Il processo di sviluppo è molto complicato e articolato, in quanto riguarda moltissime fasi che fanno comunicare tanta gente. Per questo è importante scegliere gli strumenti adeguati che riescano ad accompagnare questo processo complicato, semplificandolo ed automatizzando alcune parti di esso. Di seguito verrà spiegato quali strumenti per la gestione del progetto ho scelto e soprattutto perchè.
+
+\paragraph{Version Control System}
+I \textit{VCS} (\textit{Version Control System}) sono strumenti che registrano tutte le modifiche che avvengono ad un insieme di \textit{file}, favorendone la condivisione. Quello che è stato scelto per questo progetto è \textbf{Git}, il quale è uno strumento per il controllo del versionamento del \textit{software} distribuito, o anche comunemente chiamato \textit{DVCS} (\textit{Distributed Version Control System}). Può essere utilizzato da interfaccia a riga, come l'ho utilizzato io, oppure attraverso vari \textit{client} grafici che ne facilitano l'utilizzo.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{capitolo3/git-logo.png}
+  \caption{Logo di Git}
+  \textbf{Fonte}: \href{https://git-scm.com}{https://git-scm.com}
+\end{figure}
+
+Esistono molti tipi di \textit{VCS} e Git è quello più utilizzato al mondo. Ogni modifica rappresenta un \textit{commit}, al quale viene associato un codice univoco dato dallo stato attuale dei file e dall'orario di effettuazione. Una \textit{repository Git} permette di dividere il codice in vari ambienti di lavoro anche detti \textit{branch}. Un \textit{branch} non è altro che un semplice puntatore ad un \textit{commit}, dal quale può iniziare una storia diversa del codice. Questi \textit{branch} possono essere fusi, attraverso il processo di \textit{merging}, e chiusi. È possibile anche creare dei \textit{tag} associati ad un \textit{commit}. Questi \textit{tag} non sono altro che un puntatore immutabile ad un \textit{commit} e spesso vengono utilizzati per rilasciare la nuova versione di un \textit{software}. \\
+
+Tra le tante caratteristiche di Git è presente il fatto di essere distribuito. Infatti, quando viene importata una \textit{repository} Git all'interno di un ambiente locale come può essere un \textit{computer}, questa si porterà dietro tutta la storia delle modifiche del \textit{software} dal primo commit in poi. Questo porta molti vantaggi, tra cui una migliore risoluzione dei conflitti, possibilità di continuare il proprio lavoro anche se il nodo centrale non risponde, visto che non è presente un nodo principale, e anche la possibilità di impostare diversi \textit{workflow} che non sono possibili nei \textit{VCS} centralizzati. 
+
+\paragraph{Git workflow}
+Un Git \textit{workflow} è un insieme di regole che dicono come svolgere il lavoro in modo coerente e produttivo,  aiutando lo sviluppo del \textit{software} e facilitando l'utilizzo di pratiche di \textit{DevOps} e di \textit{Continuous Integration}. Il \textit{workflow} che è stato utilizzato è \textbf{un misto tra GitFlow e GitHub Flow}.
+L'idea alla base di questo \textit{workflow} è il fatto di avere due \textit{branch} che mantengono la storia del progetto: il \textit{main} e il \textit{develop}. Il \textit{branch main} ha il compito di storicizzare tutti i rilasci ufficiali, mentre il \textit{branch develop} è un branch di integrazione per le nuove funzionalità che dovranno essere aggiunte alla nuova versione del \textit{software}. Ogni nuova funzionalità da aggiungere al \textit{software} deve essere sviluppata in un opportuno \textit{feature branch}, che in seguito verrà fuso con il \textit{develop} in seguito all'approvazione di una \textit{pull request}. 
+
+Una volta che il \textit{branch develop} ha acquisito abbastanza nuove funzionalità per un rilascio, da quest'ultimo verrà creato un nuovo \textit{branch} chiamato di \textit{release}, dove si potrà perfezionare il codice eseguendo gli ultimi \textit{test} o \textit{bugfix}, per poi essere fuso dentro il \textit{branch main} e il \textit{branch develop}. In seguito verrà anche associato un \textit{tag} all'ultimo \textit{commit} del \textit{branch main}, in modo tale da consolidare la nuova versione del \textit{software}.
+
+Un'altra categoria importante di \textit{branch} sono quelli chiamati \textit{HotFix}, che servono per eseguire dei \textit{fix} al codice che è già passato per una \textit{release}. Questo tipo di \textit{branch} ha il compito di riparare l'errore sia nel \textit{branch main} e sia nel \textit{branch develop}, attraverso la fusione in entrambi. \\
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{capitolo3/gitflow.png}
+  \caption{Rappresentazione grafica del \textit{workflow} GitFlow}
+  \textbf{Fonte}: \href{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}
+\end{figure}
+
+È stata utilizzata questa modalità mista, per sfruttare al meglio le potenzialità che permettono le \textit{pull request} offerte dalla piattaforma GitHub, e la sistematicità che caraterizza GitFlow. Infatti, in quest'ultimo \textit{workflow} le fasi di sviluppo sono ben definite ed organizzate, associate ognuna ad un \textit{branch}. Questo permette una gestione migliore di tutto il processo di sviluppo, sia che si lavori in un \textit{team} composto da molte persone, oppure che si lavori da solo.
+
+\paragraph{GitHub}
+GitHub è un servizio di hosting per progetti \textit{software}, incentrato sull'utilizzo di Git. Oltre a questo, permette l'integrazione di \textit{Issue Tracking System}, strumenti di \textit{Continuous Integration} e \textit{artifact repository} con ogni \textit{repository}.
+
+Uno strumento molto potente ed innovativo che ha introdotto GitHub è la \textit{pull request}, ovvero una richiesta di aggiunta di modifiche che sono state apportate o da un collaboratore interno alla repository, richiedendo la fusione di un \textit{branch} con un altro attraverso questo strumento, oppure da un collaboratore esterno, il quale ha apportato le modifiche a parte da un \textit{fork} del progetto. In seguito dovrà essere approvata da uno dei proprietari del progetto. 
+
+La \textit{pull request} effettuata da un collaboratore interno è importante anche per effettuare l'analisi statica del codice non automatica, dove una persona manualmente analizza il codice che deve essere approvato.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{capitolo3/github-logo.png}
+  \caption{Logo di GitHub}
+  \textbf{Fonte}: \href{https://github.com}{https://github.com}
+\end{figure}
+
+\paragraph{Issue Tracking System}
+Il \textit{ITS} (\textit{Issue Tracking System}) è uno strumento che facilita la gestione del processo di sviluppo e di \textit{change management}, attraverso la gestione di attività diverse (\textit{work item}). Ogni singola attività del progetto è gestita con un \textit{workflow} e mantenuta in un'unica \textit{repository}. Serve a condividere le informazioni con il \textit{team} di sviluppo, il \textit{project manager} e i vari \textit{stakeholders}. \\
+
+Come \textit{ITS} è stato scelto quello offerto da GitHub, il quale permette la definizione di Work Item, o come vengono chiamate su questo strumento, issue, avendo le seguenti proprietà:
+\begin{itemize}
+  \item codice univoco;
+  \item lo stato, ovvero se è aperta o chiusa;
+  \item un nome;
+  \item una descrizione;
+  \item a chi è assegnata;
+  \item la \textit{board} a cui è associata;
+  \item la \textit{milestone} di cui fa parte.
+\end{itemize}
+
+Le funzionalità non finiscono qui infatti, come anche accennato sopra, permette la definizione di \textit{milestone} e la creazione di \textit{board}.
+
+% TODO: decidere che immagini inserire
+
+\paragraph{Continuous Integration}
+La \textit{CI} (\textit{Continuous Integration}) è una pratica che consiste nell'allineamento frequente degli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso, dove ci sarà sempre il codice più aggiornato e funzionante. Per poter sfruttare questa pratica, è molto importante aver predisposto un ambiente che automatizzi l'esecuzione di test automatici per facilitare l'attività di verifica. \\
+
+Durante il mio stage è stato utilizzato \textit{GitHub Action} come servizio per la programmazione di azioni che si verificano ad uno specifico evento e per automatizzare vari processi di lavoro. Tutte le \textit{action} sono definibili attraverso file di configurazione scritti attraverso il linguaggio per la serializzazione chiamato YAML.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\textwidth]{capitolo3/github-actions-logo.png}
+  \caption{Logo di GitHub \textit{Action}}
+  \textbf{Fonte}: \href{https://docs.github.com/en/actions}{https://docs.github.com/en/actions}
+\end{figure}
+
+\paragraph{Artifact repository}
+Il \textit{artifact repository} è uno strumento per ottimizzare e storicizzare i \textit{file} utilizzati e prodotti durante lo sviluppo. In poche parole, si centralizza la gestione di tutti i \textit{file} binari, anche detti artefatti, generati e utilizzati durante la fase di \textit{build}. \\
+
+Le \textit{artifact repository} che sono state utilizzate durante lo sviluppo sono:
+\begin{itemize}
+  \item \textbf{\textit{NPM}}: acronimo di \textit{Node Package Manager}, ha il compito di storicizzare tutti gli artefatti di applicativi basati sul \textit{framework} Node.js. Gli artefatti sono scaricabili e gestibili dall'omonimo strumento;
+  \item \textbf{Maven Central Repository}: \textit{artifact repository} ufficiale, dove vengono pubblicati tutti gli artefatti prodotti in seguito al processo di \textit{build} dello strumento Maven;
+  \item \textbf{GitHub Artifact Repository}: \textit{artifact repository} interna a GitHub, utilizzata per la pubblicazione degli artefatti prodotti in seguito al processo di \textit{build} dello strumento Maven dei progetti che ho sviluppato con Java. Sono stati caricati tutti gli \textit{smart contract} per Hotmoka e la libreria per l'integrazione con il \textit{back-end} NFTLab, in modo tale da facilitarne l'importazione e la gestione. Non è stata utilizzata la \textit{Maven Central Repository}, visto che questi artefatti sono interni al progetto e non hanno l'obiettivo di funzionare al di fuori del contesto NFTLab.
+\end{itemize}
 
 \subsection{Documentazione}
-Per quanto riguarda la scrittura della documentazione e la realizzazione dei vari diagrammi UML, ho utilizzato, rispettivamente, il linguaggio Markdown e Mermaid. Markdown è un linguaggio di \textit{markup} con una sintassi del testo semplice progettata in modo che possa essere convertita in HTML. È perfettamente integrabile con la piattaforma GitHub, la quale mette a disposizione la lettura online dei documenti scritti in Markdown.
+Per quanto riguarda la scrittura della documentazione e la realizzazione dei vari diagrammi UML, ho utilizzato, rispettivamente, il linguaggio Markdown e Mermaid. Markdown è un linguaggio di \textit{markup} con una sintassi del testo semplice progettata in modo che possa essere convertita in HTML. È perfettamente integrabile con la piattaforma GitHub, la quale mette a disposizione la lettura online di documenti scritti in Markdown.
 Mermaid, invece, è uno strumento che permette di generare le immagini dei diagrammi UML a partire da un \textit{file} con estensione mmd. Questo ha facilitato di molto la realizzazione dei diagrammi richiesti, senza doversi occupare della parte grafica. In seguito le immagini generate sono state importate dentro il documento in scritto in Markdown.
 
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{capitolo3/mermaid-example.png}
+  \caption{Esempio di diagramma delle classi sviluppato con Mermaid}
+\end{figure}
+
 \subsection{Ambiente di sviluppo}
-Come ambiente di sviluppo sono stati utilizzati IntelliJ Idea per lo sviluppo di codice che riguardava il linguaggio Java e VS Code per quello che riguardava Solidity.
-IntelliJ IDEA è un ambiente di sviluppo integrato per il linguaggio di programmazione Java. Ha molte funzionalità che facilitano la gestione del codice, infatti esegue automaticamente il \textit{code refactoring} in base alle modifiche che si vogliono apportare, si integra perfettamente con lo strumento di versionamento GIT e gli strumenti di \textit{build automation} maven e gradle.
+Come ambiente di sviluppo sono stati utilizzati \textbf{IntelliJ Idea} per lo sviluppo di codice che riguardava il linguaggio Java e \textbf{Visual Studio Code} per quello che riguardava il linguaggio di programmazione Solidity.
+IntelliJ IDEA è un ambiente di sviluppo integrato per il linguaggio di programmazione Java. Ha molte funzionalità che facilitano la gestione del codice, infatti esegue automaticamente il \textit{code refactoring} in base alle modifiche che si vogliono apportare, si integra perfettamente con lo strumento di versionamento GIT e gli strumenti di \textit{build automation} Maven e Gradle.
 VS Code, invece, è un code editor sviluppato su Electron, un \textit{framework} attraverso il quale è possibile sviluppare applicazioni \textit{desktop} utilizzando le tecnologie web. Appena installato non ha molte funzionalità, ma grazie alle numerose estensioni che sono state create, è possibile arrivare considerarlo anche un IDE. Principalmente è stato utilizzato per lo sviluppo in Solidity, con estensioni che avviassero lo strumento di \textit{lint} e formattazione del codice ad ogni salvataggio.
 
 \subsection{Tecnologie usate}
-Descrizione dei vari linguaggi di programmazione, framework, librerie e strumenti di build automation.
+Le tecnologie utilizzate durante il processo di sviluppo, tra cui linguaggi di programmazione, \textit{framework}, librerie, strumenti di \textit{build automation} e strumenti per l'analisi statica del codice, sono riportate di seguito.
 
-\paragraph{Java} 
-Java è uno dei linguaggi più utilizzati al mondo. È un linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica. In questo progetto è stato utilizzato per lo sviluppo della libreria per l'integrazione con il \textit{back-end}, visto che quest'ultimo è stato sviluppato utilizzando il \textit{framework} Spring. 
+% \paragraph{Java} 
+% Java è uno dei linguaggi più utilizzati al mondo. È un linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica. In questo progetto è stato utilizzato per lo sviluppo della libreria per l'integrazione con il \textit{back-end}, visto che quest'ultimo è stato sviluppato utilizzando il \textit{framework} Spring. 
 
-\paragraph{Solidity}
-Solidity è un linguaggio di programmazione orientato agli oggetti per la scrittura di \textit{smart contract}. Può essere utilizzato su varie piattaforme \textit{blockchain}, ma quella più famosa e originale, per cui è stato creato, è Ethereum. Come Java, Solidity non viene tradotto in linguaggio macchina ma, per il fatto che ogni \textit{smart contract} deve essere separato dall'ambiente su cui gira, viene tradotto in \textit{bytecode} ed eseguito dalla \textit{EVM} (\textit{Ethereum Virtual Machine}).
+% \paragraph{Solidity}
+% Solidity è un linguaggio di programmazione orientato agli oggetti per la scrittura di \textit{smart contract}. Può essere utilizzato su varie piattaforme \textit{blockchain}, ma quella più famosa e originale, per cui è stato creato, è Ethereum. Come Java, Solidity non viene tradotto in linguaggio macchina ma, per il fatto che ogni \textit{smart contract} deve essere separato dall'ambiente su cui gira, viene tradotto in \textit{bytecode} ed eseguito dalla \textit{EVM} (\textit{Ethereum Virtual Machine}).
 
-\paragraph{Takamaka}
-Takamaka è un \textit{subset} di Java, ovvero un sottoinsieme della sintassi del linguaggio Java, utilizzato per la scrittura di Smart Contract per nella \textit{blockchain} Hotmoka.
+% \paragraph{Takamaka}
+% Takamaka è un \textit{subset} di Java, ovvero un sottoinsieme della sintassi del linguaggio Java, utilizzato per la scrittura di Smart Contract per nella \textit{blockchain} Hotmoka.
 
 % \paragraph{Typescript}
 % Typescript è un \textit{superset} di Javascript, al quale aggiunge la tipizzazione statica del codice, una sintassi più aggiornata per la scrittura delle classi e delle interfacce e molti altri costrutti che facilitano la scrittura del codice. In questo progetto 
@@ -35,44 +127,89 @@ Takamaka è un \textit{subset} di Java, ovvero un sottoinsieme della sintassi de
 \paragraph{HardHat}
 HardHat è un ambiente di sviluppo per \textit{smart contract} in Solidity per Ethereum. Ha vari strumenti che facilitano di molto lo sviluppo ed i più importanti sono i seguenti:
 \begin{itemize}
-  \item possibilità di utilizzo di una \textit{blockchain} temporanea e relativi \textit{wallet}, la quale annulla il \textit{block time} togliendo qualsiasi forma di \textit{proof of X}, durante la fase di testing, in modo da velocizzarla;
-  \item possibilità di scrivere vari script in Typescript per eseguire il \textit{deploy} dello \textit{smart contract}, oppure semplicemente per comunicare con uno precedentemente caricato, su varie reti Ethereum, come quella pubblica o una qualsiasi \textit{testnet}<
+  \item possibilità di utilizzo di una \textit{blockchain} Ethereum temporanea e relativi \textit{wallet}, la quale annulla il \textit{block time} togliendo qualsiasi forma di \textit{proof of X}, durante la fase di testing, in modo da velocizzarla;
+  \item possibilità di scrivere vari script in Typescript per eseguire il \textit{deploy} dello \textit{smart contract}, oppure semplicemente per comunicare con uno precedentemente caricato, su varie reti Ethereum, come quella pubblica o una qualsiasi \textit{testnet};
   \item possibilità di scrivere tutti i \textit{test} utilizzando Typescript;
   \item integrazione con lo strumento solcover per ottenere il report del code coverage raggiunto.
 \end{itemize}
 
 \paragraph{Ganache}
-Ganache è uno strumento per creare una \textit{blockchain} locale non temporanea per poter svolgere vari test. Offre molte funzionalità, ma quella più importante è la possibilità di avere a disposizione moltissimi \textit{wallet}
+Ganache è uno strumento per creare una \textit{blockchain} Ethereum locale non temporanea, con la quale interagire per svolgere vari \textit{test}. Anch'essa, come quella di Hardhat, annulla il \textit{block time} togliendo qualsiasi forma \textit{proof of X} per velocizzare il \textit{testting}. Offre molte funzionalità, ma quella più importante è la possibilità di avere a disposizione moltissimi \textit{wallet} già forniti di Ether, con i quale comunicare con la \textit{blockchain}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics{capitolo3/ganache.png}
+  \includegraphics[width=\linewidth]{capitolo3/ganache.png}
   \caption{Finestra dello strumento Ganache}
 \end{figure}
 
 \paragraph{Maven}
-Maven è uno strumento di gestione di progetti \textit{software} basati su Java e \textit{build automation}. Effettua automaticamente il \textit{download} delle librerie Java e \textit{plug-in} Maven dai vari \textit{repository} definiti scaricandoli in locale. Questo permette di recuperare in modo uniforme i vari file \textit{JAR} e di poter spostare il progetto da un ambiente all'altro, avendo la sicurezza di utilizzare sempre le stesse versioni delle librerie. Utilizza file XML chiamato POM (\textit{Project Object Model}), dove vengono descritte le dipendenze tra il progetto e le varie versioni di librerie necessaire, nonchè le dipendenze fra di esse. È stato utilizzato per la gestione di tutti i progetti Java sviluppati durante il percorso di stage, ovvero la libreria per l'integrazione e gli \textit{smart contract} per HotMoka.
+Maven è uno strumento di \textit{build automation} e gestione di progetti \textit{software} basati su Java. Effettua automaticamente il \textit{download} delle librerie Java e \textit{plug-in} Maven, dai vari \textit{repository} definiti,scaricandoli in locale. Questo permette di recuperare in modo uniforme i vari \textit{file} \textit{JAR} e di poter spostare il progetto da un ambiente all'altro, avendo la sicurezza di utilizzare sempre le stesse versioni delle librerie. Utilizza un \textit{file} XML chiamato \textit{POM} (\textit{Project Object Model}), dove vengono descritte le dipendenze tra il progetto e le varie versioni delle librerie necessaire, nonché le dipendenze fra di esse. È stato utilizzato per la gestione di tutti i progetti Java sviluppati durante il percorso di stage, ovvero la libreria per l'integrazione e gli \textit{smart contract} per Hotmoka.
 
-\paragraph{ERC721 OpenZeppelin}
-Come implementazione dello standard \textit{ERC721}, è stata utilizzata quella più famosa e conosciuta nel mondo Ethereum, ovvero quella data dall'azienda OpenZeppelin. Oltre alla sua grande fama e al fatto che è utilizzata dalla maggior parte della \textit{community}, è stata scelta perché non ci sono vulnerabilità attualmente conosciute.
+% \paragraph{ERC721 OpenZeppelin}
+% Come implementazione dello standard \textit{ERC721}, è stata utilizzata quella più famosa e conosciuta nel mondo Ethereum, ovvero quella data dall'azienda OpenZeppelin. Oltre alla sua grande fama e al fatto che è utilizzata dalla maggior parte della \textit{community}, è stata scelta perché non ci sono vulnerabilità attualmente conosciute.
 
 \paragraph{JUnit5}
 
-JUnit5 è la versione 5 della libreria più famosa per la scrittura di \textit{test} nel linguaggio di programmazione Java. È stata utilizzata per tutte la
+JUnit5 è la versione 5 del \textit{framework} più famoso per la scrittura di \textit{test} nel linguaggio di programmazione Java. È stata utilizzata per la scrittura di test d'unità, d'integrazione e di sistema. Utilizzato insieme al plugin per Maven chiamato JaCoCo, permette di creare il report del \textit{code coverage} raggiunto e pubblicarlo su vari servizi come \textit{Coveralls}.
 
 \paragraph{Mockito}
+Mockito è la libreria più popolare per la realizzazione di oggetti \textit{mock} nel linguaggio di programmazione Java. Nella programmazione orientata agli oggetti, l'isolamento dei test unitari viene ottenuto utilizzando oggetti che simulano il comportamento degli oggetti reali. Questi oggetti vengono chiamati, come detto in precedenza, \textit{mock}.
 
-\paragraph{Mocka}
-
-\paragraph{Chai}
+\paragraph{Mocha}
+Mocha è un \textit{framework} per la scrittura di test in JavaScript, eseguito su Node.js. I test Mocha vengono eseguiti in serie, per produrre report flessibili e accurati. Inoltre le eccezioni non rilevate vengono mappate ai casi di test corretti. Per facilitare il testing, è stata associata alla libreria di asserzioni \textbf{Chai}, la quale ha il compito di verificare che il risultato ottenuto corrisponda a quello atteso. Chai presenta molte funzioni e metodi per confrontare l'output di un determinato test con il suo valore atteso.
 
 \paragraph{Solhint}
+Solhint è uno strumento per l'analisi statica di codice Solidity. È stato utilizzato durante la fase di sviluppo dello \textit{smart contract} in Solidity con le regole che vengono raccomandate dallo strumento stesso. In più è stato associato ad uno strumento di \textit{code formatting}, chiamato \textbf{prettier}, per definire le regole di formattazione del progetto.
+
 
 \paragraph{Checkstyle}
+Checkstyle è uno strumento che permette di eseguire l'analisi statica di codice Java. Si integra perfettamente con Maven e verrà eseguito automaticamente durante la fase di verifica, prima di quella di compilazione. Ho utilizzato le regole definite da Google, le quali sono impostate come predefinite.
+Inoltre Checkstyle permette di generare un \textit{report} dello stato dell'analisi statica del codice, modo tale da poterlo utilizzare con strumenti come SonarQube che hanno il compito di elaborare questo tipo di \textit{report}.
 
 
-\subsection{Analisi statica del codice}
-Descrizione degli strumenti utilizzati per l'automazione dell'analisi statica del codice.
+% \subsection{Analisi statica del codice}
+% Descrizione degli strumenti utilizzati per l'automazione dell'analisi statica del codice.
 
 \subsection{Way of working}
-Spiegazione di come viene organizzato e gestito il flusso di sviluppo.
+Durante il percorso di stage ho configurato quattro \textit{repository}: \textit{smart contract} per Ethereum, \textit{smart contract} per Hotmoka, la libreria per la comunicazione del \textit{back-end} con gli \textit{smart contract} precedentemente elencati e lo \textit{standard ERC721} per Hotmoka. Per ognuna di queste ho applicato uno specifico \textit{way of working} che verrà spiegato di seguito. \\
+
+Inizialmente, come la metodologia Scrum vuole, è stato definito per ogni \textit{software} il proprio \textbf{\textit{product backlog}} attraverso la creazione delle varie \textit{issue}. In seguito, venivano associate ad una \textit{milestone}, precedentemente decisa con il mio \textit{tutor} aziendale, Fabio Pallaro, ed alla relativa \textit{board}, così da poterle gestire avendo una visione migliore di cos'è da fare, cos'è in progresso e cosa è stato completato.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-board.png}
+  \caption{Esempio di utilizzo della \textit{board}}
+\end{figure}
+
+Durante lo svolgimento dello \textit{sprint}, quando una \textit{issue} cambia il suo stato in progresso, viene \textbf{aperto un nuovo \textit{branch}} legato ad essa, dove viene implementata la nuova funzionalità.
+
+Al termine dell'implementazione della funzionalità, viene creata una \textbf{\textit{pull request}} dove viene invocata la \textit{action} che esegue l'analisi statica automatica e i vari test automatici che sono stati programmati. In questo modo viene verificata la validità del codice che si vuole integrare con quello già presente nel \textit{branch develop}. Una volta approvata la \textit{pull request} e avvenuta la fusione tra il codice presente nel \textit{feature branch} e quello nel develop, viene eseguita un'altra \textit{action} che ha lo stesso compito di quella che viene avviata durante la \textit{pull request}, ma in più andrà ad eseguire il \textit{report} del \textit{code coverage} raggiunto al servizio \textit{Coveralls}.
+
+
+\begin{figure}[tbph!]
+  \captionsetup{singlelinecheck = false, format= hang, justification=raggedright, font=footnotesize, labelsep=space}
+  
+  \centering
+
+  \begin{minipage}{0.711\textwidth}
+    \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-actions.png}
+  \end{minipage}%
+  \begin{minipage}{0.289\textwidth}
+    \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-build-action.png}
+  \end{minipage}
+
+  \begin{minipage}[t]{0.7\textwidth}
+    \caption{Pagina di GitHub \textit{Action} dello \textit{smart contract} per Ethereum}
+  \end{minipage}%
+  \begin{minipage}[t]{0.3\textwidth}
+    \caption{\textit{Action} che esegue la build dello \textit{smart contract} per Ethereum}
+  \end{minipage}
+\end{figure}
+
+Quando tutte le \textit{issue} relative ad una \textit{milestone} sono state chiuse, è possibile iniziare la \textit{release}. Viene creata una \textit{pull request} dal \textit{branch develop} al \textit{branch main}. Viene verificato, come nel caso di altre \textit{pull request}, la validità del codice che deve essere integrato. In seguito all'approvazione della \textit{pull request}, viene fuso il \textit{branch develop} e creata la release attraverso la dichiarazione di un nuovo \textit{tag}. In questo momento vengono lanciate due \textit{actions}: quella che va a verificare la validità del codice presente nel \textit{branch main}, eseguendo l'analisi statica del codice, i test automatici e il report del \textit{code coverage} raggiunto al servizio \textit{Coveralls}, e quella che ha il compito di pubblicare sul \textit{artifact repository} di GitHub i pacchetti generati dalla fase di build.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{capitolo3/nftlab-artifact-repository.png}
+  \caption{\textit{Artifact repository} dell'organizzazione NFTLab}
+\end{figure}
