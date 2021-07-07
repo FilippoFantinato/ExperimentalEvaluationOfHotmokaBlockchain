@@ -3,10 +3,10 @@
 % !TEX root = ../../tesi.tex
 
 \section{Analisi dei requisiti}
-Ho iniziato la fase di analisi dei requisiti dalla quarta settimana di lavoro, cioè quando, come pianificato, avrei dovuto iniziare ad implementare gli \textit{smart contract} per la gestione di NFT seguendo gli standard ERC su \textit{blockchain} Ethereum. Inizialmente è avvenuto un processo di \textit{brainstorming} con gli altri componenti del gruppo e i vari \textit{tutor} di ognuno di noi per definire al meglio le funzionalità della piattaforma. In seguito ho isolato e ridotto le funzionalità ed i requisiti che avrebbe dovuto la mia libreria e lo \textit{smart contract} che avrei dovuto implementare. Per quanto riguarda i casi d'uso, vengono utilizzati i diagrammi dei casi d'uso per facilitarne la Presentazione concettuale, mentre per i requisiti sono state utilizzate delle tabelle di tracciamento. 
+Ho iniziato la fase di analisi dei requisiti dalla quarta settimana di lavoro, cioè quando, come pianificato, avrei dovuto iniziare ad implementare gli \textit{smart contract} per la gestione di NFT seguendo gli standard ERC su \textit{blockchain} Ethereum. Inizialmente è avvenuto un processo di \textit{brainstorming} con gli altri componenti del gruppo e i vari \textit{tutor} di ognuno di noi per definire al meglio le funzionalità della piattaforma. In seguito ho isolato e ridotto le funzionalità ed i requisiti che avrebbe dovuto avere la libreria e lo \textit{smart contract} da implementare. Per quanto riguarda i casi d'uso, vengono utilizzati i diagrammi dei casi d'uso per facilitarne la Presentazione concettuale, mentre per i requisiti sono state utilizzate delle tabelle di tracciamento. 
 
 \subsection{Casi d'uso}
-I casi d'uso sono una tecnica utilizzata nel processo di analisi dei requisiti per effettuare in maniera esaustiva e non ambigua, la raccolta dei requisiti al fine di produrre \textit{software} di qualità. \\
+I casi d'uso sono una tecnica utilizzata nel processo di analisi dei requisiti per effettuare in maniera esaustiva e non ambigua la raccolta dei requisiti al fine di produrre \textit{software} di qualità. \\
 
 \noindent La classificazione dei casi d'uso ha seguito la seguente convenzione:
 \begin{center}
@@ -21,7 +21,7 @@ dove:
 
 \subsubsection{Attori primari}
 Un attore primario è colui che interagisce con il sistema per un determinato scopo.
-Gli attori primari identificati sono i seguenti:
+Gli attori primari che sono stati identificati sono i seguenti:
 
 \begin{figure}[h!]
   \centering
@@ -30,11 +30,11 @@ Gli attori primari identificati sono i seguenti:
 \end{figure}
 
 \begin{itemize}
-  \item \textbf{Applicativo Java}: rappresenta qualsiasi applicazione sviluppata in Java che interagisce con la libreria. In questo caso, consiste nel \textit{back-end} sviluppato utilizzando il \textit{framework} Spring.
+  \item \textbf{Applicativo Java}: rappresenta qualsiasi applicazione sviluppata in Java che interagisce con la libreria. Nel contesto di NFTLab, consiste nel \textit{back-end} sviluppato utilizzando il \textit{framework} Spring.
 \end{itemize}
 
 \subsubsection{Attori secondari}
-Un attore secondario è un'entità estranea al sistema che supporta gli attori primari nelle loro attività.
+Un attore secondario è un'entità estranea al sistema che supporta gli attori primari nelle loro attività. Gli attori secondari che sono stati identificati sono i seguenti:
 
 \begin{figure}[h!]
   \centering
@@ -50,37 +50,43 @@ Un attore secondario è un'entità estranea al sistema che supporta gli attori p
 \UC{Caricamento di un NFT in blockchain}
 \label{UC:upload-new-nft}
 
-Qualsiasi applicativo Java può caricare un nuovo NFT in blockchain.
+Qualsiasi applicativo Java può caricare un nuovo NFT in \textit{blockchain}.
 
 \begin{itemize}
   \item \UCPrimaryActors{applicativo Java};
-  \item \UCSecondaryActors{\textit{smart contract}, Pinata};
-  \item \UCPre{l'applicativo Java vuole creare un NFT da un opera non ancora esistente};
+  \item \UCSecondaryActors{\textit{smart contract} e Pinata};
+  \item \UCPre{l'applicativo Java vuole creare un NFT da un'opera non ancora esistente};
   \item \UCPost{il NFT è stato creato e l'opera è stata caricata nella rete IPFS};
   \item \UCMain
   \begin{itemize}
-    \item L'applicativo Java vuole creare un NFT a partire da un opera, dalla quale non è stato creato alcun NFT;
-    \item L'opera viene caricata sulla rete IPFS tramite il servizio Pinata;
-    \item Viene invocato lo \textit{smart contract} e creato il NFT.
+    \item l'applicativo Java vuole creare un NFT a partire da un opera alla quale non è associato nessun altro NFT;
+    \item l'opera viene caricata sulla rete IPFS tramite il servizio Pinata;
+    \item viene invocato lo \textit{smart contract} e creato il NFT con le seguenti informazioni aggiuntive:
+    \begin{itemize}
+      \item codice hash univoco che identifica il NFT;
+      \item identificativo con il quale viene riferito nel \textit{database} del \textit{back-end};
+      \item \textit{wallet} del creatore del NFT;
+      \item \textit{timestamp} dell'operazione.
+    \end{itemize}
   \end{itemize}
   \item \UCExt
   \begin{enumerate}[label=\lett]
-    \item L'applicativo Java vuole assegnare il NFT ad un \textit{wallet} che non è nel formato corretto:
+    \item l'applicativo Java vuole assegnare il NFT ad un \textit{wallet} che non è nel formato corretto:
     \begin{itemize}
-      \item (UC\ref{UC:extension.wallet-not-correct}) - Visualizzazione messaggio di \textit{wallet} non nel formato corretto;
-      \item Viene impedita la creazione del NFT.
+      \item (UC\ref{UC:extension.wallet-not-correct}) - viene visualizzato il messaggio di \textit{wallet} non corretto;
+      \item viene impedita la creazione del NFT.
     \end{itemize}
 
-    \item L'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario di quest'ultimo:
+    \item l'applicativo Java vuole comunicare con lo \textit{smart contract} attraverso un \textit{wallet}, il quale non è il proprietario di quest'ultimo:
     \begin{itemize}
-      \item (UC\ref{UC:extension.operation-not-allowed}) - Visualizzazione messaggio di operazione non consentita;
-      \item Viene impedita la creazione del NFT.
+      \item (UC\ref{UC:extension.operation-not-allowed}) - viene visualizzato il messaggio di operazione non consentita;
+      \item viene impedita la creazione del NFT.
     \end{itemize}
 
-    \item L'applicativo Java vuole caricare un'opera dalla quale è già stato estratto il NFT:
+    \item l'applicativo Java vuole caricare un'opera dalla quale è già stato estratto il NFT:
     \begin{itemize}
-      \item (UC\ref{UC:extension.nft-exists-yet}) - Visualizzazione messaggio di NFT già esistente;
-      \item Viene impedita la creazione del NFT.
+      \item (UC\ref{UC:extension.nft-exists-yet}) - viene visualizzato il messaggio di NFT già esistente;
+      \item viene impedita la creazione del NFT.
     \end{itemize}
   \end{enumerate}
 \end{itemize}
