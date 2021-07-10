@@ -3,7 +3,7 @@
 % !TEX root = ../../tesi.tex
 
 \section{Analisi dei requisiti}
-Ho iniziato la fase di analisi dei requisiti dalla quarta settimana di lavoro, cioè quando, come pianificato, avrei dovuto iniziare ad implementare gli \textit{smart contract} per la gestione di NFT seguendo gli standard ERC su \textit{blockchain} Ethereum. Inizialmente è avvenuto un processo di \textit{brainstorming} con gli altri componenti del gruppo e i vari \textit{tutor} di ognuno di noi per definire al meglio le funzionalità della piattaforma. In seguito ho isolato e ridotto le funzionalità ed i requisiti che avrebbe dovuto avere la libreria e lo \textit{smart contract} da implementare. Per quanto riguarda i casi d'uso, vengono utilizzati i diagrammi dei casi d'uso per facilitarne la Presentazione concettuale, mentre per i requisiti sono state utilizzate delle tabelle di tracciamento. 
+Ho iniziato la fase di analisi dei requisiti dalla quarta settimana di lavoro, cioè quando, come pianificato, avrei dovuto iniziare ad implementare gli \textit{smart contract} per la gestione di NFT seguendo gli standard ERC su \textit{blockchain} Ethereum. Inizialmente è avvenuto un processo di \textit{brainstorming} con gli altri componenti del gruppo e i vari \textit{tutor} di ognuno di noi per definire al meglio le funzionalità della piattaforma. In seguito ho isolato e ridotto le funzionalità ed i requisiti che avrebbe dovuto avere la libreria e lo \textit{smart contract} da implementare. Per quanto riguarda i casi d'uso, vengono utilizzati i diagrammi dei casi d'uso per facilitarne la presentazione concettuale, mentre per i requisiti sono state utilizzate delle tabelle di tracciamento. 
 
 \subsection{Casi d'uso}
 I casi d'uso sono una tecnica utilizzata nel processo di analisi dei requisiti per effettuare in maniera esaustiva e non ambigua la raccolta dei requisiti al fine di produrre \textit{software} di qualità. \\
@@ -36,6 +36,7 @@ Gli attori primari che sono stati identificati sono i seguenti:
 \subsubsection{Attori secondari}
 Un attore secondario è un'entità estranea al sistema che supporta gli attori primari nelle loro attività. Gli attori secondari che sono stati identificati sono i seguenti:
 
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics{capitolo3/casi-uso/attori-secondari.png}
@@ -65,7 +66,7 @@ Qualsiasi applicativo Java può caricare un nuovo NFT in \textit{blockchain}.
     \item viene invocato lo \textit{smart contract}, attraverso il \textit{wallet} del proprietario, e creato il NFT con le seguenti informazioni aggiuntive:
     \begin{itemize}
       \item il codice hash univoco che identifica il NFT;
-      \item \textit{wallet} del creatore del NFT;
+      \item il \textit{wallet} del creatore del NFT;
       \item l'identificativo con il quale il creatore del NFT viene riferito nel \textit{database} del \textit{back-end};
       \item il \textit{timestamp} dell'operazione.
     \end{itemize}
