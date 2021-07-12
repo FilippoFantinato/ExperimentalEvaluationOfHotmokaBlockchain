@@ -63,12 +63,14 @@
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
    <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Valutazione sperimentale di Hotmoka Blockchain</rdf:li></rdf:Alt></dc:title>
-   <dc:creator><rdf:Seq><rdf:li>Author’s name</rdf:li></rdf:Seq></dc:creator>
+   <dc:creator><rdf:Seq><rdf:li>Filippo Fantinato</rdf:li></rdf:Seq></dc:creator>
    <dc:language><rdf:Bag><rdf:li>it-IT</rdf:li></rdf:Bag></dc:language>
-   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">The abstract, or short description.</rdf:li></rdf:Alt></dc:description>
-   <dc:subject><rdf:Bag><rdf:li>keyword1</rdf:li>
-     <rdf:li>keyword2</rdf:li>
-     <rdf:li>keyword3</rdf:li></rdf:Bag></dc:subject>
+   <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Tesi di laurea triennale</rdf:li></rdf:Alt></dc:description>
+   <dc:subject><rdf:Bag><rdf:li>Blockchain</rdf:li>
+     <rdf:li>NFT</rdf:li>
+     <rdf:li>Hotmoka</rdf:li>
+     <rdf:li>Ethereum</rdf:li>
+     <rdf:li>Smart contract</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:prism="http://prismstandard.org/namespaces/basic/2.2/"> 
   </rdf:Description> 
@@ -80,15 +82,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2021-07-06T16:34:24+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2021-07-06T16:34:24+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2021-07-06T16:34:24+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2021-07-11T22:14:51+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2021-07-11T22:14:51+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2021-07-11T22:14:51+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:03D28DDE-F9EC-3F33-FD10-51B5A3A279A6</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:2BFAB440-4977-3336-BF1D-423B4AE1025E</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:A50472E9-EAEF-02B1-7CAC-9E4A401CE529</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

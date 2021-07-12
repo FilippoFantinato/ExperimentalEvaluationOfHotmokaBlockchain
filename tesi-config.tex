@@ -164,6 +164,9 @@
     frame=single
 } 
 
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
 
 %**************************************************************
 % Impostazioni di xcolor
@@ -193,7 +196,7 @@
 \addto\captionsitalian{\renewcommand{\figurename}{Figura}
                        \renewcommand{\tablename}{Tabella}}
 
-\newcommand{\glsfirstoccur}{\ap{{[g]}}}
+\newcommand{\glsfirstoccur}{\textbf{\textsubscript{(g)}}}
 
 \newcommand{\intro}[1]{\textit{\textsf{#1}}}
 
@@ -266,3 +269,30 @@
 }
 
 \newcommand{\classdesc}[2]{\item[\textbf{#1:}] #2}
+
+\newcounter{personalGoalOCounter}
+\newcounter{personalGoalDCounter}
+\newcounter{personalGoalFCounter}
+
+\setcounter{personalGoalOCounter}{0}
+\setcounter{personalGoalDCounter}{0}
+\setcounter{personalGoalFCounter}{0}
+
+\newcommand{\personalGoal}[1]{
+	\ifthenelse{\equal{#1}{O}}{
+        \refstepcounter{personalGoalOCounter}
+        \personalGoalCode{#1}{\thepersonalGoalOCounter}
+    }
+	{\ifthenelse{\equal{#1}{D}}{
+        \refstepcounter{personalGoalDCounter}
+        \personalGoalCode{#1}{\thepersonalGoalDCounter}
+    }
+	{\ifthenelse{\equal{#1}{F}}{
+        \refstepcounter{personalGoalFCounter}
+        \personalGoalCode{#1}{\thepersonalGoalFCounter}
+    }{}}}
+}
+
+\newcommand{\personalGoalCode}[2]{
+    #10#2
+}
