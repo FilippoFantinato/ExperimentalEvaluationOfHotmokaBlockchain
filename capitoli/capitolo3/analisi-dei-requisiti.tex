@@ -1,0 +1,115 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../../tesi.tex
+
+\section{Analisi dei requisiti}
+Ho iniziato la fase di analisi dei requisiti dalla quarta settimana di lavoro, cioè quando, come pianificato, avrei dovuto iniziare ad implementare gli \textit{smart contract} per la gestione di NFT seguendo gli standard ERC su \textit{blockchain} Ethereum. Inizialmente è avvenuto un processo di \textit{brainstorming} con gli altri componenti del gruppo e i vari \textit{tutor} di ognuno di noi per definire al meglio le funzionalità della piattaforma. 
+In seguito ho isolato e ridotto le funzionalità ed i requisiti che avrebbe dovuto avere la libreria e lo \textit{smart contract} da implementare. I requisiti individuati per il progetto sono riportati di seguito attraverso delle tabelle di tracciamento. \\
+
+\noindent La classificazione dei requisiti ha seguito la seguente convenzione:
+\begin{center}
+  R(Tipo)(Importanza)[0-9]+
+\end{center}
+dove:
+\begin{itemize}
+  \item il tipo può essere assumere le seguenti categorie:
+  \begin{itemize}
+    \item \textbf{F}: rappresenta un requisito funzionale;
+    \item \textbf{Q}: rappresenta un requisito di qualità;
+    \item \textbf{V}: rappresenta un requisito di vincolo.
+  \end{itemize}
+
+  \item l'Importanza può assumere i seguenti valori:
+  \begin{itemize}
+    \item \textbf{O}: rappresenta un requisito obbligatorio;
+    \item \textbf{D}: rappresenta un requisito desiderabile;
+    \item \textbf{F}: rappresenta un requisito facoltativo.
+  \end{itemize}
+\end{itemize}
+\clearpage
+\subsection{Requisiti funzionali}
+\begin{longtabu}{|X[0.8,c]|X[3,c]|}
+  \hline 
+
+  \textbf{Codice requisito} & \textbf{Descrizione} \\ 
+
+  \hline
+
+  \rfun{O}{} \label{rfun:upload-new-nft} & L'applicativo Java può caricare un nuovo NFT. \\
+  
+  \hline
+
+  \rfun{O}{} \label{rfun:transfer-nft} & L'applicativo Java può trasferire la proprietà di un NFT dal proprietario ad un acquirente. \\ 
+  
+  \hline
+
+  \rfun{O}{} \label{rfun:get-nft-by-id} & L'applicativo Java può ottenere le informazioni di un NFT a partire dall'id con il quale è memorizzato all'interno dello \textit{smart contract}. \\ 
+  
+  \hline
+
+  \rfun{O}{} \label{rfun:get-nft-by-hash} & L'applicativo Java può ottenere le informazioni di un NFT a partire dal codice hash al quale è associato. \\ 
+  
+  \hline
+
+  \rfun{O}{} \label{rfun:get-transaction-history} & L'applicativo Java può ottenere la storia delle transazioni di un NFT. \\ 
+  
+  \hline
+
+  \caption{Requisiti funzionali}
+\end{longtabu}
+
+\subsection{Requisiti di qualità}
+\begin{longtabu}{|X[0.8,c]|X[3,c]|}
+
+  \hline 
+
+  \textbf{Codice requisito} & \textbf{Descrizione} \\ 
+
+  \hline
+
+  \rqua{O} \label{rqua:mit} & Tutto il \textit{software} prodotto deve essere rilasciato sotto licenza MIT \\
+  
+  \hline
+
+  \rqua{O} \label{rqua:statements-coverage} & Tutto il \textit{software} prodotto dovrà superare la soglia ottimale del 90.0\% di \textit{statements coverage} \\
+  
+  \hline
+
+  \rqua{O} \label{rqua:branches-coverage} & Tutto il \textit{software} prodotto dovrà superare la soglia ottimale del 90.0\% di \textit{branches coverage} \\
+  
+  \hline
+
+  \rqua{O} \label{rqua:functions-coverage} & Tutto il \textit{software} prodotto dovrà superare la soglia ottimale del 90.0\% di \textit{functions coverage} \\
+  
+  \hline
+
+  \rqua{O} \label{rqua:lines-coverage} & Tutto il \textit{software} prodotto dovrà superare la soglia ottimale del 90.0\% di \textit{lines coverage} \\
+  
+  \hline
+
+  \caption{Requisiti di qualità}
+\end{longtabu}
+
+\subsection{Requisiti di vincolo}
+\begin{longtabu}{|X[0.8,c]|X[3,c]|X[0.5,c]|}
+
+  \hline 
+
+  \textbf{Codice requisito} & \textbf{Descrizione} & \textbf{Fonte} \\
+
+  \hline
+
+  \rvin{O} \label{rvin:solidity} & Il linguaggio di programmazione per la scrittura dello \textit{smart contract} in Ethereum dovrà essere Solidity & Esterna \\ 
+  
+  \hline
+
+  \rvin{O} \label{rvin:java-version} & La libreria deve funzionare correttamente con JavaSE 15 in poi & Esterna \\
+  
+  \hline
+
+  \rvin{O} \label{rvin:ipfs} & Si dovrà utilizzare il protocollo IPFS per il salvataggio delle opere & Interna \\
+  
+  \hline
+
+  \caption{Requisiti di vincolo}
+\end{longtabu}

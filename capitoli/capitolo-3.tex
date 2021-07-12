@@ -7,208 +7,38 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Analisi dei rischi}
-Breve analisi dei rischi.
-
-\section{Studio preliminare}
-
-\subsection{Cos'è la blockchain}
-Spiegazione di cos'è la blockchain, introducendo la blockchain di BitCoin come termine di paragone per quelle interessate nel mio stage.
-
-\subsubsection{Il \textit{wallet}}
-Cos'è il wallet, come viene creato, gestito e il ruolo che ha durante le transazioni nella blockchain.
-
-\subsubsection{Il ruolo importante dei \textit{miners}}
-Chi sono i miners e il concetto di rewards in base al processo che svolgono, approfondendo i vari tipi di proof-of-X.
-
-\subsubsection{La crittografia in gioco}
-Spiegazione dei sistemi crittografici in gioco nella blockchain.
-
-\subsubsection{Composizione di un blocco in BitCoin}
-Com'è composto un blocco in BitCoin.
-
-\subsubsection{Come si svolge una transazione e la sua composizione}
-Processo intrapreso da una transazione in BitCoin e la sua composizione.
-
-\subsubsection{Le diramazioni in BitCoin}
-Essendo la blockchain un sistema distribuito, qui verrà spiegato come bitcoin gestisce le diramazioni che si generano casualmente.
-
-\subsubsection{I possibili attacchi alla blockchain}
-Breve introduzione alla sicurezza della blockchain e dei possibili attacchi a cui può essere sottoposta.
-
-\subsection{La blockchain Ethereum}
-Introduzione alla blockchain Ethereum spiegando le differenze con BitCoin.
-
-\subsubsection{Il concetto di smart contract}
-Cos'è uno smart contract, introduzione al concetto di gas limit e gas price e il linguaggio Solidity.
-
-\subsubsection{Tipi di transazioni}
-Approfondimento dei vari tipi di transazioni che si possono compiere in Ethereum.
-
-\subsubsection{Lo stato di Ethereum}
-Come viene gestito lo stato di Ethereum e spiegazione della struttura dati merkle patricia tries.
-
-\subsubsection{Composizione di un blocco}
-Com'è composto un blocco in Ethereum e differenze rispetto a BitCoin.
-
-% \paragraph{\textit{Merkle Patricia tries}}
-
-\subsection{La blockchain Hotmoka}
-Introduzione alla blockchain Hotmoka spiegando le differenze con Ethereum.
-
-\subsubsection{Cos'è Tendermint e il suo utilizzo in Hotmoka}
-Spiegazione di cos'è Tendermint e di come viene utilizzato in Hotmoka.
-
-\subsubsection{Lo stato di Hotmoka}
-Come viene gestito lo stato in Hotmoka.
-
-\subsubsection{Gli smart contract in Hotmoka}
-Come vengono gestiti gli smart contract in Hotmoka e il linguaggio Takamaka.
-
-\subsection{Lo standard ERC721}
-Cos'è lo standard ERC721 per la gestione di NFT.
-
-\subsection{Il protocollo IPFS (InterPlanetary File System)}
-Cos'è il protocollo IPFS e come si può utilizzare per la gestione di NFT.
+\input{capitoli/capitolo3/analisi-dei-rischi.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Strumenti e configurazione}
-
-\subsection{Strumenti di gestione del progetto}
-Descrizione degli strumenti utilizzati per la gestione del progetto.
-
-\subsection{Documentazione}
-Descrizione degli strumenti utilizzati per la scrittura della documentazione e dei vari diagrammi UML.
-
-\subsection{Ambiente di sviluppo}
-Descrizione dell'ambiente di sviluppo utilizzato.
-
-\subsection{Tecnologie usate}
-Descrizione dei vari linguaggi di programmazione, framework, librerie e strumenti di build automation.
-
-\subsection{Analisi statica del codice}
-Descrizione degli strumenti utilizzati per l'automazione dell'analisi statica del codice.
-
-\subsection{Way of working}
-Spiegazione di come viene organizzato e gestito il flusso di sviluppo.
+\input{capitoli/capitolo3/studio-preliminare.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Analisi dei requisiti}
-
-\subsection{Casi d'uso}
-
-\subsubsection{Attori primari}
-Elenco e spiegazione degli attori primari.
-
-\subsubsection{Attori secondari}
-Elenco e spiegazione degli attori secondari.
-
-\subsubsection{Diagrammi dei casi d'uso}
-Tutti i vari diagrammi dei casi d'uso.
-
-% \paragraph{UC1 - Caricamento di un opera in blockchain}
-
-% \paragraph{UC2 - Vendita di un opera}
-
-% \paragraph{UC3 - Ottenimento di un opera a partire dal suo id}
-
-% \paragraph{UC4 - Ottenimento di un opera a partire dal suo hash}
-
-\subsection{Requisiti funzionali}
-Tabella dei requisiti funzionali, con relativa spiegazione e fonte.
-
-\subsection{Requisiti di qualità}
-Tabella dei requisiti di qualità, con relativa spiegazione e fonte.
-
-\subsection{Requisiti di vincolo}
-Tabella dei requisiti di vincolo, con relativa spiegazione e fonte.
+\input{capitoli/capitolo3/analisi-dei-requisiti.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Smart contract per Ethereum}
-Spiegazione dello scopo e dei compiti dello smart contract per Ethereum.
-
-\subsection{Progettazione}
-Scelte progettuali, best practices impiegate e design pattern che sono stati utilizzati. 
-
-\subsubsection{Architettura}
-Presentazione dell'architettura con diagrammi di package, classe e sequenza.
-
-\subsection{Codifica}
-Spiegazione di quanto fatto durante il periodo di codifica, approfondendo parti di codice che ritengo importanti.
-
-\subsection{Verifica}
-Spiegazione delle librerie attraverso le quali sono stati implementati i test, numero di test scritti e code coverage raggiunto.
+\input{capitoli/capitolo3/smart-contract-ethereum.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Lo standard ERC721 per Hotmoka}
-Spiegazione del perché è risultata necessaria la scrittura dello standard ERC721 per Hotmoka.
-
-\subsection{Progettazione}
-Scelte progettuali, best practices impiegate e design pattern che sono stati utilizzati. 
-
-\subsubsection{Architettura}
-Presentazione dell'architettura con diagrammi di package, classe e sequenza.
-
-\subsection{Codifica}
-Spiegazione di quanto fatto durante il periodo di codifica, approfondendo parti di codice che ritengo importanti.
-
-\subsection{Verifica}
-Spiegazione delle librerie attraverso le quali sono stati implementati i test, numero di test scritti e code coverage raggiunto.
+\input{capitoli/capitolo3/erc721-hotmoka.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Smart contract per Hotmoka}
-Spiegazione dello scopo e dei compiti dello smart contract per Hotmoka.
-
-\subsection{Progettazione}
-Scelte progettuali, best practices impiegate e design pattern che sono stati utilizzati. 
-
-\subsubsection{Architettura}
-Presentazione dell'architettura con diagrammi di package, classe e sequenza.
-
-\subsection{Codifica}
-Spiegazione di quanto fatto durante il periodo di codifica, approfondendo parti di codice che ritengo importanti.
-
-\subsection{Verifica}
-Spiegazione delle librerie attraverso le quali sono stati implementati i test, numero di test scritti e code coverage raggiunto.
+\input{capitoli/capitolo3/smart-contract-hotmoka.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Libreria per l'integrazione con gli smart contract}
-Spiegazione dello scopo e dei compiti della libreria per l'integrazione con gli smart contract.
-
-\subsection{Progettazione}
-Scelte progettuali, best practices impiegate e design pattern che sono stati utilizzati. 
-
-\subsubsection{Architettura}
-Presentazione dell'architettura con diagrammi di package, classe e sequenza.
-
-\subsection{Codifica}
-Spiegazione di quanto fatto durante il periodo di codifica, approfondendo parti di codice che ritengo importanti.
-
-\subsection{Verifica}
-Spiegazione delle librerie attraverso le quali sono stati implementati i test, numero di test scritti e code coverage raggiunto.
+\input{capitoli/capitolo3/libreria-integrazione.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Validazione e collaudo}
-Riassunto dei requisiti soddisfatti e risultato del collaudo.
+\input{capitoli/capitolo3/validazione-collaudo.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Resoconto dei prodotti sviluppati}
-Quantità di prodotti software che sono stati sviluppati (in termini di linee di codice) e numero di documenti prodotti.
+\input{capitoli/capitolo3/integrazione-in-nftlab.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Integrazione del prodotto in NFTLab}
-Come quanto è stato implementato si integra all'interno del prodotto NFTLab.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Le conclusioni}
-Considerazioni conclusive sul confronto tra le due blockchain Hotmoka e Ethereum.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

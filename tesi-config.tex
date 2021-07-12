@@ -208,20 +208,20 @@
 
 %%%% Parameters
 % #1: Title
-\newenvironment{risk}[1]{
-    \refstepcounter{riskcounter}        % increment counter
-    \par \noindent                      % start new paragraph
-    \textbf{\arabic{riskcounter}. #1}   % display the title before the 
-                                        % content of the environment is displayed 
-}{
-    \par\medskip
-}
+% \newenvironment{risk}[1]{
+%     \refstepcounter{riskcounter}        % increment counter
+%     \par \noindent                      % start new paragraph
+%     \textbf{\arabic{riskcounter}. #1}   % display the title before the 
+%                                         % content of the environment is displayed 
+% }{
+%     \par\medskip
+% }
 
-\newcommand{\riskname}{Rischio}
+% \newcommand{\riskname}{Rischio}
 
-\newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
+% \newcommand{\riskdescription}[1]{\textbf{\\Descrizione:} #1.}
 
-\newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
+% \newcommand{\risksolution}[1]{\textbf{\\Soluzione:} #1.}
 
 \renewcommand{\arraystretch}{1.2}
 
@@ -248,12 +248,6 @@
 }
 
 \newcommand{\usecasename}{UC}
-
-\newcommand{\usecaseactors}[1]{\textbf{\\Attori Principali:} #1. \vspace{4pt}}
-\newcommand{\usecasepre}[1]{\textbf{\\Precondizioni:} #1. \vspace{4pt}}
-\newcommand{\usecasedesc}[1]{\textbf{\\Descrizione:} #1. \vspace{4pt}}
-\newcommand{\usecasepost}[1]{\textbf{\\Postcondizioni:} #1. \vspace{4pt}}
-\newcommand{\usecasealt}[1]{\textbf{\\Scenario Alternativo:} #1. \vspace{4pt}}
 
 %**************************************************************
 % Environment per ``namespace description''
@@ -295,4 +289,162 @@
 
 \newcommand{\personalGoalCode}[2]{
     #10#2
+}
+
+\newcounter{UCcounter}
+
+\setcounter{UCcounter}{0}
+
+\newcommand{\UC}[1]{
+	\stepcounter{UCcounter}
+	
+	\subsubsection{UC\theUCcounter{} - #1}
+	
+	\addtocounter{UCcounter}{-1}
+	\refstepcounter{UCcounter}
+}
+
+\newcommand{\actualUC}{UC\theUCcounter}
+
+\newcommand{\UCPrimaryActors}[1]{\textbf{Attori primari}: #1}
+\newcommand{\UCSecondaryActors}[1]{\textbf{Attori secondari}: #1}
+\newcommand{\UCPre}[1]{\textbf{Precondizione}: #1}
+\newcommand{\UCPost}[1]{\textbf{Postcondizione}: #1}
+\newcommand{\usecasedesc}[1]{\textbf{Descrizione}: #1}
+\newcommand{\UCMain}[1]{\textbf{Scenario principale}: #1}
+\newcommand{\UCAlt}[1]{\textbf{Scenario alternativo}: #1}
+\newcommand{\UCExt}[1]{\textbf{Estensioni}: #1}
+
+\newcommand{\lett}{\textbf{\alph*}.}
+
+\tabulinesep=1.2mm
+
+% Requirements Counters
+
+% Fun
+\newcounter{rfCounter}
+\newcounter{rfoCounter}
+\newcounter{rfdCounter}
+\newcounter{rfzCounter}
+
+\setcounter{rfCounter}{0}
+\setcounter{rfoCounter}{0}
+\setcounter{rfdCounter}{0}
+\setcounter{rfzCounter}{0}
+
+\newcommand{\rfun}[2]{
+	\refstepcounter{rfCounter}
+	\rfuncode{#1}{\therfCounter}{#2}
+
+	\ifthenelse{\equal{#1}{O}}{\stepcounter{rfoCounter}}
+	{\ifthenelse{\equal{#1}{D}}{\stepcounter{rfdCounter}}
+	{\ifthenelse{\equal{#1}{Z}}{\stepcounter{rfzCounter}}}}
+}
+
+\newcommand{\rfuncode}[3]{
+	\textbf{RF#1#2}\ifthenelse{\equal{#3}{}}{}{\_#3}
+}
+
+\newcommand{\actualrfun}{\therfCounter}
+\newcommand{\actualrfunO}{\therfoCounter}
+\newcommand{\actualrfunD}{\therfdCounter}
+\newcommand{\actualrfunZ}{\therfzCounter}
+
+\newcounter{tracfunCounter}
+
+\setcounter{tracfunCounter}{0}
+
+\newcommand{\tracfun}[2]{
+	\stepcounter{tracfunCounter}
+	\rfuncode{#1}{\thetracfunCounter}{#2}
+}
+
+% Qua
+\newcounter{rqCounter}
+\newcounter{rqoCounter}
+\newcounter{rqdCounter}
+\newcounter{rqzCounter}
+
+\setcounter{rqCounter}{0}
+\setcounter{rqoCounter}{0}
+\setcounter{rqdCounter}{0}
+\setcounter{rqzCounter}{0}
+
+\newcommand{\rqua}[1]{
+	\refstepcounter{rqCounter}
+	\rquacode{#1}{\therqCounter}
+
+	\ifthenelse{\equal{#1}{O}}{\stepcounter{rqoCounter}}
+	{\ifthenelse{\equal{#1}{D}}{\stepcounter{rqdCounter}}
+	{\ifthenelse{\equal{#1}{Z}}{\stepcounter{rqzCounter}}}}
+}
+
+\newcommand{\rquacode}[2]{
+	\textbf{RQ#1#2}
+}
+
+\newcommand{\actualrqua}{\therqCounter}
+\newcommand{\actualrquaO}{\therqoCounter}
+\newcommand{\actualrquaD}{\therqdCounter}
+\newcommand{\actualrquaZ}{\therqzCounter}
+
+\newcounter{tracquaCounter}
+
+\setcounter{tracquaCounter}{0}
+
+\newcommand{\tracqua}[1]{
+	\stepcounter{tracquaCounter}
+	\rquacode{#1}{\thetracquaCounter}
+}
+
+% Vin
+\newcounter{rvCounter}
+\newcounter{rvoCounter}
+\newcounter{rvdCounter}
+\newcounter{rvzCounter}
+
+\setcounter{rvCounter}{0}
+\setcounter{rvoCounter}{0}
+\setcounter{rvdCounter}{0}
+\setcounter{rvzCounter}{0}
+
+\newcommand{\rvin}[1]{
+	\refstepcounter{rvCounter}
+	\rvincode{#1}{\thervCounter}
+
+	\ifthenelse{\equal{#1}{O}}{\stepcounter{rvoCounter}}
+	{\ifthenelse{\equal{#1}{D}}{\stepcounter{rvdCounter}}
+	{\ifthenelse{\equal{#1}{Z}}{\stepcounter{rvzCounter}}}}
+}
+
+\newcommand{\rvincode}[2]{
+	\textbf{RV#1#2}
+}
+
+\newcommand{\actualrvin}{\thervCounter}
+\newcommand{\actualrvinO}{\thervoCounter}
+\newcommand{\actualrvinD}{\thervdCounter}
+\newcommand{\actualrvinZ}{\thervzCounter}
+
+\newcounter{tracvinCounter}
+
+\setcounter{tracvinCounter}{0}
+
+\newcommand{\tracvin}[1]{
+	\stepcounter{tracvinCounter}
+	\rvincode{#1}{\thetracvinCounter}
+}
+
+% Risk
+\newcounter{riskCounter}
+
+\setcounter{riskCounter}{0}
+
+\newcommand{\risk}[1]{
+	\refstepcounter{riskCounter}
+	\riskcode{#1}{\theriskCounter}
+}
+
+\newcommand{\riskcode}[2]{
+	\textbf{RI#1#2}
 }
