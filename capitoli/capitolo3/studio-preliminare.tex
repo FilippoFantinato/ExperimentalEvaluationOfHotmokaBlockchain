@@ -24,12 +24,12 @@ Per comprendere al meglio come funzionano tutti questi meccanismi, introduciamo 
 
 \textbf{BitCoin} è nata alla fine del 2009 quando Satoshi Nakamoto, una persona o un gruppo di persone la cui identità è tutt'ora ignota, pubblica un \textit{white paper} spiegando la sua idea di moneta virtuale crittografica \textit{peer-to-peer} senza intermediari. Di seguito verranno approfonditi i concetti principali di questa tecnologia.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.2\textwidth]{capitolo3/bitcoin-logo.png}
-  \caption{Logo di BitCoin}
-  \textbf{Fonte}: \href{https://bitcoin.org/it/}{https://bitcoin.org}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.2\textwidth]{capitolo3/bitcoin-logo.png}
+%   \caption{Logo di BitCoin}
+%   \textbf{Fonte}: \href{https://bitcoin.org/it/}{https://bitcoin.org}
+% \end{figure}
 
 \paragraph{Il wallet}
 Il concetto di \textit{wallet}, o portafoglio in italiano, è importantissimo e permette a chiunque di interagire con la \textit{blockchain}. Consiste in un applicativo \textit{software} che consente la compravendita della criptovaluta BitCoin.
@@ -44,7 +44,7 @@ Dalla chiave privata attraverso l'applicazione della funzione di ECDSA-512, vien
   \centering
   \includegraphics[width=\textwidth]{capitolo3/studio-preliminare/bitcoin-keys.png}
   \caption{Flusso di generazione del \textit{wallet} in BitCoin}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}} 
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}
 \end{figure}
 
 Data l'attenzione che bisogna dedicare alla sicurezza della chiave privata sono nate molte tecniche per facilitarne la memorizzazione. Una di queste tecnologie così importanti sono i \textbf{Deterministic Wallet}, grazie ai quali non bisognerà ricordarsi la chiave privata associata ad ogni \textit{wallet} che una persona ha, ma ci sarà una \textit{Master Private Key} da cui si potranno derivare in maniera deterministica tutte le altre chiavi private, dalle quale si otterranno gli indirizzi dei \textit{wallet}. 
@@ -80,13 +80,6 @@ Quando avrà ottenuto il blocco valido, lo condividerà nella rete per informare
 
 Un blocco della \textit{blockchain} BitCoin è molto semplice ma complesso allo stesso tempo. Le parti principali che lo compongono sono:
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.4\textwidth]{capitolo3/studio-preliminare/bitcoin-block-structure.png}
-  \caption{Composizione di un blocco in BitCoin}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}}
-\end{figure}
-
 \begin{itemize}
   \item \textbf{\textit{Header} del blocco}:
   \begin{itemize}
@@ -100,14 +93,21 @@ Un blocco della \textit{blockchain} BitCoin è molto semplice ma complesso allo 
   \item \textbf{Transazioni}: dove sono presenti tutte le transazioni validate nel blocco.
 \end{itemize}
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{capitolo3/studio-preliminare/bitcoin-block-structure.png}
+  \caption{Composizione di un blocco in BitCoin}
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}
+\end{figure}
+
 Un \textbf{\textit{Merkle Tree}} è una struttura dati che la tecnologia \textit{blockchain} utilizza per la verifica della validità di una transazione con modalità \textit{Zero knowledge proof}.
 
-\clearpage
+% \clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{capitolo3/studio-preliminare/bitcoin-merkle-tree.png}
   \caption{Esempio di Merkle Tree}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}}
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}
 \end{figure}
 
 Consiste in un albero binario sempre bilanciato nel quale alle foglie sono presenti tutte le transazioni interne al blocco. Ogni nodo non foglia avrà come valore il hash del hash dei suoi figli. In questo modo un qualsiasi \textit{peer} può verificare che una transazione sia valida e presente all'interno di un determinato blocco chiedendo semplicemente ad un \textit{full node} (nodo con tutta la \textit{blockchain} memorizzata) di verificarla. Il \textit{full node} gli invierà le transazioni che permetteranno di risalire al \textit{Merkle root} dell'albero a partire dalla transazione che vuole verificare, semplicemente eseguendo l'operazione di hash tra i blocchi ricevuti. Come funzione di \textit{hashing} viene utilizzata SHA256 anche nelle \textit{blockchain} che tratterremo di seguito.
@@ -117,7 +117,7 @@ Consiste in un albero binario sempre bilanciato nel quale alle foglie sono prese
   \centering
   \includegraphics[width=0.9\textwidth]{capitolo3/studio-preliminare/bitcoin-merkle-tree-verify.png}
   \caption{Esempio di verifica di una transazione in un Merkle Tree}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}}
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}{https://github.com/spoto/blockchain-course/blob/master/Bitcoin}
   \label{fig:merkle-tree-verify}
 \end{figure}
 
@@ -142,12 +142,12 @@ La \textit{blockchain} Ethereum è nata nel 2014 da un'idea di Vitalik Buterin e
 
 Sotto tanti aspetti non si differenzia di molto da BitCoin per quanto riguarda il funzionamento del consenso, la composizione dei blocchi e la creazione del \textit{wallet}, tranne per qualche funzione crittografica utilizzata. La grande differenza rispetto a BitCoin è che viene introdotto il concetto di stato di un blocco. Infatti se prima ogni transazione in BitCoin corrispondeva alla generazione di una \textit{UTX}, ora viene generalizzato questo concetto corrispondendo ad un cambiamento dello stato di un blocco.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.1\textwidth]{capitolo3/ethereum-logo.png}
-  \caption{Logo di Ethereum}
-  \textbf{Fonte}: \href{https://ethereum.org/it}{https://ethereum.org}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.1\textwidth]{capitolo3/ethereum-logo.png}
+%   \caption{Logo di Ethereum}
+%   \textbf{Fonte}: \href{https://ethereum.org/it}{https://ethereum.org}
+% \end{figure}
 
 \paragraph{Il concetto di smart contract} \label{par:ethereum.smart-contract}
 Uno \textit{smart contract} è un programma installabile all'interno di un blocco di una \textit{blockchain} con il quale è permesso scambiare valuta o modificare lo stato di entità presenti, in modo trasparente senza conflitti evitando servizi di terze parti. \\
@@ -169,17 +169,16 @@ Uno \textit{smart contract} è un programma installabile all'interno di un blocc
 \end{itemize}
 
 Per rendere sempre terminabile uno \textit{smart contract}, Ethereum ha introdotto il concetto di \textit{Gas limit} e \textit{Gas price}.
-
 Il \textbf{\textit{Gas limit}} è la massima quantità di \textit{Gas} che si è disposti a spendere. Il \textbf{\textit{Gas price}}, invece, è il prezzo al quale si è disposti a spendere il \textit{Gas} e viene calcolato in Gwei (la più piccola unità della moneta Ether). Insieme compongono quanto si è disposti a spendere per l'esecuzione di un'operazione, ovvero \textit{Gas limit} * \textit{Gas price}. Ogni istruzione che viene eseguita in uno \textit{smart contract} ha un costo in Gwei più o meno alto in base a quello che fa. Quando le operazioni eseguite in uno \textit{smart contract} superano, in prezzo, quanto si è disposti a spendere allora lo \textit{smart contract} terminerà l'esecuzione. Questo ha reso impossibile, ad esempio, la realizzazione di cicli infiniti. \\
 
 Il linguaggio più utilizzato e ufficiale per la scrittura di \textit{smart contract} è \textbf{Solidity}. Essendo finalizzato solo alla scrittura di \textit{smart contract} è un linguaggio che presenta molti costrutti che ne facilitano lo sviluppo.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.2\textwidth]{capitolo3/solidity-logo.png}
-  \caption{Logo di Solidity}
-  \textbf{Fonte}: \href{https://docs.soliditylang.org/en/v0.8.6}{https://docs.soliditylang.org}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.2\textwidth]{capitolo3/solidity-logo.png}
+%   \caption{Logo di Solidity}
+%   \textbf{Fonte}: \href{https://docs.soliditylang.org/en/v0.8.6}{https://docs.soliditylang.org}
+% \end{figure}
 
 \noindent Alcuni costrutti di Solidity degni di nota sono:
 \begin{itemize}
@@ -201,7 +200,7 @@ Grazie all'introduzione degli \textit{smart contract} vengono ampliate le tipolo
     \centering
     \includegraphics[width=\textwidth]{capitolo3/studio-preliminare/ethereum-transaction-send-money.png}
     \caption{Transazione di scambio di moneta in Ethereum}
-    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}} 
+    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Ethereum}{https://github.com/spoto/blockchain-course/tree/master/Ethereum} 
   \end{figure}
 
   \item \textbf{Creazione di un contratto}: consiste in una transazione dove viene eseguita l'installazione di un contratto all'interno di un blocco. In questo caso il campo \textit{to} verrà impostato con valore 0. In seguito all'installazione verrà ritornato l'indirizzo del blocco dove è presente lo \textit{smart contract};
@@ -210,7 +209,7 @@ Grazie all'introduzione degli \textit{smart contract} vengono ampliate le tipolo
     \centering
     \includegraphics[width=\textwidth]{capitolo3/studio-preliminare/ethereum-transaction-create-contract.png}
     \caption{Transazione di creazione di un nuovo contratto in Ethereum}
-    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}} 
+    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Ethereum}{https://github.com/spoto/blockchain-course/tree/master/Ethereum} 
   \end{figure}
   
   \item \textbf{Invocazione di un contratto}: consiste in una transazione dove viene invocato un metodo presente in uno \textit{smart contract} precedentemente installato. In questo caso il campo \textit{to} corrisponderà all'indirizzo dello \textit{smart contract} interessato e il campo \textit{data} il metodo da invocare.
@@ -219,7 +218,7 @@ Grazie all'introduzione degli \textit{smart contract} vengono ampliate le tipolo
     \centering
     \includegraphics[width=\textwidth]{capitolo3/studio-preliminare/ethereum-transaction-invoke-contract.png}
     \caption{Transazione di invocazione di un contratto in Ethereum}
-    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}} 
+    \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Ethereum}{https://github.com/spoto/blockchain-course/tree/master/Ethereum} 
   \end{figure}
 \end{itemize}
 
@@ -233,12 +232,12 @@ Il \textbf{\textit{PATRICIA Trie}} è un albero che permette di conservare una s
 \subsection{La blockchain Hotmoka}
 Hotmoka è un \textit{framework} per la programmazione di una rete \textit{peer-to-peer}, attraverso un sottoinsieme di Java chiamato Takamaka. I nodi possono appartenere a una \textit{blockchain} o possono essere dispositivi IOT (\textit{Internet Of Things}). È sviluppata e mantenuta dall'Università degli Studi di Verona.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.4\textwidth]{capitolo3/hotmoka-logo.png}
-  \caption{Logo di Hotmoka}
-  \textbf{Fonte}: \href{https://hotmoka.io}{https://hotmoka.io}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.4\textwidth]{capitolo3/hotmoka-logo.png}
+%   \caption{Logo di Hotmoka}
+%   \textbf{Fonte}: \href{https://hotmoka.io}{https://hotmoka.io}
+% \end{figure}
 
 \paragraph{Cos'è Tendermint}
 Tendermint è un \textit{framework} per la scrittura di \textit{blockchain}. Infatti, come si può vedere in figura \ref{fig:tendermint-structure}, il \textit{core} di Tendermint ha solo il compito di gestire i blocchi della \textit{blockchain} e comunicare con gli altri \textit{peer} di essa. Lo stato della \textit{blockchain} consisterà solo nel hash della transazione. Ciò che viene demandato al programmatore è lo sviluppo del \textit{application layer}, ovvero la definizione di tutto quello che viene memorizzato nella \textit{blockchain}. Per comunicare con il Tendermint \textit{core} e rendere tutto il più possibile indipendentemente dall'implementazione, l'\textit{application layer} definisce solamente una serie di funzioni che verranno richiamate durante il salvataggio di un blocco da parte del \textit{core} attraverso \textit{sockets}. \\
@@ -257,7 +256,7 @@ Tendermint è un \textit{framework} per la scrittura di \textit{blockchain}. Inf
   \centering
   \includegraphics[width=0.8\textwidth]{capitolo3/studio-preliminare/tendermint-structure.png}
   \caption{Struttura di Tendermint}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}} 
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Tendermint}{https://github.com/spoto/blockchain-course/tree/master/Tendermint} 
   \label{fig:tendermint-structure}
 \end{figure}
 
@@ -279,7 +278,7 @@ Un'altra caratteristica molto importante per quanto riguarda Tendermint è l'uti
   \end{enumerate}
 \end{enumerate}
 
-% \clearpage
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{capitolo3/studio-preliminare/tendermint-pos.png}
@@ -296,24 +295,17 @@ Ogni \textit{smart contract} verrà pacchettizzato come \textbf{JAR} e, dopo ave
 Il pacchetto JAR a questo punto sarà installato all'interno di essa e potrà essere richiamabile da altri \textit{smart contract}.
 In seguito potranno essere istanziati oggetti di quello \textit{smart contract} sul quale invocare tutte le funzioni disponibili.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.4\textwidth]{capitolo3/takamaka-logo.png}
-  \caption{Logo di Takamaka}
-  \textbf{Fonte}: \href{https://www.takamaka.io}{https://www.takamaka.io}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.4\textwidth]{capitolo3/takamaka-logo.png}
+%   \caption{Logo di Takamaka}
+%   \textbf{Fonte}: \href{https://www.takamaka.io}{https://www.takamaka.io}
+% \end{figure}
 
 \paragraph{Lo stato di Hotmoka}
 Essendo un'implementazione di Tendermint, Hotmoka presenta sia lo stato della \textit{blockchain}, gestito da Tendermint \textit{core}, e sia lo stato del \textit{application layer}. Quest'ultimo deve memorizzare due categorie di dato: i JAR che vengono inviati e gli oggetti istanziati. \\
 
 Dato che il salvataggio dei JAR e degli oggetti deve essere persistente, è stata data una struttura ben definita allo stato, il quale è stato diviso in: \textit{reponses} e \textit{histories}.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.8\textwidth]{capitolo3/studio-preliminare/hotmoka-state.png}
-  \caption{Lo stato di un blocco nella \textit{blockchain} Hotmoka}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course}{Corso dell'Università degli Studi di Verona sulla tecnologia \textit{Blockchain}}
-\end{figure}
 
 Lo stato \textbf{\textit{responses}} ha il compito di memorizzare la risposta di ogni transazione che è stata effettuata. Associa il hash della transazione (\textit{request}) effettuata ad una determinata risposta. 
 La risposta può essere di due tipi:
@@ -321,6 +313,13 @@ La risposta può essere di due tipi:
   \item \textbf{JAR}: se la richiesta a cui è associata corrisponde alla memorizzazione di un JAR. In questo caso dentro la risposta verrà memorizzato il JAR che è stato inserito in un blocco;
   \item \textbf{Field updates}: se la richiesta a cui è associata corrisponde alla creazione di un oggetto oppure all'invocazione di metodi che modificano lo stato. In questo caso la risposta conterrà o l'oggetto istanziato, oppure il valore dei campi che sono stati aggiornati dall'invocazione di un metodo.
 \end{itemize}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{capitolo3/studio-preliminare/hotmoka-state.png}
+  \caption{Lo stato di un blocco nella \textit{blockchain} Hotmoka}
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Hotmoka}{https://github.com/spoto/blockchain-course/tree/master/Hotmoka}
+\end{figure}
 
 L'implementazione tipica di questo stato viene data attraverso l'utilizzo di un \textbf{\textit{Merkle Tree}}, la quale \textit{Merkle root} viene memorizzata dentro il blocco che deve essere salvato in \textit{blockchain}. \\
 
@@ -332,12 +331,12 @@ Lo stato \textbf{\textit{histories}}, invece, viene utilizzato per associare ad 
 Per ERC (\textit{Ethereum Request Comments}) si intendono le richieste di standardizzazione che avvengono nella \textit{blockchain} Ethereum per la scrittura di \textit{smart contract}. Sono associate ad un numero progressivo e quella che gestisce gli \textbf{NFT} è stata la numero 721. \\
 
 % \clearpage
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.3\textwidth]{capitolo3/open-zeppelin-logo.png}
-  \caption{Logo dell'azienda OpenZeppelin}
-  \textbf{Fonte}: \href{https://openzeppelin.com/}{https://openzeppelin.com/}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.3\textwidth]{capitolo3/open-zeppelin-logo.png}
+%   \caption{Logo dell'azienda OpenZeppelin}
+%   \textbf{Fonte}: \href{https://openzeppelin.com/}{https://openzeppelin.com/}
+% \end{figure}
 
 Per lo sviluppo dello \textit{smart contract} in \textbf{Solidity} è stata utilizzata l'implementazione dello standard ERC721 più utilizzata e conosciuta nel mondo Ethereum, ovvero quella data dall'azienda \textbf{OpenZeppelin}. Oltre alla sua grande fama e al fatto che è utilizzata dalla maggior parte della \textit{community}, è stata scelta perché non ci sono vulnerabilità attualmente conosciute. \\
 
@@ -346,18 +345,16 @@ Per quanto riguarda invece \textbf{Hotmoka}, essendo una \textit{blockchain} gio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Il protocollo IPFS (InterPlanetary File System)}
-Il protocollo IPFS (\textit{InterPlanetary File System}) è un'alternativa al protocollo internet HTTP. IPFS si pone l'obiettivo di creare una rete informatica di portata globale che consenta l'archiviazione delle informazioni in maniera completamente decentralizzata e con elevata scalabilità.
+Il protocollo IPFS (\textit{InterPlanetary File System}) è un'alternativa al protocollo internet HTTP. IPFS si pone l'obiettivo di creare una rete informatica di portata globale che consenta l'archiviazione delle informazioni in maniera completamente decentralizzata e con elevata scalabilità. \\
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.2\textwidth]{capitolo3/ipfs-logo.png}
-  \caption{Logo di IPFS}
-  \textbf{Fonte}: \href{https://ipfs.io}{https://ipfs.io}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.2\textwidth]{capitolo3/ipfs-logo.png}
+%   \caption{Logo di IPFS}
+%   \textbf{Fonte}: \href{https://ipfs.io}{https://ipfs.io}
+% \end{figure}
 
-È attualmente la risposta tecnologica ai limiti di HTTP che ad oggi sembra più concreta. Il protocollo infatti promette di sostituire HTTP, adottando come base tecnica e concettuale un modello di decentralizzazione dei contenuti.
-
-Il web di oggi è inefficiente e costoso, dove HTTP permette di scaricare \textit{file} da un computer alla volta invece di ottenere parti degli stessi da più computer contemporaneamente. In più fa riferimento ai \textit{file} attraverso la \textbf{\textit{location addressing}}, cioè attraverso il nome con il quale vengono riconosciuti dal \textit{File System}. Questo può comportare vari problemi nell'ambito degli NFT, infatti se un \textit{hacker} o una qualsiasi altra persona cambiasse un'opera a cui è associato un NFT con un'altra, ma mantenendo lo stesso nome del \textit{file}, il sistema non si accorgerebbe di nulla e si perderebbe così l'opera vera e propria, causando un'incongruenza nei dati. 
+È attualmente la risposta tecnologica ai limiti di HTTP che ad oggi sembra più concreta. Il protocollo infatti promette di sostituire HTTP, adottando come base tecnica e concettuale un modello di decentralizzazione dei contenuti. Il web di oggi è inefficiente e costoso, dove HTTP permette di scaricare \textit{file} da un computer alla volta invece di ottenere parti degli stessi da più computer contemporaneamente. In più fa riferimento ai \textit{file} attraverso la \textbf{\textit{location addressing}}, cioè attraverso il nome con il quale vengono riconosciuti dal \textit{File System}. Questo può comportare vari problemi nell'ambito degli NFT, infatti se un \textit{hacker} o una qualsiasi altra persona cambiasse un'opera a cui è associato un NFT con un'altra, ma mantenendo lo stesso nome del \textit{file}, il sistema non si accorgerebbe di nulla e si perderebbe così l'opera vera e propria, causando un'incongruenza nei dati. 
 Uno dei punti di forza di IPFS è proprio il non utilizzare la \textit{location addressing}, ma bensì il \textbf{\textit{content addressing}}. Tramite questo metodo di indirizzamento, ogni file viene associato ad un codice univoco, chiamato \textbf{CID (\textit{Content ID})}, che si basa sul contenuto del \textit{file}. In questo modo ogni \textit{file} potrà essere riferito attraverso il proprio CID e non potrà essere sostituito in alcun modo da altri, visto che avranno un CID diverso.
 Oltre a questo motivo, è stato scelto di utilizzare IPFS anche per la sua natura decentralizzata che assicura sempre la reperibilità delle opere richieste. \\
 
@@ -389,6 +386,7 @@ Essendo IPFS un protocollo a se stante rispetto a HTTP, per poterlo utilizzare i
 
 La prima proposta è stata scartata subito perché avrebbe solamente complicato ancora di più il sistema che dovevo tenere in piedi per lo sviluppo. Per questo è stata intrapresa la seconda strada e, in seguito ad una ricerca di quale fosse il servizio più conveniente, è stato scelto \textbf{Pinata} visto che è il più famoso in circolazione e  offre delle comode \gls{api} da richiamare per caricare e prelevare \textit{file} dalla rete IPFS.
 
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{capitolo3/ipfs-pinata-dashboard.png}

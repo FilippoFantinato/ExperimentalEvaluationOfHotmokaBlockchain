@@ -33,13 +33,13 @@ Durante la fase di codifica sono stato molto attento a seguire le \textit{best p
   \item utilizzo di variabili di tipo \textit{memory} per tutti gli oggetti che non devono essere memorizzati.
 \end{itemize}
 
-\clearpage
+% \clearpage
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.3\textwidth]{capitolo3/smart-contract-ethereum/smart-contract-ethereum-structure.png}
-  \caption{Struttura del progetto del contratto per Solidity}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.3\textwidth]{capitolo3/smart-contract-ethereum/smart-contract-ethereum-structure.png}
+%   \caption{Struttura del progetto del contratto per Solidity}
+% \end{figure}
 
 Meritevole di attenzione è sicuramente l'implementazione del \textit{design pattern \textbf{Access Restriction}}. Come si può vedere nel costruttore viene assegnata una variabile, la quale specifica che chi ha eseguito il \textit{deploy} del contratto è il proprietario. In seguito viene creato un modificatore che permette di limitare l'esecuzione di determinate funzioni solo al proprietario.
 
@@ -56,6 +56,7 @@ In parallelo con l'attività di codifica, ho verificato lo sviluppo del contratt
 
 Per quanto riguarda i tipi di \textit{test} eseguiti, gli unici che sono stati sviluppati sono quelli di unità, perché non potevano essere sviluppati altri tipi di \textit{test} per la natura semplice delle funzioni del contratto.
 
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{capitolo3/smart-contract-number-test.png}

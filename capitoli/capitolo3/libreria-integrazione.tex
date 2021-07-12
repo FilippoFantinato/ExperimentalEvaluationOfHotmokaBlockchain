@@ -25,6 +25,7 @@ A partire da quanto richiesto dall'analisi dei requisiti, ho basato la soluzione
   \item \textbf{services.smartcontract}: nel seguente \textit{package} si possono trovare tutte le classi che aiutano la gestione dei dati da comunicare con lo \textit{smart contract}.
 \end{itemize}
 
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{capitolo3/library/library-packages.png}
@@ -67,12 +68,13 @@ A partire dalla progettazione architetturale, l'iter di sviluppo si è svolto ne
   \item implementazione del \textit{package} \textbf{services.ipfs} e \textbf{services.ipfs.pinataresponses}, dove ho sviluppato il servizio per comunicare con la rete IPFS attraverso Pinata;
   \item implementazione del \textit{package} \textbf{contracts}, dove ho provveduto a generare la classe per comunicare con il contratto caricato su \textit{blockchain} Ethereum e a scrivere il sistema per la comunicazione con la \textit{blockchain} Hotmoka.
 \end{enumerate}
+
 % \clearpage
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.35\textwidth]{capitolo3/library/library-structure.png}
-  \caption{Struttura del progetto della libreria per l'integrazione con i contratti}
-\end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.35\textwidth]{capitolo3/library/library-structure.png}
+%   \caption{Struttura del progetto della libreria per l'integrazione con i contratti}
+% \end{figure}
 
 \subsection{Verifica}
 In parallelo con l'attività di codifica, ho verificato lo sviluppo delle libreria sfruttando il \textit{framework} \textbf{JUnit5} e la libreria \textbf{Mockito}. Questi ultimi si integrano perfettamente con lo strumento Maven. \\
