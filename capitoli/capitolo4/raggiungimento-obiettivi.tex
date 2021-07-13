@@ -7,7 +7,7 @@ A conclusione dello stage di 320 ore ho provveduto insieme al mio \textit{tutor}
 
 \paragraph{Obiettivi dello stage}
 Per quanto riguarda gli obiettivi dello stage, posso affermare che sono stati coperti totalmente e gli \textit{stakeholders} sono rimasti molto soddisfatti di quanto è stato sviluppato. 
-Sono riuscito a raggiungere il soddisfacimento totale degli obiettivi anche grazie all'analisi preventiva dei rischi che ho svolto, che mi ha permesso di identificare le parti critiche del progetto alle quali prestare molta più attenzione. 
+Sono riuscito a raggiungere il soddisfacimento totale degli obiettivi anche grazie all'analisi preventiva dei rischi svolta, la quale mi ha permesso di identificare le parti critiche del progetto alle quali prestare molta più attenzione. 
 Come si può vedere dal resoconto dell'analisi dei rischi (tabella \ref{tab:resoconto-analisi-dei-rischi}) non si è verificato alcun rischio preventivato. 
 Ciò che mi ha rallentato e non avevo previsto, è stata la non presenza di uno standard per la gestione di NFT in Hotmoka che è stata data per scontata. Comunque non è stato un ostacolo insormontabile e, anzi, mi ha permesso di approfondire ancora meglio il linguaggio di programmazione per gli \textit{smart contract} Takamaka.
 
@@ -15,31 +15,31 @@ Ciò che mi ha rallentato e non avevo previsto, è stata la non presenza di uno 
 
   \hline
 
-  \textbf{Rischio} & \textbf{Verificato} & \textbf{Resoconto} \\
+  \textbf{Rischio} & \textbf{Avvenuto} & \textbf{Resoconto} \\
   
   \hline
 
-  RIS1 & \xmark & Non ho avuto alcuna difficoltà a comprendere gli argomenti trattati durante il periodo di studio grazie al materiale completo e ampio che il \textit{tutor} aziendale mi ha fornito \\
+  \riskcode{S}{\ref{risk:non-comprensione-argomento}} & \xmark & Non ho avuto alcuna difficoltà a comprendere gli argomenti trattati durante il periodo di studio grazie al materiale completo e ampio che il \textit{tutor} aziendale mi ha fornito \\
 
   \hline
 
-  RIR2 & \xmark & Ho compreso correttamente tutti requisiti da implementare anche grazie alla metodologia Scrum che mi ha permesso di avere un costante riscontro di quanto stavo facendo \\
+  \riskcode{R}{\ref{risk:non-comprensione-requisito}} & \xmark & Ho compreso correttamente tutti requisiti da implementare anche grazie alla metodologia Scrum che mi ha permesso di avere un costante riscontro di quanto stavo facendo \\
 
   \hline
 
-  RIT3 & \xmark & Solidity è risultato un linguaggio molto semplice da imparare grazie alla sua somiglianza sintattica ad altri linguaggi come Java e C++ \\
+  \riskcode{T}{\ref{risk:solidity}} & \xmark & Solidity è risultato un linguaggio di programmazione molto semplice da imparare grazie alla sua somiglianza sintattica ad altri linguaggi come Java e C++ \\
 
   \hline
 
-  RIT4 & \xmark & Non ho avuto difficoltà con le nuove versioni di Java e, anzi, ho fatto un grande uso delle funzionalità offerte \\
+  \riskcode{T}{\ref{risk:java}} & \xmark & Non ho avuto difficoltà con le nuove versioni di Java e, anzi, ho fatto un grande uso delle funzionalità offerte \\
 
   \hline
 
-  RIT5 & \xmark & Grazie a strumenti come HardHat e Ganache non ho avuto alcun problema nell'utilizzare un ambiente di \textit{test} per la \textit{blockchain} Ethereum \\
+  \riskcode{T}{\ref{risk:ethereum-test}} & \xmark & Grazie a strumenti come HardHat e Ganache non ho avuto alcun problema nell'utilizzare un ambiente di \textit{test} per la \textit{blockchain} Ethereum \\
 
   \hline
 
-  RIT6 & \xmark & Grazie alla documentazione molto ampia e ben strutturata di Hotmoka non ho avuto alcun problema nell'utilizzare un ambiente di \textit{test} \\
+  \riskcode{T}{\ref{risk:hotmoka-test}} & \xmark & Grazie alla documentazione molto ampia e ben strutturata di Hotmoka non ho avuto alcun problema nell'utilizzare un ambiente di \textit{test} \\
 
   \hline
 
@@ -47,7 +47,7 @@ Ciò che mi ha rallentato e non avevo previsto, è stata la non presenza di uno 
 \end{longtabu}
 \label{tab:resoconto-analisi-dei-rischi}
 
-Di seguito è riportata una tabella riassuntiva degli obiettivi dello stage:
+Di seguito è riportata una tabella riassuntiva del soddisfacimento degli obiettivi dello stage:
 
 \begin{longtabu}{|X|c|}
 
@@ -57,7 +57,7 @@ Di seguito è riportata una tabella riassuntiva degli obiettivi dello stage:
 
   \hline
 
-  Documento tecnico & \cmark \\
+  Produzione del documento tecnico & \cmark \\
 
   \hline
 
@@ -76,45 +76,8 @@ Di seguito è riportata una tabella riassuntiva degli obiettivi dello stage:
   \caption{Resoconto del soddisfacimento degli obiettivi dello stage}
 \end{longtabu}
 
-In più, come già illustrato nel \hyperref[cap:nftlab]{capitolo 3}, ho ottenuto ottimi risultati per quanto riguarda il \textit{code coverage} raggiunto per ogni prodotto sviluppato.
-
-\begin{longtabu}{|X[5,l]|X[1,c]|X[1,c]|}
-  
-  \hline
-
-  \multicolumn{1}{|c|}{\textbf{Prodotto}} & \textbf{Numero di test} & \textbf{Code coverage} \\
-
-  \hline
-  \textbf{\textit{Smart contract} per Ethereum} & \textbf{19} & \textbf{100\%} \\
-  % \hline
-
-  Test di unità & 19 & \\
-  Test di integrazione & 0 & \\
-  Test di sistema & 0 & \\
-
-  \hline
-  \textbf{\textit{Smart contract} per Hotmoka} & \textbf{19} & \textbf{100\%} \\
-  % \hline
-
-  Test di unità & 19 & \\
-  Test di integrazione & 0 & \\
-  Test di sistema & 0 & \\
-  
-  \hline
-  \textbf{Libreria per l'interazione con gli \textit{smart contract}} & \textbf{48} & \textbf{90\%} \\
-  % \hline
-  
-  Test di unità & 29 & \\
-  Test di integrazione & 14 & \\
-  Test di sistema & 5 & \\
-
-  \hline
-  
-  \caption{Resoconto dei test scritti}
-\end{longtabu}
-
 \paragraph{Obiettivi personali}
-Per quanto concerne gli obiettivi personali ho soddisfatto pienamente tutti gli obiettivi prefissati, riuscendo anche a fare molto di più utilizzando il protocollo IPFS per il salvataggio delle opere e sviluppando una mia implementazione dello standard ERC721 per Hotmoka. Nel complesso, perciò, gli \textit{stakeholders} sono rimasti molto soddisfatti del lavoro compiuto.
+Per quanto concerne gli obiettivi personali ho soddisfatto pienamente tutti gli obiettivi prefissati, riuscendo anche a fare molto di più utilizzando il protocollo IPFS per il salvataggio delle opere e sviluppando una mia implementazione dello standard ERC721 per Hotmoka. Di seguito è riportata una tabella riassuntiva del soddisfacimento degli obiettivi personali:
 
 \begin{longtabu}{|c|c|}
   \hline
