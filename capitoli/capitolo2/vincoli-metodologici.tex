@@ -7,9 +7,10 @@ Durante il percorso di stage ho configurato quattro \textit{repository}: \textit
 
 Inizialmente, come la metodologia Scrum vuole, è stato definito per ogni prodotto il proprio \textbf{\textit{product backlog}} attraverso la creazione delle varie \textit{issue}. In seguito, sono state associate ad una \textit{milestone}, prefissata con il mio \textit{tutor} aziendale, Fabio Pallaro, ed alla relativa \textit{board}, così da poterle gestire avendo una visione migliore delle attività da fare, quelle in progresso e quelle completate.
 
+\clearpage
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-board.png}
+  \includegraphics[width=0.8\textwidth]{capitolo3/smart-contract-ethereum-board.png}
   \caption{Esempio di utilizzo della \textit{board}}
   \textbf{Fonte}: \href{https://github.com/NFT-Lab/smart-contract-ethereum/projects/1}{https://github.com/NFT-Lab/smart-contract-ethereum/projects/1}
 \end{figure}
@@ -18,17 +19,17 @@ Durante lo svolgimento dello \textit{sprint}, quando una \textit{issue} cambia i
 
 Al termine dell'implementazione della funzionalità, viene creata una \textbf{\textit{pull request}}, la quale avvia la \textit{action} che esegue l'analisi statica e i vari test automatici che sono stati programmati. In questo modo viene verificata la validità del codice che si vuole integrare con quello già presente nel \textit{branch develop}. Una volta approvata la \textit{pull request} e avvenuta la fusione tra il codice presente nel \textit{feature branch} e quello nel \textit{develop}, viene eseguita un'altra \textit{action} che ha lo stesso compito di quella precedente, ma in più andrà ad eseguire il \textit{report} del \textit{code coverage} raggiunto al servizio \textit{Coveralls}.
 
-\clearpage
+% \clearpage
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-actions.png}
+  \includegraphics[width=0.9\textwidth]{capitolo3/smart-contract-ethereum-actions.png}
   \caption{Pagina di GitHub \textit{Action} dello \textit{smart contract} per Ethereum}
   \textbf{Fonte}: \href{https://github.com/NFT-Lab/smart-contract-ethereum/actions}{https://github.com/NFT-Lab/smart-contract-ethereum/actions}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{capitolo3/smart-contract-ethereum-build-action.png}
+  \includegraphics[width=0.9\textwidth]{capitolo3/smart-contract-ethereum-build-action.png}
   \caption{\textit{Action} che esegue la build dello \textit{smart contract} per Ethereum}
   \textbf{Fonte}: \href{https://github.com/NFT-Lab/smart-contract-ethereum/blob/main/.github/workflows/build.yml}{build.yml}
 \end{figure}
@@ -37,7 +38,7 @@ Quando tutte le \textit{issue} relative ad una \textit{milestone} sono state chi
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{capitolo3/nftlab-artifact-repository.png}
+  \includegraphics[width=0.9\textwidth]{capitolo3/nftlab-artifact-repository.png}
   \caption{\textit{Artifact repository} dell'organizzazione NFTLab}
   \textbf{Fonte}: \href{https://github.com/orgs/NFT-Lab/packages}{https://github.com/orgs/NFT-Lab/packages}
 \end{figure}

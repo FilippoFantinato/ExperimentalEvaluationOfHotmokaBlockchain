@@ -20,8 +20,14 @@ Un Git \textit{workflow} è un insieme di regole che dicono come svolgere il lav
 L'idea alla base di questo \textit{workflow} è il fatto di avere due \textit{branch} che mantengono la storia del progetto: il \textit{main} e il \textit{develop}. Il \textit{branch main} ha il compito di storicizzare tutti i rilasci ufficiali, mentre il \textit{branch develop} è un branch di integrazione per le nuove funzionalità che dovranno essere aggiunte alla nuova versione del \textit{software}. Ogni nuova funzionalità da aggiungere al \textit{software} deve essere sviluppata in un opportuno \textit{feature branch}, che in seguito verrà integrato con il \textit{develop} dopo l'approvazione della \textit{pull request}.
 
 Una volta che il \textit{branch develop} ha acquisito abbastanza nuove funzionalità per un rilascio, da quest'ultimo verrà creato un nuovo \textit{branch} di tipo \textit{release}, dove si potrà perfezionare il codice eseguendo gli ultimi \textit{test} o \textit{bugfix}, per poi essere fuso dentro il \textit{branch main} e il \textit{branch develop}. In seguito verrà anche associato un \textit{tag} all'ultimo \textit{commit} del \textit{branch main}, in modo tale da consolidare la nuova versione del \textit{software}.
+Un'altra categoria importante di \textit{branch} sono quelli chiamati \textit{HotFix}, che servono per eseguire dei \textit{fix} al codice che è già stato integrato in una \textit{release}. Questo tipo di \textit{branch} ha il compito di riparare l'errore sia nel \textit{branch main} e sia nel \textit{branch develop}, attraverso la fusione in entrambi.
 
-Un'altra categoria importante di \textit{branch} sono quelli chiamati \textit{HotFix}, che servono per eseguire dei \textit{fix} al codice che è già stato integrato in una \textit{release}. Questo tipo di \textit{branch} ha il compito di riparare l'errore sia nel \textit{branch main} e sia nel \textit{branch develop}, attraverso la fusione in entrambi. \\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{capitolo3/gitflow.png}
+  \caption{Rappresentazione grafica del workflow GitFlow}
+  \textbf{Fonte}: \href{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}
+\end{figure}
 
 È stato utilizzato questo \textit{workflow} misto per sfruttare al meglio le potenzialità che hanno le \textit{pull request} offerte dalla piattaforma GitHub, e la sistematicità che caratterizza GitFlow. Infatti, in GitFlow le fasi di sviluppo sono ben definite ed organizzate, associate ognuna ad un \textit{branch}. Questo permette una gestione migliore di tutto il processo di sviluppo, sia che si lavori in un \textit{team} composto da molte persone, sia che si lavori da solo.
 
@@ -70,7 +76,7 @@ Per quanto riguarda la scrittura del documento tecnico e la realizzazione dei va
 
 \textbf{Mermaid}, invece, è uno strumento che permette di generare le immagini dei diagrammi UML a partire da un \textit{file} con estensione mmd. L'utilizzo di Mermaid ha facilitato di molto la realizzazione dei diagrammi richiesti, senza doversi occupare della parte grafica. In seguito le immagini generate sono state importate dentro il documento scritto in Markdown.
 
-\clearpage
+% \clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{capitolo3/mermaid-example.png}
@@ -100,10 +106,11 @@ HardHat è un ambiente di sviluppo per \textit{smart contract} in Solidity per E
 \paragraph{Ganache}
 Ganache è uno strumento per creare una \textit{blockchain} Ethereum locale non temporanea, con la quale interagire per svolgere vari \textit{test}. Anch'essa, come quella di Hardhat, annulla il \textit{block time} togliendo qualsiasi forma di \textit{proof of X} per velocizzare il \textit{testing}. Offre molte funzionalità, ma quella più importante è la possibilità di avere a disposizione moltissimi \textit{wallet} già forniti di Ether, con i quale comunicare con la \textit{blockchain}.
 
+\clearpage
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\linewidth]{capitolo3/ganache.png}
-  \caption{Finestra dello strumento Ganache}
+  \caption{Schermata principale dello strumento Ganache}
 \end{figure}
 
 \paragraph{Web3J} 
