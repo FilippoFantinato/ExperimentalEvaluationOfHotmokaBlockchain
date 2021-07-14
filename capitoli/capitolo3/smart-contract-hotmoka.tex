@@ -2,17 +2,17 @@
 % !TEX TS-program = pdflatex
 % !TEX root = ../../tesi.tex
 
-\section{Smart contract per Hotmoka}
-Lo \textit{smart contract} per Hotmoka ha il compito di gestire gli NFT generati dalla piattaforma NFTLab nella \textit{blockchain} Hotmoka.
+\section{Smart contract per HotMoka}
+Lo \textit{smart contract} per HotMoka ha il compito di gestire gli NFT generati dalla piattaforma NFTLab nella \textit{blockchain} HotMoka.
 
 \subsection{Progettazione}
-La progettazione del contract per la \textit{blockchain} Hotmoka è molto simile a quella che è stata eseguita per il contratto per Ethereum. Le differenze principali sono ovviamente nelle convezioni date dal linguaggio, infatti Takamaka segue le stesse convezioni di linguaggio che da Java. 
+La progettazione del contract per la \textit{blockchain} HotMoka è molto simile a quella che è stata eseguita per il contratto per Ethereum. Le differenze principali sono ovviamente nelle convezioni date dal linguaggio, infatti Takamaka segue le stesse convezioni di linguaggio che da Java. 
 I \textit{design pattern} che ho utilizzato sono gli stessi, ovvero il \textbf{\textit{Access Restriction}} e il \textbf{\textit{Guard Check}}.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{capitolo3/class-diagram/smart-contract-hotmoka-class-diagram.png}
-  \caption{Diagramma delle classi dello \textit{smart contract} per Hotmoka}
+  \caption{Diagramma delle classi dello \textit{smart contract} per HotMoka}
 \end{figure}
 
 \subsection{Codifica}
@@ -36,7 +36,7 @@ Per quanto riguarda i tipi di test eseguiti, gli unici che sono stati sviluppati
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{capitolo3/smart-contract-number-test.png}
-  \caption{Numero di test scritti nel contratto in Hotmoka}
+  \caption{Numero di test scritti nel contratto in HotMoka}
 \end{figure}
 
 In generale, posso affermare che l'attività di verifica si è rilevata molto proficua e mi ha permesso di agevolare lo sviluppo in modo significativo, tanto da produrre un grande quantitativo di \textit{test} e raggiungere un \textit{code coverage} del 100\%.
@@ -45,5 +45,5 @@ In generale, posso affermare che l'attività di verifica si è rilevata molto pr
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{capitolo3/smart-contract-code-coverage.png}
-  \caption{\textit{Code coverage} raggiunto nel contratto in Hotmoka}
+  \caption{\textit{Code coverage} raggiunto nel contratto in HotMoka}
 \end{figure}

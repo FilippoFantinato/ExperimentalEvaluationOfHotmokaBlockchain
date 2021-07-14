@@ -62,13 +62,13 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> 
    <dc:format>application/pdf</dc:format> 
-   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Valutazione sperimentale di Hotmoka Blockchain</rdf:li></rdf:Alt></dc:title>
+   <dc:title><rdf:Alt><rdf:li xml:lang="x-default">Valutazione sperimentale di HotMoka Blockchain</rdf:li></rdf:Alt></dc:title>
    <dc:creator><rdf:Seq><rdf:li>Filippo Fantinato</rdf:li></rdf:Seq></dc:creator>
    <dc:language><rdf:Bag><rdf:li>it-IT</rdf:li></rdf:Bag></dc:language>
    <dc:description><rdf:Alt><rdf:li xml:lang="x-default">Tesi di laurea triennale</rdf:li></rdf:Alt></dc:description>
    <dc:subject><rdf:Bag><rdf:li>Blockchain</rdf:li>
      <rdf:li>NFT</rdf:li>
-     <rdf:li>Hotmoka</rdf:li>
+     <rdf:li>HotMoka</rdf:li>
      <rdf:li>Ethereum</rdf:li>
      <rdf:li>Smart contract</rdf:li></rdf:Bag></dc:subject>
   </rdf:Description> 
@@ -82,15 +82,15 @@
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> 
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool> 
-   <xmp:ModifyDate>2021-07-13T10:57:33+02:00</xmp:ModifyDate> 
-   <xmp:CreateDate>2021-07-13T10:57:33+02:00</xmp:CreateDate> 
-   <xmp:MetadataDate>2021-07-13T10:57:33+02:00</xmp:MetadataDate> 
+   <xmp:ModifyDate>2021-07-14T12:21:58+02:00</xmp:ModifyDate> 
+   <xmp:CreateDate>2021-07-14T12:21:58+02:00</xmp:CreateDate> 
+   <xmp:MetadataDate>2021-07-14T12:21:58+02:00</xmp:MetadataDate> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpRights = "http://ns.adobe.com/xap/1.0/rights/"> 
   </rdf:Description> 
   <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"> 
    <xmpMM:DocumentID>uuid:03D28DDE-F9EC-3F33-FD10-51B5A3A279A6</xmpMM:DocumentID> 
-   <xmpMM:InstanceID>uuid:AD4BB377-9C68-84B3-2A78-D9249A505C1B</xmpMM:InstanceID> 
+   <xmpMM:InstanceID>uuid:9A6A66F7-19BC-695E-B134-B7A1D930E143</xmpMM:InstanceID> 
   </rdf:Description> 
  </rdf:RDF> 
 </x:xmpmeta> 

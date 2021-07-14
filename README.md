@@ -1,3 +1,3 @@
-# Experimental evaluation of Hotmoka blockchain
+# Experimental evaluation of HotMoka blockchain
 
 [![Build thesis](https://github.com/FilippoFantinato/ExperimentalEvaluationOfHotmokaBlockchain/actions/workflows/build.yml/badge.svg)](https://github.com/FilippoFantinato/ExperimentalEvaluationOfHotmokaBlockchain/actions/workflows/build.yml)

@@ -35,13 +35,13 @@ A partire da quanto richiesto dall'analisi dei requisiti, ho basato la soluzione
 \paragraph{Package services} Per creare una libreria che sia espandibile e che rispetti i principi SOLID, ho fatto uso del \textit{design pattern} chiamato \textit{\textbf{Strategy Pattern}}. Infatti è stata creata un'interfaccia chiamata NFTContractService da cui derivare tutte le specializzazioni per comunicare con qualsiasi \textit{blockchain}, facilmente selezionabili dai \textit{file} di configurazione di Spring nel caso del \textit{back-end} di NFTLab. Sono state create tre specializzazioni:
 \begin{itemize}
   \item \textbf{NFTETHContractService}: per comunicare con la rete IPFS e il contratto caricato su \textit{blockchain} Ethereum;
-  \item \textbf{NFTHotmokaContractService}: per comunicare con la rete IPFS e il contratto caricato su \textit{blockchain} Hotmoka;
+  \item \textbf{NFTHotmokaContractService}: per comunicare con la rete IPFS e il contratto caricato su \textit{blockchain} HotMoka;
   \item \textbf{NFTDummyContractService}: utilizzata dal \textit{back-end} quando non si vuole comunicare con alcuna \textit{blockchain}, ma solo con la rete IPFS.
 \end{itemize}
 
-\paragraph{Package contracts} In questo \textit{package} sono presenti tutte le classi che gestiscono la comunicazione diretta con gli \textit{smart contract}. Per quanto riguarda la classe che gestisce la comunicazione con lo \textit{smart contract} in Ethereum, viene generata automaticamente a partire dal contratto scritto in Solidity attraverso lo strumento Web3J. Al contrario, il contratto per Hotmoka non ha alcuno strumento di questo tipo e per questo ho dovuto provvedere a questa mancanza, attraverso le classi HotmokaIntegration e NFTLabStoreHotmoka. \\
+\paragraph{Package contracts} In questo \textit{package} sono presenti tutte le classi che gestiscono la comunicazione diretta con gli \textit{smart contract}. Per quanto riguarda la classe che gestisce la comunicazione con lo \textit{smart contract} in Ethereum, viene generata automaticamente a partire dal contratto scritto in Solidity attraverso lo strumento Web3J. Al contrario, il contratto per HotMoka non ha alcuno strumento di questo tipo e per questo ho dovuto provvedere a questa mancanza, attraverso le classi HotmokaIntegration e NFTLabStoreHotmoka. \\
 
-Per l'integrazione con la \textit{blockchain} Hotmoka sono state previste due classi perché HotmokaIntegration ha il compito di gestire tutta la parte di connessione con Hotmoka, mentre in NFTLabStoreHotmoka sono state definite tutte le chiamate che servono per comunicare con il contratto. È stata fatta questa distinzione per separare la logica di connessione alla rete, da quella delle chiamate verso il contratto.
+Per l'integrazione con la \textit{blockchain} HotMoka sono state previste due classi perché HotmokaIntegration ha il compito di gestire tutta la parte di connessione con HotMoka, mentre in NFTLabStoreHotmoka sono state definite tutte le chiamate che servono per comunicare con il contratto. È stata fatta questa distinzione per separare la logica di connessione alla rete, da quella delle chiamate verso il contratto.
 
 \paragraph{Package services.ipfs} Attraverso il \textit{package} services.ipfs ho definito tutte le classi e interfacce per interagire con la rete IPFS. Sempre grazie all'utilizzo dello \textit{\textbf{Strategy Pattern}} è stata definita l'interfaccia IPFSService, la quale è stata specializzata nella classe \textbf{IPFSPinataService} utilizzata per comunicare con la rete IPFS attraverso il servizio Pinata.
 
@@ -66,7 +66,7 @@ A partire dalla progettazione architetturale, l'iter di sviluppo si è svolto ne
 \begin{enumerate}
   \item implementazione del \textit{package} \textbf{services} e \textbf{services.smartcontract}, dove mi sono concentrato nella scrittura delle classi principali che hanno il compito di comunicare direttamente con il \textit{back-end};
   \item implementazione del \textit{package} \textbf{services.ipfs} e \textbf{services.ipfs.pinataresponses}, dove ho sviluppato il servizio per comunicare con la rete IPFS attraverso Pinata;
-  \item implementazione del \textit{package} \textbf{contracts}, dove ho provveduto a generare la classe per comunicare con il contratto caricato su \textit{blockchain} Ethereum e a scrivere il sistema per la comunicazione con la \textit{blockchain} Hotmoka.
+  \item implementazione del \textit{package} \textbf{contracts}, dove ho provveduto a generare la classe per comunicare con il contratto caricato su \textit{blockchain} Ethereum e a scrivere il sistema per la comunicazione con la \textit{blockchain} HotMoka.
 \end{enumerate}
 
 % \clearpage

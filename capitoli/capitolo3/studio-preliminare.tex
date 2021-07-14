@@ -3,7 +3,7 @@
 % !TEX root = ../../tesi.tex
 
 \section{Studio preliminare}
-Durante la fase di studio preliminare ho dovuto apprendere tutte le nozioni teoriche che stanno alla base del funzionamento della \textbf{tecnologia \textit{blockchain}} e, in seguito, alla base delle \textit{blockchain} \textbf{Ethereum} e \textbf{Hotmoka}, con i relativi linguaggi per la scrittura di \textit{smart contract}.
+Durante la fase di studio preliminare ho dovuto apprendere tutte le nozioni teoriche che stanno alla base del funzionamento della \textbf{tecnologia \textit{blockchain}} e, in seguito, alla base delle \textit{blockchain} \textbf{Ethereum} e \textbf{HotMoka}, con i relativi linguaggi per la scrittura di \textit{smart contract}.
 
 \subsection{Cos'è la blockchain}
 La \textit{blockchain} è una nuova tipologia di registro distribuito strutturato come una catena di blocchi contenenti le transazioni. Fa parte, perciò, della più ampia famiglia delle tecnologie di \textbf{\textit{Distributed Ledger}}, ossia sistemi che si basano su un registro distribuito che può essere letto e modificato da più nodi di una rete.
@@ -229,13 +229,13 @@ Il \textbf{\textit{PATRICIA Trie}} è un albero che permette di conservare una s
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{La blockchain Hotmoka}
-Hotmoka è un \textit{framework} per la programmazione di una rete \textit{peer-to-peer}, attraverso un sottoinsieme di Java chiamato Takamaka. I nodi possono appartenere a una \textit{blockchain} o possono essere dispositivi IOT (\textit{Internet Of Things}). È sviluppata e mantenuta dall'Università degli Studi di Verona.
+\subsection{La blockchain HotMoka}
+HotMoka è un \textit{framework} per la programmazione di una rete \textit{peer-to-peer}, attraverso un sottoinsieme di Java chiamato Takamaka. I nodi possono appartenere a una \textit{blockchain} o possono essere dispositivi IOT (\textit{Internet Of Things}). È sviluppata e mantenuta dall'Università degli Studi di Verona.
 
 % \begin{figure}[h!]
 %   \centering
 %   \includegraphics[width=0.4\textwidth]{capitolo3/hotmoka-logo.png}
-%   \caption{Logo di Hotmoka}
+%   \caption{Logo di HotMoka}
 %   \textbf{Fonte}: \href{https://hotmoka.io}{https://hotmoka.io}
 % \end{figure}
 
@@ -286,12 +286,12 @@ Un'altra caratteristica molto importante per quanto riguarda Tendermint è l'uti
   \textbf{Fonte}: \href{https://blog.cosmos.network/consensus-compare-casper-vs-tendermint-6df154ad56ae}{https://blog.cosmos.network/consensus-compare-casper-vs-tendermint}
 \end{figure}
 
-\noindent Tendermint è stato utilizzato per la realizzazione di Hotmoka.
+\noindent Tendermint è stato utilizzato per la realizzazione di HotMoka.
 
-\paragraph{Gli smart contract in Hotmoka}
-Gli \textit{smart contract} in Hotmoka sono programmabili attraverso un \textit{subset} di Java chiamato Takamaka. \textbf{Takamaka} aggiunge molte annotazioni e classi per facilitare la scrittura di \textit{smart contract}, andando ad imitare i costrutti degni di nota del linguaggio Solidity che ho elencato in §\ref{par:ethereum.smart-contract}. Inoltre viene rimosso l'accesso a tutti i costrutti di programmazione concorrente e alle funzioni che potrebbero creare non determinismo. Viene introdotto, come per Ethereum, il concetto di \textit{Gas price} e \textit{Gas limit}. \\
+\paragraph{Gli smart contract in HotMoka}
+Gli \textit{smart contract} in HotMoka sono programmabili attraverso un \textit{subset} di Java chiamato Takamaka. \textbf{Takamaka} aggiunge molte annotazioni e classi per facilitare la scrittura di \textit{smart contract}, andando ad imitare i costrutti degni di nota del linguaggio Solidity che ho elencato in §\ref{par:ethereum.smart-contract}. Inoltre viene rimosso l'accesso a tutti i costrutti di programmazione concorrente e alle funzioni che potrebbero creare non determinismo. Viene introdotto, come per Ethereum, il concetto di \textit{Gas price} e \textit{Gas limit}. \\
 
-Ogni \textit{smart contract} verrà pacchettizzato come \textbf{JAR} e, dopo aver eseguito un processo di verifica, dove verrà controllato che tutte le istruzioni scritte siano consentite, e di instrumentizzazione, dove verrà modificato e reso installabile dentro un blocco, viene inviato alla rete Hotmoka.  
+Ogni \textit{smart contract} verrà pacchettizzato come \textbf{JAR} e, dopo aver eseguito un processo di verifica, dove verrà controllato che tutte le istruzioni scritte siano consentite, e di instrumentizzazione, dove verrà modificato e reso installabile dentro un blocco, viene inviato alla rete HotMoka.  
 Il pacchetto JAR a questo punto sarà installato all'interno di essa e potrà essere richiamabile da altri \textit{smart contract}.
 In seguito potranno essere istanziati oggetti di quello \textit{smart contract} sul quale invocare tutte le funzioni disponibili.
 
@@ -302,8 +302,8 @@ In seguito potranno essere istanziati oggetti di quello \textit{smart contract} 
 %   \textbf{Fonte}: \href{https://www.takamaka.io}{https://www.takamaka.io}
 % \end{figure}
 
-\paragraph{Lo stato di Hotmoka}
-Essendo un'implementazione di Tendermint, Hotmoka presenta sia lo stato della \textit{blockchain}, gestito da Tendermint \textit{core}, e sia lo stato del \textit{application layer}. Quest'ultimo deve memorizzare due categorie di dato: i JAR che vengono inviati e gli oggetti istanziati. \\
+\paragraph{Lo stato di HotMoka}
+Essendo un'implementazione di Tendermint, HotMoka presenta sia lo stato della \textit{blockchain}, gestito da Tendermint \textit{core}, e sia lo stato del \textit{application layer}. Quest'ultimo deve memorizzare due categorie di dato: i JAR che vengono inviati e gli oggetti istanziati. \\
 
 Dato che il salvataggio dei JAR e degli oggetti deve essere persistente, è stata data una struttura ben definita allo stato, il quale è stato diviso in: \textit{reponses} e \textit{histories}.
 
@@ -317,8 +317,8 @@ La risposta può essere di due tipi:
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{capitolo3/studio-preliminare/hotmoka-state.png}
-  \caption{Lo stato di un blocco nella \textit{blockchain} Hotmoka}
-  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/Hotmoka}{https://github.com/spoto/blockchain-course/tree/master/Hotmoka}
+  \caption{Lo stato di un blocco nella \textit{blockchain} HotMoka}
+  \textbf{Fonte}: \href{https://github.com/spoto/blockchain-course/tree/master/HotMoka}{https://github.com/spoto/blockchain-course/tree/master/HotMoka}
 \end{figure}
 
 L'implementazione tipica di questo stato viene data attraverso l'utilizzo di un \textbf{\textit{Merkle Tree}}, la quale \textit{Merkle root} viene memorizzata dentro il blocco che deve essere salvato in \textit{blockchain}. \\
@@ -340,7 +340,7 @@ Per ERC (\textit{Ethereum Request Comments}) si intendono le richieste di standa
 
 Per lo sviluppo dello \textit{smart contract} in \textbf{Solidity} è stata utilizzata l'implementazione dello standard ERC721 più utilizzata e conosciuta nel mondo Ethereum, ovvero quella data dall'azienda \textbf{OpenZeppelin}. Oltre alla sua grande fama e al fatto che è utilizzata dalla maggior parte della \textit{community}, è stata scelta perché non ci sono vulnerabilità attualmente conosciute. \\
 
-Per quanto riguarda invece \textbf{Hotmoka}, essendo una \textit{blockchain} giovane non è stato implementato alcuno standard per la scrittura di \textit{smart contract} per la gestione di NFT. Per questo motivo, in accordo con il mio \textit{tutor} aziendale, Fabio Pallaro, è stato deciso che avrei provato a scrivere una mia possibile implementazione dello standard ERC721.
+Per quanto riguarda invece \textbf{HotMoka}, essendo una \textit{blockchain} giovane non è stato implementato alcuno standard per la scrittura di \textit{smart contract} per la gestione di NFT. Per questo motivo, in accordo con il mio \textit{tutor} aziendale, Fabio Pallaro, è stato deciso che avrei provato a scrivere una mia possibile implementazione dello standard ERC721.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -32,14 +32,12 @@ pdflatex -output-directory=$DIR $NAME
 pdflatex -output-directory=$DIR $NAME
 
 echo ---------------------------------
-echo - Pulisco e poi apro il file... -
+echo - Pulisco -
 echo ---------------------------------
 
 # rm $DIR/*.acn $DIR/*.aux $DIR/*.bbl $DIR/*.bcf $DIR/*.glo
 # rm $DIR/*.ist $DIR/*.lof $DIR/*.lot $DIR/*.run.xml $DIR/*.toc
 # # Per mantenere i log commentare la linea seguente
 # rm $DIR/*.blg  $DIR/*.log
-
-xdg-open $DIR/$NAME.pdf
 
 echo ---------------------------- END -----------------------------
