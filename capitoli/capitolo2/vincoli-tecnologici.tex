@@ -2,10 +2,10 @@
 % !TEX TS-program = pdflatex
 % !TEX root = ../../tesi.tex
 
-\subsection{Vincoli tecnologici}
-In questa sezione vengono presentati gli strumenti e le tecnologie decise ed utilizzate per procedere al meglio durante la fase di sviluppo.
+\section{Vincoli tecnologici}
+Prima di iniziare con lo stage, sono state decise insieme al mio \textit{tutor} aziendale, Fabio Pallaro, tutti gli strumenti e le tecnologie da utilizzare per procedere al meglio durante la fase di sviluppo.
 
-\subsubsection{Strumenti di gestione del progetto}
+\subsection{Strumenti di gestione del progetto}
 Il processo di sviluppo è molto complicato e articolato, in quanto riguarda molte fasi che fanno comunicare numerose persone. Per questo è importante scegliere gli strumenti adeguati che riescano ad accompagnare questo processo, semplificandolo ed automatizzando alcune parti di esso. Di seguito verranno spiegati quali strumenti per la gestione del progetto ho scelto e soprattutto il perché.
 
 \paragraph{Version Control System}
@@ -69,7 +69,7 @@ Il \textit{artifact repository} è uno strumento per ottimizzare e storicizzare 
   \item \textbf{\textit{GitHub Artifact Repository}}: \textit{artifact repository} interna a GitHub, utilizzata per la pubblicazione degli artefatti prodotti in seguito al processo di \textit{build} dello strumento Maven. Nel \textit{GitHub Artifact Repository} sono stati caricati tutti gli \textit{smart contract} per HotMoka e la libreria per l'integrazione con il \textit{back-end} NFTLab, in modo tale da facilitarne l'importazione e la gestione. Non è stata utilizzata la \textit{Maven Central Repository}, visto che questi artefatti sono interni al progetto e non hanno l'obiettivo di funzionare al di fuori del contesto NFTLab.
 \end{itemize}
 
-\subsubsection{Documento tecnico}
+\subsection{Documento tecnico}
 Per quanto riguarda la scrittura del documento tecnico e la realizzazione dei vari diagrammi UML, ho utilizzato, rispettivamente, il linguaggio Markdown e Mermaid. 
 
 \textbf{Markdown} è un linguaggio di \textit{markup} con una sintassi del testo semplice progettata in modo che possa essere convertita in HTML. È perfettamente integrabile con la piattaforma GitHub, la quale mette a disposizione la lettura online di documenti scritti in Markdown.
@@ -84,14 +84,14 @@ Per quanto riguarda la scrittura del documento tecnico e la realizzazione dei va
   \textbf{Fonte}: \href{https://github.com/NFT-Lab/smart-contract-integration/blob/main/docs/classdiagram\_services.mmd}{https://github.com/NFT-Lab/smart-contract-integration/blob/main/docs/classdiagram\_services.mmd}
 \end{figure}
 
-\subsubsection{Ambienti di sviluppo}
+\subsection{Ambienti di sviluppo}
 Come ambienti di sviluppo sono stati utilizzati IntelliJ Idea per la scrittura di codice che riguardava il linguaggio Java e Visual Studio Code per quella che riguardava il linguaggio di programmazione Solidity.
 
 \textbf{IntelliJ IDEA} è un ambiente di sviluppo integrato per il linguaggio di programmazione Java. Ha molte funzionalità che facilitano la gestione del codice, infatti esegue automaticamente il \textit{code refactoring} in base alle modifiche che si vogliono apportare, si integra perfettamente con lo strumento di versionamento GIT e gli strumenti di \textit{build automation} Maven e Gradle.
 
 \textbf{Visual Studio Code}, invece, è un \textit{code editor} sviluppato su Electron, un \textit{framework} attraverso il quale è possibile sviluppare applicazioni \textit{desktop} utilizzando le tecnologie web. Appena installato non ha molte funzionalità, ma grazie alle numerose estensioni che sono state create e si possono installare, può essere considerato un IDE. Principalmente è stato utilizzato per lo sviluppo in Solidity, con estensioni che avviano lo strumento di analisi statica e formattazione del codice ad ogni salvataggio.
 
-\subsubsection{Tecnologie usate}
+\subsection{Tecnologie usate}
 Le tecnologie utilizzate durante il processo di sviluppo, tra cui linguaggi di programmazione, \textit{framework}, librerie, strumenti di \textit{build automation} e strumenti per l'analisi statica del codice, sono riportate di seguito.
 
 \paragraph{HardHat}
