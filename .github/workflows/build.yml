@@ -19,7 +19,6 @@ jobs:
         with:
           root_file: tesi.tex
           latexmk_shell_escape: true
-          args: "-pdf -file-line-error -halt-on-error -interaction=nonstopmode -f"
           
       - name: Get output name
         id: thesis_name
